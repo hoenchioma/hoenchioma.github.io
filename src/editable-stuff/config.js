@@ -6,31 +6,35 @@ const navBar = {
 // MAIN BODY SECTION
 // https://fontawesome.com/v4/icons/
 const mainBody = {
-  gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
-  firstName: "Michelle",
+  gradientColors: "#000000, #ff7f7f, #ecf0f1",
+  firstName: "Raheeb",
   middleName: "",
-  lastName: "Liu",
-  message: "Applied math and computer science student at Brown University",
+  lastName: "Hassan",
+  message: "",
   icons: [
     {
+      image: "fa-envelope-o",
+      url: "mailto:raheeb998@gmail.com",
+    },
+    {
       image: "fa-github",
-      url: "https://github.com/michelleliu4",
+      url: "https://github.com/hoenchioma",
     },
     {
       image: "fa-linkedin",
-      url: "https://www.linkedin.com/in/michelleliu-4",
+      url: "https://www.linkedin.com/in/raheebhassan",
     },
     // {
     //   image: "fa-discord",
     //   url: "https://discordapp.com/users/384794549412954113",
     // },
-    {
-      image: "fa-facebook",
-      url: "https://www.facebook.com/michelle.liu.4",
-    },
+    // {
+    //   image: "fa-facebook",
+    //   url: "https://www.facebook.com/michelle.liu.4",
+    // },
     {
       image: "fa-instagram",
-      url: "https://www.instagram.com/michelle.liu.4",
+      url: "https://www.instagram.com/raheebomega",
     },
   ],
 };
@@ -51,11 +55,11 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  imageLink: require("../editable-stuff/headshot.jpg"),
+  profilePictureLink: "raheebomega",
   imageSize: 375,
   message:
     "Hi! I am a junior at Brown University studying Applied Mathematics and Computer Science. I am passionate about using tech to improve the world and an avid learner with many interests, especially in machine learning and entrepreneurship.",
-  resume: require("../editable-stuff/resume.pdf"),
+  resume: "https://drive.google.com/file/d/1_hhTXxe2LKMIaaRc8fIM-FeSyiirQO27/view?usp=sharing",
   education:
     <div>
     <p style={{fontSize:22, marginBottom:0}}><b>Brown University</b></p>
