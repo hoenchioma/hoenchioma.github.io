@@ -7,7 +7,7 @@ import { Link } from "@mui/material";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const ArtShowcase = ({ heading, instagramProfileUrl, instagramUrls }) => {
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const cardWidth = Math.min(390, width - 10);
   const cardHeight = cardWidth + 10;
   return (
