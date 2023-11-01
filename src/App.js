@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { navBar, mainBody, about, experience, leadership, repos, awards, skills, getInTouch,} from "./editable-stuff/config.js";
+import { navBar, mainBody, about, education, experience, leadership, repos, awards, skills, getInTouch,} from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
@@ -13,6 +13,7 @@ import GetInTouch from "./components/home/GetInTouch.jsx";
 import Awards from "./components/home/Awards.jsx";
 import Experience from "./components/home/Experience";
 import Leadership from "./components/home/Leadership";
+import Education from "./components/home/Education.jsx";
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -34,24 +35,24 @@ const Home = React.forwardRef((props, ref) => {
           education={about.education}
         />
       )}
+      {education.show && (
+        <Education
+          heading={education.heading}
+          educationList={education.data}
+        />
+      )}
       {experience.show && (
         <Experience
           heading={experience.heading}
           experienceList={experience.data}
         />
       )}
-      {leadership.show && (
-        <Leadership
-          heading={leadership.heading}
-          leadershipList={leadership.data}
-        />
-      )}
-      {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
+      {awards.show && (
+        <Awards
+          heading={awards.heading}
+          message={awards.message}
+          img={awards.images}
+          imageSize={awards.imageSize}
         />
       )}
       {skills.show && (
@@ -62,12 +63,12 @@ const Home = React.forwardRef((props, ref) => {
           otherSkills={skills.otherSkills}
         />
       )}
-      {awards.show && (
-        <Awards
-          heading={awards.heading}
-          message={awards.message}
-          img={awards.images}
-          imageSize={awards.imageSize}
+      {repos.show && (
+        <Project
+          heading={repos.heading}
+          username={repos.gitHubUsername}
+          length={repos.reposLength}
+          specfic={repos.specificRepos}
         />
       )}
     </>

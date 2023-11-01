@@ -3,7 +3,7 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { mainBody, about, experience, leadership, repos, awards, skills } from "../editable-stuff/config.js";
+import { mainBody, about, education, experience, leadership, repos, awards, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
 const Navigation = React.forwardRef((props, ref) => {
@@ -68,6 +68,15 @@ const Navigation = React.forwardRef((props, ref) => {
             Resume
           </NavLink>
 
+          {education.show && (
+            <NavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/#education"}
+            >
+              Education
+            </NavLink>
+          )}
+
           {experience.show && (
             <NavLink
               className="nav-item lead"
@@ -77,22 +86,23 @@ const Navigation = React.forwardRef((props, ref) => {
             </NavLink>
           )}
 
-          {leadership.show && (
+          {/* {leadership.show && (
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#leadership"}
             >
               Leadership
             </NavLink>
-          )}
+          )} */}
 
-          {repos.show && (
+          {awards.show && (
             <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
+              href={process.env.PUBLIC_URL + "/#awards"}
             >
-              Projects
+              Awards
             </NavLink>
           )}
+
           {skills.show && (
             <NavLink
               className="nav-item lead"
@@ -101,11 +111,12 @@ const Navigation = React.forwardRef((props, ref) => {
               Skills
             </NavLink>
           )}
-          {awards.show && (
+
+          {repos.show && (
             <NavLink
-              href={process.env.PUBLIC_URL + "/#awards"}
+              href={process.env.PUBLIC_URL + "/#projects"}
             >
-              Awards
+              Projects
             </NavLink>
           )}
         </Nav>
