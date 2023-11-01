@@ -1,7 +1,7 @@
 {
   "name": "developers-portfolio",
   "description": "A personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects.",
-  "homepage": "https://michelleliu4.github.io",
+  "homepage": "https://hoenchioma.github.io",
   "version": "2.0.0",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",

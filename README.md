@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">Michelle's Personal Website</h1>
+  <h1 align="center">Raheeb's Personal Website</h1>
 
   <p align="center">
     This is a personal portfolio website hosted with GitHub Pages. It is forked from 
@@ -9,14 +9,14 @@
   </p>
 </p>
 
-[![GitHub forks](https://img.shields.io/github/forks/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/star_book/network)
+<!-- [![GitHub forks](https://img.shields.io/github/forks/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/star_book/network)
 [![GitHub issues](https://img.shields.io/github/issues/hashirshoaeb/home?color=ffcc66&style=for-the-badge)](https://github.com/hashirshoaeb/star_book/issues)
 [![GitHub license](https://img.shields.io/github/license/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/home/blob/master/LICENSE)
 [![Node Version](https://img.shields.io/static/v1?label=Node&message=v18.13.0&color=026e00&style=for-the-badge)](https://nodejs.org)
-[![npm Version](https://img.shields.io/static/v1?label=npm&message=9.5.1&color=cb0000&style=for-the-badge)](https://nodejs.org)
-[![Site preview](/public/social-image.png)](https://michelleliu4.github.io)
+[![npm Version](https://img.shields.io/static/v1?label=npm&message=9.5.1&color=cb0000&style=for-the-badge)](https://nodejs.org) -->
+[![Site preview](/public/social-image.png)](https://hoenchioma.github.io)
 
-## Table of Contents
+<!-- ## Table of Contents
 
 - [Technology Stack 🛠️](#technology-stack-)
 - [Prerequisites 🍪](#prerequisites-)
@@ -87,4 +87,4 @@ You should have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/
     - Delete it.
     - Take a screenshot of your version and rename it "social-image.png" and place it there.
 
-Next time if you make changes, repeat from step 8.
+Next time if you make changes, repeat from step 8. -->
