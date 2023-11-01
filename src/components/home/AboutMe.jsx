@@ -73,14 +73,14 @@ const AboutMe = ({ heading, message, link, imgSize, resume, education }) => {
               >
                 Resume
               </a>
-              <button
+              {/* <button
                 className="btn btn-outline-dark btn-lg"
                 aria-label="Education"
                 style={{width: 120, marginLeft: 10, marginRight: 10}}
                 onClick={showEducation}
               >
                 Education
-              </button>
+              </button> */}
             </p>
           )}
           <div id="education-box" style={{display: 'none'}}>
