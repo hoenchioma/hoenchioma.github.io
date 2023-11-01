@@ -6,16 +6,16 @@ const navBar = {
 // MAIN BODY SECTION
 // https://fontawesome.com/v4/icons/
 const mainBody = {
-  gradientColors: "#000000, #ff7f7f, #ecf0f1",
+  gradientColors: "#1ad7c0, #4484ce, #9b59b6",
   firstName: "Raheeb",
   middleName: "",
   lastName: "Hassan",
-  message: "",
+  message: "Associate ML Engineer at Therap (BD) Ltd.",
   icons: [
-    {
-      image: "fa-envelope-o",
-      url: "mailto:raheeb998@gmail.com",
-    },
+    // {
+    //   image: 'email',
+    //   url: "mailto:raheeb998@gmail.com",
+    // },
     {
       image: "fa-github",
       url: "https://github.com/hoenchioma",
@@ -55,49 +55,26 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  profilePictureLink: "raheebomega",
+  imageLink: require("../editable-stuff/headshot.jpg"),
   imageSize: 375,
   message:
-    "Hi! I am a junior at Brown University studying Applied Mathematics and Computer Science. I am passionate about using tech to improve the world and an avid learner with many interests, especially in machine learning and entrepreneurship.",
-  resume: "https://drive.google.com/file/d/1_hhTXxe2LKMIaaRc8fIM-FeSyiirQO27/view?usp=sharing",
-  education:
-    <div>
-    <p style={{fontSize:22, marginBottom:0}}><b>Brown University</b></p>
-    <p style={{fontSize:18, marginBottom:0}}>Sc.B. Applied Math and Computer Science, Sep 2021 – May 2025 </p>
-    <ul>
-      <li>Computer Science Courses
-        <ul>
-          <li>Machine Learning, Deep Learning, NLP</li>
-          <li>Computer Systems, Web Development, Functional Programming</li>
-          <li>Theory of Computation, Data Structures & Algorithms</li>
-        </ul>
-      </li>
-      <li>Math Courses
-        <ul>
-          <li>Numerical Solutions of Differential Equations, Operations Research: Deterministic Models, Stochastic Calculus</li>
-          <li>Honors Statistics, Applied Partial Differential Equations</li>
-          <li>Abstract Algebra, Complex Analysis, Differential Geometry, Graph Theory</li>
-        </ul>
-      </li>
-    </ul>
+  "Hello! I'm Raheeb Hassan, a fresh CSE graduate from the University of Dhaka. Currently, I work as an Associate ML Engineer at Therap (BD) Ltd. My passion lies in Deep Learning, Computer Vision, and Reinforcement Learning. I enjoy tinkering, problem-solving, and creating digital art in my spare time. I'm a fast learner, constantly seeking new knowledge.",
+  resume: require("../editable-stuff/resume.pdf"),
+};
 
-    <p style={{fontSize:22, marginBottom:0}}><b>University of Nevada Reno</b></p>
-    <p style={{fontSize:18, marginBottom:0}}>Middle/High School Dual Enrollment, Aug 2015 – May 2021</p>
-    <ul>
-      <li>Relevant Courses
-        <ul>
-          <li>Game Theory, Topology, Real Analysis, Number Theory,
-        Calculus III, Linear Algebra, Microeconomics</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p style={{fontSize:22, marginBottom:0}}><b>Davidson Academy</b></p>
-    <p style={{fontSize:18, marginBottom:0}}>Middle/High School, Aug 2015 – May 2021</p>
-    <ul>
-      <li>ACT: 36 (composite), Math: 36, Science: 35, English: 36, Reading: 35, Writing: 10</li>
-    </ul>
-    </div>,
+// EDUCATION SECTION
+const education = {
+  show: true,
+  heading: "Education",
+  data: [
+    {
+      university: "University of Dhaka",
+      department: "Department of Computer Science and Engineering",
+      degree: "BSc. in Computer Science and Engineering",
+      result: "CGPA: 3.75/4.00 (2nd highest in my class)",
+      logo: require("../assets/img/logo_du.png"),
+    }
+  ]
 };
 
 // EXPERIENCE SECTION
@@ -106,129 +83,32 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      company: 'SIG',
-      location: "New York, NY",
-      role: 'Quantitative Trading Intern',
-      date: 'Summer 2024',
+      company: 'Therap (BD) Ltd.',
+      location: "Dhaka, Bangladesh",
+      role: 'Associate ML Engineer',
+      date: 'Feb 2023 – Present',
+      logo: require("../assets/img/logo_therap.jpg"),
       description: [
         <ul>
-          <li>Incoming for Summer 2024</li>
+          <li>Worked with computer vision, face recognition, multi-object tracking, activity recognition</li>
+          <li>Worked with the NVIDIA Deepstream platform for low level machine learning computation</li>
+          <li>Designed and implemented systems for ML based real time monitoring</li>
         </ul>
       ],
     },
     {
-      company: 'Lightspeed',
-      location: "Providence, RI",
-      role: 'Data Science Intern',
-      date: 'Spring 2024',
+      company: 'CranTech LLC (Formerly Quixx Projects)',
+      location: "Dhaka, Bangladesh",
+      role: 'Full Stack Developer (Part-Time)',
+      date: '2020 – 2021',
+      logo: require("../assets/img/logo_crantech.jpg"),
       description: [
         <ul>
-          <li>Incoming for Spring 2024</li>
+          <li>Worked on several frontend projects like Shoshikkha, Amplfiy, etc.</li>
+          <li>Worked with ReactJS (frontend), ExpressJS (backend) and React Native (Mobile)</li>
         </ul>
       ],
     },
-    {
-      company: 'Brown University',
-      location: "Providence, RI",
-      role: 'Undergraduate Teaching Assistant',
-      date: 'Aug 2022 – Present',
-      description: [
-        <ul>
-          <li>Courses: Computational Linguistics (Fall 2023), Statistical Inference (Spring 2023), Machine Learning (Spring 2023), Functional Programming (Fall 2022)</li>
-          <li>Designed projects, homework, and exams as well as assisted with grading of assignments</li>
-          <li>Facilitated interactive workshops to foster collaboration, reinforce key concepts, and tackle challenging problem sets</li>
-          <li>Supported over 300 individuals by moderating an online question forum and providing guidance during office hours</li>
-        </ul>,
-      ],
-    },
-    {
-      company: "JPMorgan Chase & Co.",
-      location: "Jersey City, NJ",
-      role: "Software Engineer Intern",
-      date: "Jun 2023 – Aug 2023",
-      description: [
-        <ul>
-          <li>Leveraged Splunk queries and AWS to construct a robust data pipeline for extracting and preprocessing call center log data</li>
-          <li>Developed and implemented outlier detection and classification models, achieving over 90% accuracy identifying irregular and bad calls</li>
-          <li>Created time series models to find general trends in problematic calls across various regions, supporting a user base of over 50,000 call specialists</li>
-        </ul>
-      ],
-    },
-    {
-      company: 'Visual Prosthesis Lab',
-      location: "Providence, RI",
-      role: 'Research Assistant',
-      date: 'Sep 2022 – Dec 2022',
-      description: [
-        <ul>
-          <li>Conducted research and implemented Python computer vision frameworks to aid visually impaired individuals in navigation</li>
-          <li>Developed visual prosthesis devices by leveraging YoloV5 for object localization, Text2Voice for intuitive grasping, and OCR for character recognition</li>
-        </ul>,
-      ],
-    },
-    {
-      company: 'Western Digital',
-      location: "Milpitas, CA",
-      role: 'Software Development Engineer Intern',
-      date: 'May 2022 – Aug 2022',
-      description: [
-        <ul>
-          <li>Designed test prioritization algorithm using Python and machine learning, increasing cycle efficiency by 50%</li>
-          <li>Created regression, random forest, and neural network models to predict failures with 95% accuracy</li>
-          <li>Utilized FastAPI and SQL queries to access and post algorithm performances on Elasticsearch</li>
-          <li>Studied natural language processing to create code coverage maps</li>
-        </ul>,
-      ],
-    },
-    // {
-    //   company: 'D.E. Shaw & Co.',
-    //   location: "New York, NY",
-    //   role: 'Discovery Fellowship Attendee',
-    //   date: 'May 2023',
-    //   description: [
-    //     <ul>
-    //       <li>Selected as one of 30 attendees for selective program to learn about roles at DE Shaw & Co</li>
-    //       <li>Studied financial market topics such as alpha and behavioral finance</li>
-    //     </ul>,
-    //   ],
-    // },
-    {
-      company: 'Citadel',
-      location: "New York, NY",
-      role: 'Discover Citadel & Citadel Securities Participant',
-      date: 'Apr 2023',
-      description: [
-        <ul>
-          <li>Selected as one of 120 out of over 2600 students to learn about quantitative roles at Citadel</li>
-          <li>Attended networking sessions with senior leaders to learn about company structure</li>
-          <li>Leveraged asset pricing and bidding to place 1st in a trading game</li>
-        </ul>,
-      ],
-    },
-    {
-      company: 'Jane Street',
-      location: "New York, NY",
-      role: 'First-Year Trading and Technology (FTTP) and INSIGHT Fellow',
-      date: 'Mar 2022, Aug 2022',
-      description: [
-        <ul>
-          <li>Selected as one of 60 students for FTTP and one of 40 students for INSIGHT, both highly competitive program to learn market-making and algorithmic trading</li>
-          <li>Programmed trading bot in Python leveraging arbitrage and bond pricing to place 3rd in electronic trading competition</li>
-        </ul>,
-      ],
-    },
-    // {
-    //   company: 'Jadepoint',
-    //   location: "Remote",
-    //   role: 'Consulting Intern',
-    //   date: 'Jan 2022',
-    //   description: [
-    //     <ul>
-    //       <li>Collaborated with the consulting team to design PowerPoint presentations and training tasks for clients in Aruba, effectively conveying performance psychology concepts</li>
-    //       <li>Conducted market research on the luxury hotel industry, providing valuable insights and recommendations to support strategic decision-making for the consulting projects</li>
-    //     </ul>,
-    //   ],
-    // },
   ]
 };
 
@@ -247,67 +127,6 @@ const leadership = {
           <li>Orchestrated club operations, including weekly rehearsals and a <a href="https://www.youtube.com/@brownavge">Youtube channel</a> with over 80k views</li>
         </ul>,
     },
-    {
-      company: 'Applied Math DUG',
-      role: 'President',
-      date: 'Mar 2022 – Present',
-      description:
-        <ul>
-          <li>Lead a club of over 300 students, collaborating with board members to plan events such as industry panels, course advising, and social mixers</li>
-          <li>Managed over $1500 budget, allocating reosurces for social outreach initiatives and overseeing the <a href="https://brownamdug.wordpress.com/">website</a></li>
-          <li>Coordinated with the applied math department and clubs like SIAM and Association of Women in Mathematics to host events such as Pi Day, peer and faculty advising, and math talks</li>
-        </ul>,
-    },
-    {
-      company: 'Cambridge Math Circle',
-      role: 'Mathematics Instructor',
-      date: 'Apr 2020 – Present',
-      description:
-        <ul>
-          <li>Taught online math classes and explained challenging concepts for 1st-8th grade students in the Cambridge area</li>
-          <li>Constructed advanced Beast Academy and AoPS lesson plans used by over 150 students</li>
-        </ul>,
-    },
-    {
-      company: 'Ensemble Theatre',
-      role: 'Executive Board',
-      date: 'Feb 2022 – Present',
-      description: 
-        <ul>
-          <li>Coordinated the production team and acted as a liaison between the board and and the show as an executive producer</li>
-          <li>Managed social media accounts and designed graphics for posts reaching over 600 followers</li>
-          <li>Coordinated with other performance and theatre groups to organize shows and scheduling in an advisory board</li>
-        </ul>,
-    },
-    {
-      company: 'Machine Intelligence Community',
-      role: 'Executive Board',
-      date: 'Oct 2022 – May 2023',
-      description:
-        <ul>
-          <li>Constructed educational machine learning workshops in song generation with GPT-2 and neuro style transfer</li>
-          <li>Lead conceptual sessions for over 70 individuals, assisting them in understanding and coding machine learning projects</li>
-        </ul>
-    },
-    {
-      company: 'Harvard WECode',
-      role: 'Tech Fellow',
-      date: 'Nov 2022 – Feb 2023',
-      description: 
-        <ul>
-          <li>Performed club outreach and hosted events to promote Harvard's WECode conference, the largest student-run women in tech conference in the world</li>
-        </ul>,
-    },
-    // {
-    //   company: 'Full Stack at Brown',
-    //   role: 'Full Stack Developer',
-    //   date: 'Feb 2022 – May 2022',
-    //   description: 
-    //     <ul>
-    //       <li>Developed the backend for KeebWorld, an aggregate website for mechanical keyboard parts</li>
-    //       <li>Utilized Python and Beautiful Soup to web scrape off vendor websites and organize data into Firebase</li>
-    //     </ul>,
-    // },
   ]
 };
 
@@ -319,46 +138,86 @@ const leadership = {
 const repos = {
   show: true,
   heading: "Recent Projects",
-  gitHubUsername: "michelleliu4",
-  reposLength: 4,
-  specificRepos: ['Jreamboard', 'goodbot-slack'],
+  gitHubUsername: "hoenchioma",
+  reposLength: 0,
+  specificRepos: ['hotkey', 'vlawyer', 'cp-library', 'kamlabot', 'Depths-of-CSEDU', 'transperfecta', 'backtrack2class'],
 };
 
 // AWARDS SECTION
 const awards = {
   show: true,
-  heading: "Awards",
+  heading: "Awards and Achievements",
   message:
   <div>
-    <p style={{fontSize:20, marginBottom:0}}><b>AIME Qualifier (2018, 2021)</b></p>
-      <ul>
-        <li>Two-time AIME qualifier, scoring in the top 5% of all AMC 12 exam takers worldwide, as well as a Math Prize for Girls participant</li>
-      </ul>
-      <p style={{fontSize:20, marginBottom:0}}><b>Hackathon for Social Good Bronze Award (2022)</b></p>
-      <ul>
-        <li>Built <a href="https://github.com/michelleliu4/goodbot-slack">Goodbot</a>, a Slack bot for workplace satisfaction</li>
-        <li><a href="https://robinhood.engineering/robinhoods-hackathon-for-social-good-92c91a5726c3">Robinhood blog post</a> about the hackathon</li>
-      </ul>
-      <p style={{fontSize:20, marginBottom:0}}><b>National Science Bowl Top 32 (2021)</b></p>
-      <ul>
-        <li>Member of the Nevada team at the National Science Bowl Competition, sponsored by the DOE</li>
-      </ul>
-      <p style={{fontSize:20, marginBottom:0}}><b>Doyle Foundation Scholarship (2021, 2022, 2023)</b></p>
-      <ul>
-        <li>Three-time recipient of the <a href="https://doylefound.org/">Doyle Foundation</a> Scholarship</li>
-      </ul>
+    <p style={{fontSize: 20, marginBottom: 0}}><b>Undergraduate Project Final Poster Presentation 2021 (Held on Jan 2023)</b></p>
+    <p style={{fontSize: 16}}>Department of Computer Science and Engineering, University of Dhaka</p>
+    <ul style={{fontSize: 18}}>
+      <li>
+        Best Poster Presentation Award
+        <p style={{fontSize: 15}}>Topic: <i>DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm<br/> considering Peak and
+Average Constraints</i></p>
+      </li>
+    </ul>
+    <p style={{fontSize: 20, marginBottom: 0}}><b>Code Samurai: Inter-University Hackathon 2022</b></p>
+    <ul style={{fontSize: 18}}>
+      <li>Champion</li>
+      <li>Enzan Koubou Special Award</li>
+    </ul>
+
+    <p style={{fontSize: 20, marginTop: 20, marginBottom: 5}}><b>Other Competitions</b></p>
+    <ul style={{fontSize: 18}}>
+      <li>SUST Technovent 2023 Capture the Flag (11th place)</li>
+      <li>International Collegiate Programming Contest Asia Dhaka Regional 2021 (16th place)</li>
+      <li>MIST Inter University Programming Contest 2019 (20th place)</li>
+      <li>SUB Inter University Programming Contest 2019 (28th place)</li>
+    </ul>
+
   </div>,
+  // <div>
+  //   <p style={{fontSize:20, marginBottom:0}}><b>AIME Qualifier (2018, 2021)</b></p>
+  //     <ul>
+  //       <li>Two-time AIME qualifier, scoring in the top 5% of all AMC 12 exam takers worldwide, as well as a Math Prize for Girls participant</li>
+  //     </ul>
+  //     <p style={{fontSize:20, marginBottom:0}}><b>Hackathon for Social Good Bronze Award (2022)</b></p>
+  //     <ul>
+  //       <li>Built <a href="https://github.com/michelleliu4/goodbot-slack">Goodbot</a>, a Slack bot for workplace satisfaction</li>
+  //       <li><a href="https://robinhood.engineering/robinhoods-hackathon-for-social-good-92c91a5726c3">Robinhood blog post</a> about the hackathon</li>
+  //     </ul>
+  //     <p style={{fontSize:20, marginBottom:0}}><b>National Science Bowl Top 32 (2021)</b></p>
+  //     <ul>
+  //       <li>Member of the Nevada team at the National Science Bowl Competition, sponsored by the DOE</li>
+  //     </ul>
+  //     <p style={{fontSize:20, marginBottom:0}}><b>Doyle Foundation Scholarship (2021, 2022, 2023)</b></p>
+  //     <ul>
+  //       <li>Three-time recipient of the <a href="https://doylefound.org/">Doyle Foundation</a> Scholarship</li>
+  //     </ul>
+  // </div>,
   images: [
     { 
-      img: require("../assets/img/awards_robinhood.png"), 
-      label: "", 
-      paragraph: "" 
+      img: require("../assets/img/best_poster_award_du.jpg"), 
+      label: "Best Poster Presentation Award", 
+      paragraph: "",
     },
     { 
-      img: require("../assets/img/awards_nsb.png"), 
+      img: require("../assets/img/logo_code_samurai.jpg"), 
       label: "", 
-      paragraph: "" 
+      paragraph: "",
     },
+    {
+      img: require("../assets/img/code_samurai_winners.jpg"),
+      label: "Code Samurai: Inter-University Hackathon 2022",
+      paragraph: "",
+    },
+    {
+      img: require("../assets/img/logo_icpc.png"),
+      label: "",
+      paragraph: "",
+    },
+    {
+      img: require("../assets/img/mist_iupc_team.jpg"),
+      label: "MIST Inter University Programming Contest 2019",
+      paragraph: "",
+    }
   ],
   imageSize: {
     width:"400", //orig: 615
@@ -372,29 +231,25 @@ const skills = {
   heading: "Skills",
   languages: [
     { name: "Python", value: require("../assets/img/logo_python.png") },
+    { name: "C/C++", value: require("../assets/img/logo_c.png") },
     { name: "JavaScript", value: require("../assets/img/logo_javascript.png") },
     { name: "HTML/CSS", value: require("../assets/img/logo_html.png") },
-    // { name: "CSS", value: require("../assets/img/logo_css.png") },
-    { name: "ReasonML", value: require("../assets/img/logo_reasonml.png") },
-    // { name: "Racket", value: require("../assets/img/logo_racket.png") },
-    { name: "C/C++", value: require("../assets/img/logo_c.png") },
+    { name: "Java", value: require("../assets/img/logo_java.jpg") },
   ],
   librariesFrameworks: [
+    { name: "PyTorch", value: require("../assets/img/logo_pytorch.png")},
     { name: "TensorFlow", value: require("../assets/img/logo_tensorflow.png") },
     { name: "NumPy", value: require("../assets/img/logo_numpy.png") },
     { name: "pandas", value: require("../assets/img/logo_pandas.png") },
     { name: "scikit-learn", value: require("../assets/img/logo_scikitlearn.png") },
     { name: "Matplotlib", value: require("../assets/img/logo_matplotlib.png") },
+    { name: "NVIDIA Deepstream", value: require("../assets/img/logo_nvidia.png") },
     { name: "React", value: require("../assets/img/logo_react.png") },
-    { name: "PostgreSQL", value: require("../assets/img/logo_postgresql.png") },
+    { name: "Unity", value: require("../assets/img/logo_unity.png") },
   ],
   otherSkills: [
     { name: "Git", value: require("../assets/img/logo_git.png") },
     { name: "Docker", value: require("../assets/img/logo_docker.png") },
-    { name: "Figma", value: require("../assets/img/logo_figma.png") },
-    { name: "WordPress", value: require("../assets/img/logo_wordpress.png") },
-    { name: "Agile", value: require("../assets/img/logo_agile.png") },
-    { name: "Jira", value: require("../assets/img/logo_jira.png") },
   ],
 };
 
@@ -404,7 +259,7 @@ const getInTouch = {
   heading: "Get In Touch",
   message:
     "Always open to opportunities! Please reach out to me at",
-  email: "michelle_h_liu@brown.edu",
+  email: "raheeb998@gmail.com",
 };
 
 // BLOG SECTION
@@ -412,4 +267,4 @@ const getInTouch = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, experience, leadership, repos, awards, skills, getInTouch };
+export { navBar, mainBody, about, education, experience, leadership, repos, awards, skills, getInTouch };
