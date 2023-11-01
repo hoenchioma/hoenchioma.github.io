@@ -1,0 +1,23 @@
+{
+    "name": "JavaScript",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"dbaeumer.vscode-eslint",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"kamikillerto.vscode-colorize",
+				"tomoki1207.pdf"
+			],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    },
+    "appPort": [3000],
+    "postCreateCommand": "npm install",
+    "postStartCommand": "npm start"
+  }
