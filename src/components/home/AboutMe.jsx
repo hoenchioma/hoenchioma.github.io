@@ -30,16 +30,16 @@ const AboutMe = ({ heading, message, link, imgSize, resume, education }) => {
     }
   }, [link]);
 
-  function showEducation() {
-    // Toggles Education block
-    var x = document.getElementById("education-box");
-    if (x.style.display === 'block') {
-      x.style.display = 'none';
-    }
-    else {
-      x.style.display = 'block';
-    }
-  }
+  // function showEducation() {
+  //   // Toggles Education block
+  //   var x = document.getElementById("education-box");
+  //   if (x.style.display === 'block') {
+  //     x.style.display = 'none';
+  //   }
+  //   else {
+  //     x.style.display = 'block';
+  //   }
+  // }
 
 
   return (

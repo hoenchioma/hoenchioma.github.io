@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { navBar, mainBody, about, education, experience, leadership, repos, awards, skills, getInTouch,} from "./editable-stuff/config.js";
+import { navBar, mainBody, about, education, experience, repos, awards, skills, getInTouch,} from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
@@ -12,7 +12,7 @@ import Skills from "./components/home/Skills";
 import GetInTouch from "./components/home/GetInTouch.jsx";
 import Awards from "./components/home/Awards.jsx";
 import Experience from "./components/home/Experience";
-import Leadership from "./components/home/Leadership";
+// import Leadership from "./components/home/Leadership";
 import Education from "./components/home/Education.jsx";
 
 const Home = React.forwardRef((props, ref) => {

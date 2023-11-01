@@ -113,22 +113,22 @@ const experience = {
 };
 
 // LEADERSHIP SECTION
-const leadership = {
-  show: true,
-  heading: "Activities & Leadership",
-  data: [
-    {
-      company: 'Anime Video Game Ensemble',
-      role: 'Founder, Co-President',
-      date: 'Sep 2021 – Present',
-      description: 
-        <ul>
-          <li>Founded club and recruited over 70 members to arrange and perform anime and video game music in biannual concerts</li>
-          <li>Orchestrated club operations, including weekly rehearsals and a <a href="https://www.youtube.com/@brownavge">Youtube channel</a> with over 80k views</li>
-        </ul>,
-    },
-  ]
-};
+// const leadership = {
+//   show: true,
+//   heading: "Activities & Leadership",
+//   data: [
+//     {
+//       company: 'Anime Video Game Ensemble',
+//       role: 'Founder, Co-President',
+//       date: 'Sep 2021 – Present',
+//       description: 
+//         <ul>
+//           <li>Founded club and recruited over 70 members to arrange and perform anime and video game music in biannual concerts</li>
+//           <li>Orchestrated club operations, including weekly rehearsals and a <a href="https://www.youtube.com/@brownavge">Youtube channel</a> with over 80k views</li>
+//         </ul>,
+//     },
+//   ]
+// };
 
 // PROJECTS SECTION
 // Setting up project lenght will automatically fetch your that number of recently updated projects, or you can set this field 0 to show none.
@@ -267,4 +267,4 @@ const getInTouch = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, education, experience, leadership, repos, awards, skills, getInTouch };
+export { navBar, mainBody, about, education, experience, repos, awards, skills, getInTouch };
