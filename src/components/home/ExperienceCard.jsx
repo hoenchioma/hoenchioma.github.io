@@ -30,7 +30,7 @@ const ExperienceCard = ({ value }) => {
         </div>
         </Col>
         <Col md="3">
-          <div className="d-flex justify-content-center">
+          <div className="d-flex mb-5 justify-content-center">
             <img
               src={logo}
               alt={`${company} logo`}

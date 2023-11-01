@@ -4,8 +4,12 @@ import { Jumbotron } from "./migration";
 import Row from "react-bootstrap/Row";
 import { InstagramEmbed } from "react-social-media-embed";
 import { Link } from "@mui/material";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const ArtShowcase = ({ heading, instagramProfileUrl, instagramUrls }) => {
+  const { height, width } = useWindowDimensions();
+  const cardWidth = Math.min(390, width - 10);
+  const cardHeight = cardWidth + 10;
   return (
     <Jumbotron fluid id="art" className="bg-white m-0 target-section">
       <Container className="">
@@ -13,15 +17,20 @@ const ArtShowcase = ({ heading, instagramProfileUrl, instagramUrls }) => {
         <Row>
           {instagramUrls.map((instagramUrl) => (
             <div
+              key={instagramUrl}
               style={{
                 paddingBottom: 10,
-                marginRight: 10,
-                marginLeft: 10,
-                width: 400,
+                paddingRight: 5,
+                paddingLeft: 5,
+                width: cardWidth,
                 overflow: false,
               }}
             >
-              <InstagramEmbed url={instagramUrl} width={400} height={400} s />
+              <InstagramEmbed
+                url={instagramUrl}
+                width={cardWidth - 10}
+                height={cardHeight}
+              />
             </div>
           ))}
         </Row>

@@ -9,6 +9,7 @@ const EducationCard = ({ value }) => {
     result,
     logo
   } = value;
+  
   return (
       <>
         <Col md="9">
@@ -29,7 +30,7 @@ const EducationCard = ({ value }) => {
         </div>
         </Col>
         <Col md="3">
-          <div className="d-flex justify-content-center">
+          <div className="d-flex mb-5 justify-content-center">
             <img
               src={logo}
               alt={`${university} logo`}
