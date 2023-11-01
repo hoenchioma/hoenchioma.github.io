@@ -253,6 +253,27 @@ const skills = {
   ],
 };
 
+// ART SECTION
+const art = {
+  show: true,
+  heading: "My Art",
+  instagramProfileUrl: "https://www.instagram.com/raheebomega",
+  instagramUrls: [
+    'https://www.instagram.com/p/CdKsMcrJXeV/',
+    'https://www.instagram.com/p/CkozB5wyMFL/',
+    'https://www.instagram.com/p/Clqj-VZSvYg/',
+    'https://www.instagram.com/p/Cd1RattPE-1/',
+    'https://www.instagram.com/p/CbWQGXiJOwp/',
+    'https://www.instagram.com/p/CaHroEypwXc/',
+    'https://www.instagram.com/p/CVwyJpJvOpb/',
+    'https://www.instagram.com/p/CBz1RDTj9Vj/',
+    // 'https://www.instagram.com/p/CBsilHdj36C/',
+    'https://www.instagram.com/p/CBp12vAjPyf/',
+    // 'https://www.instagram.com/p/Bzn7_RShs6t/',
+    // 'https://www.instagram.com/p/Bzkj6_3Bgw1/',
+  ]
+}
+
 // GET IN TOUCH SECTION
 const getInTouch = {
   show: true,
@@ -267,4 +288,4 @@ const getInTouch = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, education, experience, repos, awards, skills, getInTouch };
+export { navBar, mainBody, about, education, experience, repos, awards, skills, art, getInTouch };
