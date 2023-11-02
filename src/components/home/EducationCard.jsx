@@ -5,6 +5,8 @@ const EducationCard = ({ value }) => {
   const {
     university,
     degree,
+    date,
+    location,
     department,
     result,
     logo
@@ -14,8 +16,9 @@ const EducationCard = ({ value }) => {
       <>
         <Col md="9">
         < div className="p-3 mb-0">
-            <h5>{university}</h5>
-            <span className="text-muted text-secondary">{department}</span> 
+            <h5 className="mb-0">{university} - <span className="text-muted text-secondary">{location}</span></h5>
+            <div>{department}</div>
+            <div><span className="text-secondary">{date}</span></div> 
 
             <div className="card-text" style={{marginTop: 15}}>
                 <div className="lead" style={{fontSize: 17}}>
@@ -25,7 +28,6 @@ const EducationCard = ({ value }) => {
                   {result}
                 </div>
           </div>
-          <br />
           <hr />
         </div>
         </Col>

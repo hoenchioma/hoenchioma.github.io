@@ -70,6 +70,8 @@ const education = {
     {
       university: "University of Dhaka",
       department: "Department of Computer Science and Engineering",
+      location: "Dhaka, Bangladesh",
+      date: "2018 - 2023",
       degree: "BSc. in Computer Science and Engineering",
       result: "CGPA: 3.75/4.00 (2nd highest in my class)",
       logo: require("../assets/img/logo_du.png"),
