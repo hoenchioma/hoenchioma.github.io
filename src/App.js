@@ -29,9 +29,12 @@ import Education from "./components/home/Education.jsx";
 import ArtShowcase from "./components/home/Art.jsx";
 import Research from "./components/home/Research.jsx";
 
+import HashLinkObserver from "react-hash-link";
+
 const Home = React.forwardRef((props, ref) => {
   return (
     <>
+      <HashLinkObserver />
       <MainBody
         gradient={mainBody.gradientColors}
         title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
