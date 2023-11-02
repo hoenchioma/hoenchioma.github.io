@@ -1,0 +1,30 @@
+import React from "react";
+import Container from "react-bootstrap/Container";
+import { Jumbotron } from './migration';
+import Row from "react-bootstrap/Row";
+import ResearchCard from "./ResearchCard";
+
+const Research = ({ heading, myName, researchList, background }) => {
+  
+  return (
+    <Jumbotron fluid id="research" className={`bg-${background} m-0 target-section`}>
+      <Container className={` p-3 mb-5 bg-${background} rounded`}>
+        <h2 className="display-4 pb-5 text-center">{heading}</h2>
+        <Row>
+          {
+          researchList.map((research, index) => (
+                <ResearchCard
+                  key={`research-card-${index}`}
+                  id={`research-card-${index}`}
+                  value={research}
+                  myName={myName}
+                />
+              )) 
+          }
+        </Row>
+      </Container>
+    </Jumbotron>
+  );
+};
+
+export default Research;

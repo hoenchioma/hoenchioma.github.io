@@ -139,7 +139,7 @@ const experience = {
 //      i.e ["repository-1", "repo-2"]
 const repos = {
   show: true,
-  heading: "Recent Projects",
+  heading: "Projects",
   gitHubUsername: "hoenchioma",
   reposLength: 0,
   specificRepos: ['hotkey', 'vlawyer', 'cp-library', 'kamlabot', 'Depths-of-CSEDU', 'transperfecta', 'backtrack2class'],
@@ -258,7 +258,7 @@ const skills = {
 // ART SECTION
 const art = {
   show: true,
-  heading: "My Art",
+  heading: "Art",
   instagramProfileUrl: "https://www.instagram.com/raheebomega",
   instagramUrls: [
     'https://www.instagram.com/p/CdKsMcrJXeV/',
@@ -276,6 +276,44 @@ const art = {
   ]
 }
 
+// RESEARCH SECTION
+const research = {
+  show: true,
+  heading: "Research",
+  myName: "Raheeb Hassan",
+  data: [
+    {
+      title: "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
+      authors: "Raheeb Hassan, K.M. Shadman Wadith, Md. Mamun or Rashid, Md. Mosaddek Khan",
+      conferenceOrJournal: "Springer Applied Intelligence Journal (APIN)",
+      status: "Under Review",
+      preprintLink: "https://arxiv.org/abs/2310.14348",
+      description: [
+        <ul>
+          <li>Proposed a novel decentralized safe multi-agent reinforcement learning algorithm</li>
+          <li>Considered both peak and average constraints</li>
+          <li>Theoretically analysed the convergence of the algorithm</li>
+          <li>Compared with existing centralized MARL algorithms that deal with peak and average constraints</li>
+        </ul>
+      ],
+    },
+    {
+      title: "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
+      authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
+      conferenceOrJournal: "Springer Nature Machine Intelligence Journal (NMI)",
+      status: "Pending Submission",
+      description: [
+        <ul>
+          <li>Investigated and suggested alternatives to the early stopping strategy of PI-GNN</li>
+          <li>Proposed a modified generic RL framework using QUBO for combinatorial optimization</li>
+          <li>Proposed a MCTS based approach using GNNs and QUBO for combinatorial optimization</li>
+          <li>Achieved upto 44% improvement over PI-GNN in the Max Cut problem</li>
+        </ul>
+      ]
+    }
+  ]
+}
+
 // GET IN TOUCH SECTION
 const getInTouch = {
   show: true,
@@ -290,4 +328,4 @@ const getInTouch = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, education, experience, repos, awards, skills, art, getInTouch };
+export { navBar, mainBody, about, education, experience, repos, awards, skills, art, research, getInTouch };

@@ -1,6 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { navBar, mainBody, about, education, experience, repos, awards, skills, getInTouch, art,} from "./editable-stuff/config.js";
+import {
+  navBar,
+  mainBody,
+  about,
+  education,
+  experience,
+  repos,
+  awards,
+  skills,
+  getInTouch,
+  art,
+  research,
+} from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
 import Project from "./components/home/Project";
@@ -15,6 +27,7 @@ import Experience from "./components/home/Experience";
 // import Leadership from "./components/home/Leadership";
 import Education from "./components/home/Education.jsx";
 import ArtShowcase from "./components/home/Art.jsx";
+import Research from "./components/home/Research.jsx";
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -38,18 +51,21 @@ const Home = React.forwardRef((props, ref) => {
       )}
       {education.show && (
         <Education
+          background="light"
           heading={education.heading}
           educationList={education.data}
         />
       )}
       {experience.show && (
         <Experience
+          background="white"
           heading={experience.heading}
           experienceList={experience.data}
         />
       )}
       {awards.show && (
         <Awards
+          background="light"
           heading={awards.heading}
           message={awards.message}
           img={awards.images}
@@ -58,14 +74,24 @@ const Home = React.forwardRef((props, ref) => {
       )}
       {skills.show && (
         <Skills
+          background="white"
           heading={skills.heading}
           languages={skills.languages}
           librariesFrameworks={skills.librariesFrameworks}
           otherSkills={skills.otherSkills}
         />
       )}
+      {research.show && (
+        <Research
+          background="light"
+          heading={research.heading}
+          myName={research.myName}
+          researchList={research.data}
+        />
+      )}
       {repos.show && (
         <Project
+          background="white"
           heading={repos.heading}
           username={repos.gitHubUsername}
           length={repos.reposLength}
@@ -74,6 +100,7 @@ const Home = React.forwardRef((props, ref) => {
       )}
       {art.show && (
         <ArtShowcase
+          background="light"
           heading={art.heading}
           instagramProfileUrl={art.instagramProfileUrl}
           instagramUrls={art.instagramUrls}

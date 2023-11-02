@@ -6,12 +6,12 @@ import { InstagramEmbed } from "react-social-media-embed";
 import { Link } from "@mui/material";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
-const ArtShowcase = ({ heading, instagramProfileUrl, instagramUrls }) => {
+const ArtShowcase = ({ heading, instagramProfileUrl, instagramUrls, background }) => {
   const { width } = useWindowDimensions();
   const cardWidth = Math.min(390, width - 10);
   const cardHeight = cardWidth + 10;
   return (
-    <Jumbotron fluid id="art" className="bg-white m-0 target-section">
+    <Jumbotron fluid id="art" className={`bg-${background} m-0 target-section`}>
       <Container className="">
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
         <Row>

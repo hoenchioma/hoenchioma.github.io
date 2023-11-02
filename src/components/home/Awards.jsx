@@ -2,11 +2,11 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Jumbotron } from "./migration";
 
-const Awards = ({ heading, message, img, imageSize }) => {
+const Awards = ({ heading, message, img, imageSize, background }) => {
   return (
     <Jumbotron
       id="awards"
-      className="bg-light m-0"
+      className={`bg-${background} m-0`}
     >
       <h2 className="display-4 pb-5 text-center">{heading}</h2>
       <div className="row">
