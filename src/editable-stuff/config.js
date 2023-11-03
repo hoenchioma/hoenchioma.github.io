@@ -12,10 +12,10 @@ const mainBody = {
   lastName: "Hassan",
   message: "Associate ML Engineer at Therap (BD) Ltd.",
   icons: [
-    // {
-    //   image: 'email',
-    //   url: "mailto:raheeb998@gmail.com",
-    // },
+    {
+      image: 'email',
+      url: "mailto:contact@raheeb.xyz",
+    },
     {
       image: "fa-github",
       url: "https://github.com/hoenchioma",
@@ -320,7 +320,7 @@ const getInTouch = {
   heading: "Get In Touch",
   message:
     "Always open to opportunities! Please reach out to me at",
-  email: "raheeb998@gmail.com",
+  email: "contact@raheeb.xyz",
 };
 
 // BLOG SECTION

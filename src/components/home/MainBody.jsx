@@ -5,6 +5,7 @@ import { Jumbotron } from "./migration";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const MainBody = React.forwardRef(
   ({ gradient, title, message, icons }, ref) => {
@@ -37,10 +38,14 @@ const MainBody = React.forwardRef(
                 target="_blank"
                 rel="noopener noreferrer"
                 href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]}`}
+                aria-label={`My ${icon.image === "email"? "email": icon.image.split("-")[1]}`}
               >
                 {/* <i className={`fab ${icon.image}  fa-3x socialicons`} /> */}
-                <FontAwesomeIcon icon={['fab', `${icon.image}`]} className="socialicons" size="3x" />
+                {
+                  icon.image === "email" 
+                    ? <FontAwesomeIcon icon={faEnvelope} className="socialicons" size="3x" /> 
+                    : <FontAwesomeIcon icon={['fab', `${icon.image}`]} className="socialicons" size="3x" />
+                }
               </a>
             ))}
           </div>
