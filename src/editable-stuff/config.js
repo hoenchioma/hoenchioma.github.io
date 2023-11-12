@@ -301,7 +301,7 @@ const research = {
       title: "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
       conferenceOrJournal: "Springer Nature Machine Intelligence Journal (NMI)",
-      status: "Pending Submission",
+      status: "Under Review",
       description: [
         <ul>
           <li>Investigated and suggested alternatives to the early stopping strategy of PI-GNN</li>
