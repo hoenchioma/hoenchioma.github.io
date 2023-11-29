@@ -302,6 +302,7 @@ const research = {
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
       conferenceOrJournal: "Springer Nature Machine Intelligence Journal (NMI)",
       status: "Under Review",
+      preprintLink: "https://arxiv.org/abs/2311.16277",
       description: [
         <ul>
           <li>Investigated and suggested alternatives to the early stopping strategy of PI-GNN</li>
