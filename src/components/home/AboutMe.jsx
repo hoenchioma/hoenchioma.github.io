@@ -46,7 +46,7 @@ const AboutMe = ({ heading, message, link, imgSize, resume, education }) => {
     
     <Jumbotron id="aboutme" className="m-0">
       <div className="container row">
-        <div className="col-5 d-none d-lg-block align-self-center">
+        <div className="col-5 d-none d-lg-block align-self-center" style={{ zIndex: 10000 }}>
           {showPic && (
             <img
               className="border border-secondary rounded-circle"
