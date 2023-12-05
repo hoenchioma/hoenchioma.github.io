@@ -85,7 +85,7 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      company: 'Therap (BD) Ltd.',
+      company: 'Therap Services LLC',
       location: "Dhaka, Bangladesh",
       role: 'Associate ML Engineer',
       date: 'Feb 2023 – Present',
