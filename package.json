@@ -37,10 +37,6 @@
     "eject": "react-scripts eject",
     "custom-deploy": "node pages.js"
   },
-  "engines": {
-    "node": "^v18.13.0",
-    "npm": "^9.5.1"
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
