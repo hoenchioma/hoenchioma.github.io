@@ -300,7 +300,7 @@ const research = {
     {
       title: "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
-      conferenceOrJournal: "Engineering Applications of Artificial Intelligence Journal (EAAI)",
+      conferenceOrJournal: "ICAPS 2024",
       status: "Under Review",
       preprintLink: "https://arxiv.org/abs/2311.16277",
       description: [
