@@ -99,7 +99,7 @@ const experience = {
       ],
     },
     {
-      company: 'Cognitive Agents and Learning Lab (CAIL), University of Dhaka',
+      company: 'Cognitive Agents and Interaction Lab (CAIL), University of Dhaka',
       location: "Dhaka, Bangladesh",
       role: 'Undergraduate Research Student',
       date: '2021 – 2023',
