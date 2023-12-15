@@ -99,6 +99,21 @@ const experience = {
       ],
     },
     {
+      company: 'Cognitive Agents and Learning Lab (CAIL), University of Dhaka',
+      location: "Dhaka, Bangladesh",
+      role: 'Undergraduate Research Student',
+      date: '2021 – 2023',
+      logo: require("../assets/img/logo_du.png"),
+      description: [
+        <>
+          <ul>
+            <li>Worked with Multi-Agent Reinforcement Learning and Safe Reinforcement Learning</li>
+          </ul>
+          <br/>
+        </>
+      ],
+    },
+    {
       company: 'CranTech LLC (Formerly Quixx Projects)',
       location: "Dhaka, Bangladesh",
       role: 'Full Stack Developer (Part-Time)',
