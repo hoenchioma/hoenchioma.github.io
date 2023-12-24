@@ -15,10 +15,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy React to GitHub Pages
-        uses: bitovi/github-actions-react-to-github-pages@v1.2.1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          checkout: true
-          path: build
-          install_command: npm install
-          build_command: npm run build
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          name: github-pages
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/deploy-pages@v3
+        with:
+          artifact_name: github-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
