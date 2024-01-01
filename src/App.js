@@ -89,6 +89,7 @@ const Home = React.forwardRef((props, ref) => {
           background="light"
           heading={research.heading}
           myName={research.myName}
+          googleScholarUrl={research.googleScholarUrl}
           researchList={research.data}
         />
       )}

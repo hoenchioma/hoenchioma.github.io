@@ -13,27 +13,23 @@ const mainBody = {
   message: "Associate ML Engineer at Therap (BD) Ltd.",
   icons: [
     {
-      image: 'email',
+      type: 'email',
       url: "mailto:contact@raheeb.xyz",
     },
     {
-      image: "fa-github",
+      type: "googleScholar",
+      url: "https://scholar.google.com/citations?user=73zHDeoAAAAJ&hl=en",
+    },
+    {
+      type: "github",
       url: "https://github.com/hoenchioma",
     },
     {
-      image: "fa-linkedin",
+      type: "linkedin",
       url: "https://www.linkedin.com/in/raheebhassan",
     },
-    // {
-    //   image: "fa-discord",
-    //   url: "https://discordapp.com/users/384794549412954113",
-    // },
-    // {
-    //   image: "fa-facebook",
-    //   url: "https://www.facebook.com/michelle.liu.4",
-    // },
     {
-      image: "fa-instagram",
+      type: "instagram",
       url: "https://www.instagram.com/raheebomega",
     },
   ],
@@ -296,6 +292,7 @@ const research = {
   show: true,
   heading: "Research",
   myName: "Raheeb Hassan",
+  googleScholarUrl: "https://scholar.google.com/citations?user=73zHDeoAAAAJ&hl=en",
   data: [
     {
       title: "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
