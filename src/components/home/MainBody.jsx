@@ -1,16 +1,30 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Typist from 'react-typist-component';
+import Typist from "react-typist-component";
 import { Jumbotron } from "./migration";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope as emailIcon } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub as githubIcon,
+  faLinkedin as linkedinIcon,
+  faDiscord as discordIcon,
+  faFacebook as facebookIcon,
+  faInstagram as instagramIcon,
+  faGoogleScholar as googleScholarIcon,
+} from "@fortawesome/free-brands-svg-icons";
+
+const iconImages = {
+  email: emailIcon,
+  github: githubIcon,
+  linkedin: linkedinIcon,
+  discord: discordIcon,
+  facebook: facebookIcon,
+  instagram: instagramIcon,
+  googleScholar: googleScholarIcon,
+};
 
 const MainBody = React.forwardRef(
   ({ gradient, title, message, icons }, ref) => {
-    library.add(fab); // Add brand icon library
-
     return (
       <Jumbotron
         fluid
@@ -27,9 +41,7 @@ const MainBody = React.forwardRef(
             {title}
           </h1>
           <Typist>
-            <div className="lead typist">
-              {message}
-            </div>
+            <div className="lead typist">{message}</div>
           </Typist>
           <div className="p-5">
             {icons.map((icon, index) => (
@@ -38,14 +50,13 @@ const MainBody = React.forwardRef(
                 target="_blank"
                 rel="noopener noreferrer"
                 href={icon.url}
-                aria-label={`My ${icon.image === "email"? "email": icon.image.split("-")[1]}`}
+                aria-label={`My ${icon.type}`}
               >
-                {/* <i className={`fab ${icon.image}  fa-3x socialicons`} /> */}
-                {
-                  icon.image === "email" 
-                    ? <FontAwesomeIcon icon={faEnvelope} className="socialicons" size="3x" /> 
-                    : <FontAwesomeIcon icon={['fab', `${icon.image}`]} className="socialicons" size="3x" />
-                }
+                <FontAwesomeIcon
+                  icon={iconImages[icon.type]}
+                  className="socialicons"
+                  size="3x"
+                />
               </a>
             ))}
           </div>
