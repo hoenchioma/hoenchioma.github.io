@@ -17,7 +17,14 @@ const ExperienceCard = ({ value }) => {
             <h5>{company} - <span className="text-muted text-secondary">{location}</span>  </h5>
 
             <div className="card-text">
-                <div>{role} - <span className="text-secondary">{date}</span></div>          
+                {
+                  // check if role and date is an array and then map through it
+                  Array.isArray(role) ? role.map((role, index) => (
+                      <div key={`experience-role-${index}`}>{role} - <span className="text-secondary">{date[index]}</span></div>
+                  )) : (
+                    <div>{role} - <span className="text-secondary">{date}</span></div>          
+                  )
+                }
                 <div className="my-2"> {
                   description.map((description, index) => (
                       <p className="lead"
