@@ -10,7 +10,7 @@ const mainBody = {
   firstName: "Raheeb",
   middleName: "",
   lastName: "Hassan",
-  message: "Associate ML Engineer at Therap (BD) Ltd.",
+  message: "ML Engineer at Therap (BD) Ltd.",
   icons: [
     {
       type: 'email',
@@ -83,8 +83,8 @@ const experience = {
     {
       company: 'Therap Services LLC',
       location: "Dhaka, Bangladesh",
-      role: 'Associate ML Engineer',
-      date: 'Feb 2023 – Present',
+      role: ['ML Engineer', 'Associate ML Engineer'],
+      date: ['Apr 2024 - Present', 'Feb 2023 – Mar 2024'],
       logo: require("../assets/img/logo_therap.jpg"),
       description: [
         <ul>
