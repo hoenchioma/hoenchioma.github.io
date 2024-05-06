@@ -54,7 +54,7 @@ const about = {
   imageLink: require("../editable-stuff/headshot.jpg"),
   imageSize: 375,
   message:
-  "Hello! I'm Raheeb Hassan, a fresh CSE graduate from the University of Dhaka. Currently, I work as an Associate ML Engineer at Therap (BD) Ltd. My passion lies in Deep Learning, Computer Vision, and Reinforcement Learning. I enjoy tinkering, problem-solving, and creating digital art in my spare time. I'm a fast learner, constantly seeking new knowledge.",
+  "Hello! I'm Raheeb Hassan, a CSE graduate from the University of Dhaka. Currently, I work as an ML Engineer at Therap (BD) Ltd. My passion lies in Deep Learning, Computer Vision, and Reinforcement Learning. I enjoy tinkering, problem-solving, and creating digital art in my spare time. I'm a fast learner, constantly seeking new knowledge.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
