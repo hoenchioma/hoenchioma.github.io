@@ -162,11 +162,11 @@ const awards = {
   heading: "Awards and Achievements",
   message:
   <div>
-    <p style={{fontSize: 20, marginBottom: 0}}><b>Undergraduate Project Final Poster Presentation 2021 (Held on Jan 2023)</b></p>
+    <p style={{fontSize: 20, marginBottom: 0}}><b>Undergraduate Project Presentation 2021 (Held on Jan 2023)</b></p>
     <p style={{fontSize: 16}}>Department of Computer Science and Engineering, University of Dhaka</p>
     <ul style={{fontSize: 18}}>
       <li>
-        Best Poster Presentation Award
+        Best Undergraduate Project Award
         <p style={{fontSize: 15}}>Topic: <i>DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm<br/> considering Peak and
 Average Constraints</i></p>
       </li>
@@ -208,7 +208,7 @@ Average Constraints</i></p>
   images: [
     { 
       img: require("../assets/img/best_poster_award_du.jpg"), 
-      label: "Best Poster Presentation Award", 
+      label: "Best Undergraduate Project Award", 
       paragraph: "",
     },
     { 
