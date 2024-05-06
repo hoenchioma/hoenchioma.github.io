@@ -298,7 +298,8 @@ const research = {
       title: "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
       authors: "Raheeb Hassan, K.M. Shadman Wadith, Md. Mamun or Rashid, Md. Mosaddek Khan",
       conferenceOrJournal: "Applied Intelligence Journal (APIN)",
-      status: "Accepted",
+      status: "Published",
+      link: "https://doi.org/10.1007/s10489-024-05433-x",
       preprintLink: "https://arxiv.org/abs/2310.14348",
       description: [
         <ul>
@@ -312,7 +313,7 @@ const research = {
     {
       title: "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
-      conferenceOrJournal: "ICML 2024",
+      conferenceOrJournal: "ACML 2024",
       status: "Under Review",
       preprintLink: "https://arxiv.org/abs/2311.16277",
       description: [

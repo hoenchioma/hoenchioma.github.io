@@ -42,16 +42,19 @@ const ResearchCard = ({ myName, value }) => {
                 {")"}
               </span>
             </div>
-            {link ? (
+            {link && (
               <div className="lead" style={{ fontSize: 17 }}>
-                <a href={link} style={{ textDecoration: 'none'}}>Link to Paper</a>
+                <a href={link} style={{ textDecoration: "none" }}>
+                  Link to Paper
+                </a>
               </div>
-            ) : (
-              preprintLink && (
-                <div className="lead" style={{ fontSize: 17 }}>
-                  <a href={preprintLink} style={{ textDecoration: 'none'}}>Link to Preprint</a>
-                </div>
-              )
+            )}
+            {preprintLink && (
+              <div className="lead" style={{ fontSize: 17 }}>
+                <a href={preprintLink} style={{ textDecoration: "none" }}>
+                  Link to Preprint
+                </a>
+              </div>
             )}
             <div className="my-2">
               {" "}
