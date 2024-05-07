@@ -168,7 +168,7 @@ const awards = {
   show: true,
   heading: "Awards and Achievements",
   message: (
-  <div>
+    <div>
       <p style={{ fontSize: 20, marginBottom: 0 }}>
         <b>Awards</b>
       </p>
@@ -180,22 +180,22 @@ const awards = {
             Department of Computer Science and Engineering, University of Dhaka
           </span>
         </li>
-      <li>
+        <li>
           Scholarship Recipient for Academic Excellence in Undergraduate
           Examinations 2021
           <br />
           <span style={{ fontSize: 16, color: "gray" }}>
             University of Dhaka
           </span>
-      </li>
-    </ul>
+        </li>
+      </ul>
 
       <p style={{ fontSize: 20, marginBottom: 0 }}>
         <b>Hackathons</b>
       </p>
       <ul style={{ fontSize: 18 }}>
         <li>Code Samurai: Inter-University Hackathon 2022 (Champion)</li>
-    </ul>
+      </ul>
 
       <p style={{ fontSize: 20, marginBottom: 0 }}>
         <b>Programming Competitions</b>
@@ -205,9 +205,9 @@ const awards = {
           International Collegiate Programming Contest Asia Dhaka Regional 2021
           (16th place)
         </li>
-      <li>MIST Inter University Programming Contest 2019 (20th place)</li>
-      <li>SUB Inter University Programming Contest 2019 (28th place)</li>
-    </ul>
+        <li>MIST Inter University Programming Contest 2019 (20th place)</li>
+        <li>SUB Inter University Programming Contest 2019 (28th place)</li>
+      </ul>
 
       <p style={{ fontSize: 20, marginBottom: 0 }}>
         <b>Cybersecurity Competitions</b>
@@ -218,14 +218,14 @@ const awards = {
     </div>
   ),
   images: [
-    { 
-      img: require("../assets/img/best_poster_award_du.jpg"), 
+    {
+      img: require("../assets/img/best_poster_award_du.jpg"),
       label: "Best Undergraduate Final Project Award",
       paragraph: "",
     },
-    { 
-      img: require("../assets/img/logo_code_samurai.jpg"), 
-      label: "", 
+    {
+      img: require("../assets/img/logo_code_samurai.jpg"),
+      label: "",
       paragraph: "",
     },
     {
@@ -346,8 +346,8 @@ const research = {
       title:
         "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
-      conferenceOrJournal: "ACML 2024",
-      status: "Under Review",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
       preprintLink: "https://arxiv.org/abs/2311.16277",
       description: [
         <ul>
