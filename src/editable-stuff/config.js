@@ -262,19 +262,30 @@ const skills = {
     { name: "Java", value: require("../assets/img/logo_java.jpg") },
   ],
   librariesFrameworks: [
-    { name: "PyTorch", value: require("../assets/img/logo_pytorch.png")},
+    { name: "PyTorch", value: require("../assets/img/logo_pytorch.png") },
     { name: "TensorFlow", value: require("../assets/img/logo_tensorflow.png") },
     { name: "NumPy", value: require("../assets/img/logo_numpy.png") },
     { name: "pandas", value: require("../assets/img/logo_pandas.png") },
-    { name: "scikit-learn", value: require("../assets/img/logo_scikitlearn.png") },
+    { name: "OpenCV", value: require("../assets/img/logo_opencv.webp") },
+    {
+      name: "scikit-learn",
+      value: require("../assets/img/logo_scikitlearn.png"),
+    },
     { name: "Matplotlib", value: require("../assets/img/logo_matplotlib.png") },
-    { name: "NVIDIA Deepstream", value: require("../assets/img/logo_nvidia.png") },
+    { name: "Optuna", value: require("../assets/img/logo_optuna.png") },
+    {
+      name: "NVIDIA Deepstream",
+      value: require("../assets/img/logo_nvidia.png"),
+    },
     { name: "React", value: require("../assets/img/logo_react.png") },
     { name: "Unity", value: require("../assets/img/logo_unity.png") },
   ],
   otherSkills: [
     { name: "Git", value: require("../assets/img/logo_git.png") },
     { name: "Docker", value: require("../assets/img/logo_docker.png") },
+    { name: "Linux", value: require("../assets/img/logo_linux.jpg") },
+    { name: "AWS Cloud", value: require("../assets/img/logo_aws.png") },
+    { name: "Oracle Cloud", value: require("../assets/img/logo_oracle_cloud.png") },
   ],
 };
 
