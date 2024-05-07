@@ -167,51 +167,56 @@ const repos = {
 const awards = {
   show: true,
   heading: "Awards and Achievements",
-  message:
+  message: (
   <div>
-    <p style={{fontSize: 20, marginBottom: 0}}><b>Undergraduate Project Presentation 2021 (Held on Jan 2023)</b></p>
-    <p style={{fontSize: 16}}>Department of Computer Science and Engineering, University of Dhaka</p>
-    <ul style={{fontSize: 18}}>
+      <p style={{ fontSize: 20, marginBottom: 0 }}>
+        <b>Awards</b>
+      </p>
+      <ul style={{ fontSize: 18 }}>
+        <li>
+          Best Undergraduate Final Project Award 2021 (Held on Jan 2023)
+          <br />
+          <span style={{ fontSize: 16, color: "gray" }}>
+            Department of Computer Science and Engineering, University of Dhaka
+          </span>
+        </li>
       <li>
-        Best Undergraduate Project Award
-        <p style={{fontSize: 15}}>Topic: <i>DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm<br/> considering Peak and
-Average Constraints</i></p>
+          Scholarship Recipient for Academic Excellence in Undergraduate
+          Examinations 2021
+          <br />
+          <span style={{ fontSize: 16, color: "gray" }}>
+            University of Dhaka
+          </span>
       </li>
     </ul>
-    <p style={{fontSize: 20, marginBottom: 0}}><b>Code Samurai: Inter-University Hackathon 2022</b></p>
-    <ul style={{fontSize: 18}}>
-      <li>Champion</li>
-      <li>Enzan Koubou Special Award</li>
+
+      <p style={{ fontSize: 20, marginBottom: 0 }}>
+        <b>Hackathons</b>
+      </p>
+      <ul style={{ fontSize: 18 }}>
+        <li>Code Samurai: Inter-University Hackathon 2022 (Champion)</li>
     </ul>
 
-    <p style={{fontSize: 20, marginTop: 20, marginBottom: 5}}><b>Other Competitions</b></p>
-    <ul style={{fontSize: 18}}>
-      <li>SUST Technovent 2023 Capture the Flag (11th place)</li>
-      <li>International Collegiate Programming Contest Asia Dhaka Regional 2021 (16th place)</li>
+      <p style={{ fontSize: 20, marginBottom: 0 }}>
+        <b>Programming Competitions</b>
+      </p>
+      <ul style={{ fontSize: 18 }}>
+        <li>
+          International Collegiate Programming Contest Asia Dhaka Regional 2021
+          (16th place)
+        </li>
       <li>MIST Inter University Programming Contest 2019 (20th place)</li>
       <li>SUB Inter University Programming Contest 2019 (28th place)</li>
     </ul>
 
-  </div>,
-  // <div>
-  //   <p style={{fontSize:20, marginBottom:0}}><b>AIME Qualifier (2018, 2021)</b></p>
-  //     <ul>
-  //       <li>Two-time AIME qualifier, scoring in the top 5% of all AMC 12 exam takers worldwide, as well as a Math Prize for Girls participant</li>
-  //     </ul>
-  //     <p style={{fontSize:20, marginBottom:0}}><b>Hackathon for Social Good Bronze Award (2022)</b></p>
-  //     <ul>
-  //       <li>Built <a href="https://github.com/michelleliu4/goodbot-slack">Goodbot</a>, a Slack bot for workplace satisfaction</li>
-  //       <li><a href="https://robinhood.engineering/robinhoods-hackathon-for-social-good-92c91a5726c3">Robinhood blog post</a> about the hackathon</li>
-  //     </ul>
-  //     <p style={{fontSize:20, marginBottom:0}}><b>National Science Bowl Top 32 (2021)</b></p>
-  //     <ul>
-  //       <li>Member of the Nevada team at the National Science Bowl Competition, sponsored by the DOE</li>
-  //     </ul>
-  //     <p style={{fontSize:20, marginBottom:0}}><b>Doyle Foundation Scholarship (2021, 2022, 2023)</b></p>
-  //     <ul>
-  //       <li>Three-time recipient of the <a href="https://doylefound.org/">Doyle Foundation</a> Scholarship</li>
-  //     </ul>
-  // </div>,
+      <p style={{ fontSize: 20, marginBottom: 0 }}>
+        <b>Cybersecurity Competitions</b>
+      </p>
+      <ul style={{ fontSize: 18 }}>
+        <li>SUST Technovent 2023 Capture the Flag (11th place)</li>
+      </ul>
+    </div>
+  ),
   images: [
     { 
       img: require("../assets/img/best_poster_award_du.jpg"), 
