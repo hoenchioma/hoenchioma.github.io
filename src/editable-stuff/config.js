@@ -10,10 +10,10 @@ const mainBody = {
   firstName: "Raheeb",
   middleName: "",
   lastName: "Hassan",
-  message: "ML Engineer at Therap (BD) Ltd.",
+  message: "ML Engineer at Therap Services LLC",
   icons: [
     {
-      type: 'email',
+      type: "email",
       url: "mailto:contact@raheeb.xyz",
     },
     {
@@ -54,7 +54,7 @@ const about = {
   imageLink: require("../editable-stuff/headshot.jpg"),
   imageSize: 375,
   message:
-  "Hello! I'm Raheeb Hassan, a CSE graduate from the University of Dhaka. Currently, I work as an ML Engineer at Therap (BD) Ltd. My passion lies in Deep Learning, Computer Vision, and Reinforcement Learning. I enjoy tinkering, problem-solving, and creating digital art in my spare time. I'm a fast learner, constantly seeking new knowledge.",
+    "Hello! I'm Raheeb Hassan, a CSE graduate from the University of Dhaka. Currently, I work as an ML Engineer at Therap Services LLC. My passion lies in Deep Learning, Computer Vision, and Reinforcement Learning. I enjoy tinkering, problem-solving, and creating digital art in my spare time. I'm a fast learner, constantly seeking new knowledge.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -71,8 +71,8 @@ const education = {
       degree: "BSc. in Computer Science and Engineering",
       result: "CGPA: 3.75/4.00 (2nd highest in my class)",
       logo: require("../assets/img/logo_du.png"),
-    }
-  ]
+    },
+  ],
 };
 
 // EXPERIENCE SECTION
@@ -81,67 +81,66 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      company: 'Therap Services LLC',
+      company: "Therap Services LLC",
       location: "Dhaka, Bangladesh",
-      role: ['ML Engineer', 'Associate ML Engineer'],
-      date: ['Apr 2024 - Present', 'Feb 2023 – Mar 2024'],
+      role: ["ML Engineer", "Associate ML Engineer"],
+      date: ["Apr 2024 - Present", "Feb 2023 – Mar 2024"],
       logo: require("../assets/img/logo_therap.jpg"),
       description: [
         <ul>
-          <li>Worked with computer vision, face recognition, multi-object tracking, activity recognition</li>
-          <li>Worked with the NVIDIA Deepstream platform for low level machine learning computation</li>
-          <li>Designed and implemented systems for ML based real time monitoring</li>
-        </ul>
+          <li>
+            Worked with computer vision, face recognition, multi-object
+            tracking, activity recognition
+          </li>
+          <li>
+            Worked with the NVIDIA Deepstream platform for low level machine
+            learning computation
+          </li>
+          <li>
+            Designed and implemented systems for ML based real time monitoring
+          </li>
+        </ul>,
       ],
     },
     {
-      company: 'Cognitive Agents and Interaction Lab (CAIL), University of Dhaka',
+      company:
+        "Cognitive Agents and Interaction Lab (CAIL), University of Dhaka",
       location: "Dhaka, Bangladesh",
-      role: 'Undergraduate Research Student',
-      date: '2021 – 2023',
+      role: "Undergraduate Research Student",
+      date: "2021 – 2023",
       logo: require("../assets/img/logo_du.png"),
       description: [
         <>
           <ul>
-            <li>Worked with Multi-Agent Reinforcement Learning and Safe Reinforcement Learning</li>
+            <li>
+              Worked with Multi-Agent Reinforcement Learning and Safe
+              Reinforcement Learning
+            </li>
           </ul>
-          <br/>
-        </>
+          <br />
+        </>,
       ],
     },
     {
-      company: 'CranTech LLC (Formerly Quixx Projects)',
+      company: "CranTech LLC (Formerly Quixx Projects)",
       location: "Dhaka, Bangladesh",
-      role: 'Full Stack Developer (Part-Time)',
-      date: '2020 – 2021',
+      role: "Full Stack Developer (Part-Time)",
+      date: "2020 – 2021",
       logo: require("../assets/img/logo_crantech.jpg"),
       description: [
         <ul>
-          <li>Worked on several frontend projects like Shoshikkha, Amplfiy, etc.</li>
-          <li>Worked with ReactJS (frontend), ExpressJS (backend) and React Native (Mobile)</li>
-        </ul>
+          <li>
+            Worked on several frontend projects like Shoshikkha, Amplfiy, etc.
+          </li>
+          <li>
+            Worked with ReactJS (frontend), ExpressJS (backend) and React Native
+            (Mobile)
+          </li>
+        </ul>,
       ],
     },
-  ]
+  ],
 };
-
-// LEADERSHIP SECTION
-// const leadership = {
-//   show: true,
-//   heading: "Activities & Leadership",
-//   data: [
-//     {
-//       company: 'Anime Video Game Ensemble',
-//       role: 'Founder, Co-President',
-//       date: 'Sep 2021 – Present',
-//       description: 
-//         <ul>
-//           <li>Founded club and recruited over 70 members to arrange and perform anime and video game music in biannual concerts</li>
-//           <li>Orchestrated club operations, including weekly rehearsals and a <a href="https://www.youtube.com/@brownavge">Youtube channel</a> with over 80k views</li>
-//         </ul>,
-//     },
-//   ]
-// };
 
 // PROJECTS SECTION
 // Setting up project lenght will automatically fetch your that number of recently updated projects, or you can set this field 0 to show none.
@@ -153,7 +152,15 @@ const repos = {
   heading: "Projects",
   gitHubUsername: "hoenchioma",
   reposLength: 0,
-  specificRepos: ['hotkey', 'vlawyer', 'cp-library', 'kamlabot', 'Depths-of-CSEDU', 'transperfecta', 'backtrack2class'],
+  specificRepos: [
+    "hotkey",
+    "vlawyer",
+    "cp-library",
+    "kamlabot",
+    "Depths-of-CSEDU",
+    "transperfecta",
+    "backtrack2class",
+  ],
 };
 
 // AWARDS SECTION
@@ -208,7 +215,7 @@ Average Constraints</i></p>
   images: [
     { 
       img: require("../assets/img/best_poster_award_du.jpg"), 
-      label: "Best Undergraduate Project Award", 
+      label: "Best Undergraduate Final Project Award",
       paragraph: "",
     },
     { 
@@ -230,12 +237,12 @@ Average Constraints</i></p>
       img: require("../assets/img/mist_iupc_team.jpg"),
       label: "MIST Inter University Programming Contest 2019",
       paragraph: "",
-    }
+    },
   ],
   imageSize: {
-    width:"400", //orig: 615
-    height:"400" //orig: 450
-  }
+    width: "400", //orig: 615
+    height: "400", //orig: 450
+  },
 };
 
 // SKILLS SECTION
@@ -272,68 +279,88 @@ const art = {
   heading: "Art",
   instagramProfileUrl: "https://www.instagram.com/raheebomega",
   instagramUrls: [
-    'https://www.instagram.com/p/CdKsMcrJXeV/',
-    'https://www.instagram.com/p/CkozB5wyMFL/',
-    'https://www.instagram.com/p/Clqj-VZSvYg/',
-    'https://www.instagram.com/p/Cd1RattPE-1/',
-    'https://www.instagram.com/p/CbWQGXiJOwp/',
-    'https://www.instagram.com/p/CaHroEypwXc/',
-    'https://www.instagram.com/p/CVwyJpJvOpb/',
-    'https://www.instagram.com/p/CBz1RDTj9Vj/',
+    "https://www.instagram.com/p/CdKsMcrJXeV/",
+    "https://www.instagram.com/p/CkozB5wyMFL/",
+    "https://www.instagram.com/p/Clqj-VZSvYg/",
+    "https://www.instagram.com/p/Cd1RattPE-1/",
+    "https://www.instagram.com/p/CbWQGXiJOwp/",
+    "https://www.instagram.com/p/CaHroEypwXc/",
+    "https://www.instagram.com/p/CVwyJpJvOpb/",
+    "https://www.instagram.com/p/CBz1RDTj9Vj/",
     // 'https://www.instagram.com/p/CBsilHdj36C/',
-    'https://www.instagram.com/p/CBp12vAjPyf/',
+    "https://www.instagram.com/p/CBp12vAjPyf/",
     // 'https://www.instagram.com/p/Bzn7_RShs6t/',
     // 'https://www.instagram.com/p/Bzkj6_3Bgw1/',
-  ]
-}
+  ],
+};
 
 // RESEARCH SECTION
 const research = {
   show: true,
   heading: "Research",
   myName: "Raheeb Hassan",
-  googleScholarUrl: "https://scholar.google.com/citations?user=73zHDeoAAAAJ&hl=en",
+  googleScholarUrl:
+    "https://scholar.google.com/citations?user=73zHDeoAAAAJ&hl=en",
   data: [
     {
-      title: "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
-      authors: "Raheeb Hassan, K.M. Shadman Wadith, Md. Mamun or Rashid, Md. Mosaddek Khan",
+      title:
+        "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
+      authors:
+        "Raheeb Hassan, K.M. Shadman Wadith, Md. Mamun or Rashid, Md. Mosaddek Khan",
       conferenceOrJournal: "Applied Intelligence Journal (APIN)",
       status: "Published",
       link: "https://doi.org/10.1007/s10489-024-05433-x",
       preprintLink: "https://arxiv.org/abs/2310.14348",
       description: [
         <ul>
-          <li>Proposed a novel decentralized safe multi-agent reinforcement learning algorithm</li>
+          <li>
+            Proposed a novel decentralized safe multi-agent reinforcement
+            learning algorithm
+          </li>
           <li>Considered both peak and average constraints</li>
           <li>Theoretically analysed the convergence of the algorithm</li>
-          <li>Compared with existing centralized MARL algorithms that deal with peak and average constraints</li>
-        </ul>
+          <li>
+            Compared with existing centralized MARL algorithms that deal with
+            peak and average constraints
+          </li>
+        </ul>,
       ],
     },
     {
-      title: "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
+      title:
+        "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
       conferenceOrJournal: "ACML 2024",
       status: "Under Review",
       preprintLink: "https://arxiv.org/abs/2311.16277",
       description: [
         <ul>
-          <li>Investigated and suggested alternatives to the early stopping strategy of PI-GNN</li>
-          <li>Proposed a modified generic RL framework using QUBO for combinatorial optimization</li>
-          <li>Proposed a MCTS based approach using GNNs and QUBO for combinatorial optimization</li>
-          <li>Achieved upto 44% improvement over PI-GNN in the Max Cut problem</li>
-        </ul>
-      ]
-    }
-  ]
-}
+          <li>
+            Investigated and suggested alternatives to the early stopping
+            strategy of PI-GNN
+          </li>
+          <li>
+            Proposed a modified generic RL framework using QUBO for
+            combinatorial optimization
+          </li>
+          <li>
+            Proposed a MCTS based approach using GNNs and QUBO for combinatorial
+            optimization
+          </li>
+          <li>
+            Achieved upto 44% improvement over PI-GNN in the Max Cut problem
+          </li>
+        </ul>,
+      ],
+    },
+  ],
+};
 
 // GET IN TOUCH SECTION
 const getInTouch = {
   show: true,
   heading: "Get In Touch",
-  message:
-    "Always open to opportunities! Please reach out to me at",
+  message: "Always open to opportunities! Please reach out to me at",
   email: "contact@raheeb.xyz",
 };
 
@@ -342,4 +369,16 @@ const getInTouch = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, education, experience, repos, awards, skills, art, research, getInTouch };
+export {
+  navBar,
+  mainBody,
+  about,
+  education,
+  experience,
+  repos,
+  awards,
+  skills,
+  art,
+  research,
+  getInTouch,
+};
