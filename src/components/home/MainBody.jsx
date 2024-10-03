@@ -11,6 +11,7 @@ import {
   faFacebook as facebookIcon,
   faInstagram as instagramIcon,
   faGoogleScholar as googleScholarIcon,
+  faTwitter as twitterIcon,
 } from "@fortawesome/free-brands-svg-icons";
 
 const iconImages = {
@@ -21,6 +22,7 @@ const iconImages = {
   facebook: facebookIcon,
   instagram: instagramIcon,
   googleScholar: googleScholarIcon,
+  twitter: twitterIcon,
 };
 
 const MainBody = React.forwardRef(

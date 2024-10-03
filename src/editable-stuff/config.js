@@ -32,6 +32,10 @@ const mainBody = {
       type: "instagram",
       url: "https://www.instagram.com/raheebomega",
     },
+    {
+      type: "twitter",
+      url: "https://x.com/raheebomega",
+    }
   ],
 };
 
