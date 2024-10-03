@@ -58,7 +58,7 @@ const about = {
   imageLink: require("../editable-stuff/headshot.jpg"),
   imageSize: 375,
   message:
-    "Hello! I'm Raheeb Hassan, a CSE graduate from the University of Dhaka. Currently, I work as an ML Engineer at Therap Services LLC. My research interests lie in Computer Vision, Reinforcement Learning and Graph Neural Networks. I enjoy tinkering and problem-solving with a passion. I also like creating digital art in my spare time.",
+    "Hello! I'm Raheeb Hassan, a CSE graduate from the University of Dhaka. Currently, I work as an ML Engineer at Therap Services LLC. My research interests lie in Computer Vision, Reinforcement Learning and Multi-agent systems. I enjoy tinkering and problem-solving with a passion. I also like creating digital art in my spare time.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -97,11 +97,13 @@ const experience = {
             tracking, activity recognition
           </li>
           <li>
-            Worked with the NVIDIA Deepstream platform for low level machine
-            learning computation
+            Designed a system integrating real-time monitoring data from cameras and sensors to generate long-term statistical models of individual behavior
           </li>
           <li>
-            Designed and implemented systems for ML based real time monitoring
+            Optimized ML pipelines to work on resource constrained environements using NVIDIA Deepstream
+          </li>
+          <li>
+            Worked on scaling distributed ML video processing systems in the cloud (AWS, Oracle Cloud)
           </li>
         </ul>,
       ],
@@ -110,15 +112,23 @@ const experience = {
       company:
         "Cognitive Agents and Interaction Lab (CAIL), University of Dhaka",
       location: "Dhaka, Bangladesh",
-      role: "Undergraduate Research Student",
-      date: "2021 – 2023",
+      role: "Research Assistant",
+      date: "2021 – Present",
       logo: require("../assets/img/logo_du.png"),
       description: [
         <>
           <ul>
             <li>
-              Worked with Multi-Agent Reinforcement Learning and Safe
-              Reinforcement Learning
+              Studied and benchmarked several reinforcement learning algorithms
+            </li>
+            <li>
+              Researched safety in reinforcement learning and multi-agent systems
+            </li>
+            <li>
+              Developed a novel decentralized safe multi-agent reinforcement learning algorithm
+            </li>
+            <li>
+              Worked with applying graph neural networks and reinforcement learning for solving combinatorial optimization problems
             </li>
           </ul>
           <br />
@@ -134,7 +144,7 @@ const experience = {
       description: [
         <ul>
           <li>
-            Worked on several frontend projects like Shoshikkha, Amplfiy, etc.
+            Worked on several web development projects like Shoshikkha, Amplfiy, etc.
           </li>
           <li>
             Worked with ReactJS (frontend), ExpressJS (backend) and React Native
