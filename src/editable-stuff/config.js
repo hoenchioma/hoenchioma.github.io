@@ -100,7 +100,7 @@ const experience = {
             Designed a system integrating real-time monitoring data from cameras and sensors to generate long-term statistical models of individual behavior
           </li>
           <li>
-            Optimized ML pipelines to work on resource constrained environements using NVIDIA Deepstream
+            Optimized ML pipelines to work on resource constrained environments using NVIDIA Deepstream
           </li>
           <li>
             Worked on scaling distributed ML video processing systems in the cloud (AWS, Oracle Cloud)
