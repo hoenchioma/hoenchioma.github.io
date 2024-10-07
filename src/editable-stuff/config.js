@@ -85,8 +85,10 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      company: "Therap Services LLC",
+      company: "Therap (BD) Ltd.",
       location: "Dhaka, Bangladesh",
+      secondaryCompany: "Therap Services LLC",
+      secondaryLocation: "Connecticut, USA",
       role: ["ML Engineer", "Associate ML Engineer"],
       date: ["Apr 2024 - Present", "Feb 2023 – Mar 2024"],
       logo: require("../assets/img/logo_therap.jpg"),
@@ -136,9 +138,9 @@ const experience = {
       ],
     },
     {
-      company: "CranTech LLC (Formerly Quixx Projects)",
-      location: "Dhaka, Bangladesh",
-      role: "Full Stack Developer (Part-Time)",
+      company: "CranTech LLC",
+      location: "New York, USA",
+      role: "Full Stack Developer (Part-Time, Remote)",
       date: "2020 – 2021",
       logo: require("../assets/img/logo_crantech.jpg"),
       description: [
