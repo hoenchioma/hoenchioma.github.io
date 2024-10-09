@@ -85,7 +85,7 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      company: "Therap (BD) Ltd.",
+      company: "Therap (BD) LTD",
       location: "Dhaka, Bangladesh",
       secondaryCompany: "Therap Services LLC",
       secondaryLocation: "Connecticut, USA",
