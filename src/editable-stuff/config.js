@@ -363,7 +363,8 @@ const research = {
         "Reinforcement Learning Based Formulations with Hamiltonian-Inspired Loss Functions for Combinatorial Optimization over Graphs",
       authors: "Redwan Ahmed Rizvee, Raheeb Hassan, Md. Mosaddek Khan",
       conferenceOrJournal: "IEEE Access Journal",
-      status: "Accepted for Publication",
+      status: "Published",
+      link: "https://doi.org/10.1109/access.2024.3497955",
       preprintLink: "https://arxiv.org/abs/2311.16277",
       description: [
         <ul>
