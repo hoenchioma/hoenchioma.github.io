@@ -85,6 +85,25 @@ const experience = {
   heading: "Experience",
   data: [
     {
+      company: "Bio-Inspired Architecture and Systems Lab (BiasLab)",
+      location: "Irvine, California, USA",
+      secondaryCompany: "University of California, Irvine",
+      secondaryLocation: "California, USA",
+      role: "Research Intern (Part-Time, Remote)",
+      date: "Oct 2024 - Present",
+      logo: require("../assets/img/logo_biaslab.jpg"),
+      description: [
+        <ul>
+          <li>
+            Investigated multimodal anomaly detection and recognition
+          </li>
+          <li>
+            Implemented graph neural network based strategy for anomaly detection using image and audio data
+          </li>
+        </ul>,
+      ],
+    },
+    {
       company: "Therap (BD) LTD",
       location: "Dhaka, Bangladesh",
       secondaryCompany: "Therap Services LLC",
@@ -111,9 +130,10 @@ const experience = {
       ],
     },
     {
-      company:
-        "Cognitive Agents and Interaction Lab (CAIL), University of Dhaka",
+      company: "Cognitive Agents and Interaction Lab (CAIL)",
       location: "Dhaka, Bangladesh",
+      secondaryCompany: "University of Dhaka",
+      secondaryLocation: "Dhaka, Bangladesh",
       role: "Research Assistant",
       date: "2021 – Present",
       logo: require("../assets/img/logo_du.png"),
