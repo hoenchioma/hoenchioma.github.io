@@ -85,7 +85,7 @@ const experience = {
   heading: "Experience",
   data: [
     {
-      company: "Bio-Inspired Architecture and Systems Lab (BiasLab)",
+      company: "Bio-Inspired Architecture and Systems Lab (BIASLab)",
       location: "Irvine, California, USA",
       secondaryCompany: "University of California, Irvine",
       secondaryLocation: "California, USA",
