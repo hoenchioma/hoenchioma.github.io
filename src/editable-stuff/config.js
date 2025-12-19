@@ -54,6 +54,11 @@ const mainBody = {
       link: "#experience",
     },
     {
+      date: "Nov 8, 2024",
+      text: "Published research paper in IEEE Access Journal",
+      link: "#research",
+    },
+    {
       date: "May 14, 2024",
       text: "Presented at a session by Therap (BD) Ltd. at Bangladesh University of Engineering and Technology (BUET)",
       link: "#experience",
@@ -62,11 +67,6 @@ const mainBody = {
       date: "Apr 1, 2024",
       text: "Got promoted to ML Engineer at Therap (BD) Ltd.",
       link: "#experience",
-    },
-    {
-      date: "Nov 8, 2024",
-      text: "Published research paper in IEEE Access Journal",
-      link: "#research",
     },
     {
       date: "Mar 29, 2024",
@@ -101,7 +101,9 @@ const about = {
   imageSize: 375,
   message: (
     <>
-      I am a CS PhD Student at the University of California, Irvine. My research focuses on hyperdimensional computing, neurosymbolic learning, multimodal reasoning and reinforcement learning.
+      I am currently a CS PhD Student at the University of California, Irvine, advised by Dr. Mohsen Imani. My research focuses on hyperdimensional computing, neurosymbolic learning, multimodal reasoning and reinforcement learning.
+      <br />
+      Previously, I graduated from the University of Dhaka in 2023 where I conducted research on Multi-Agent Reinforcement Learning under the supervision of Dr. Md. Mosaddek Khan. I also worked as a Machine Learning Engineer at Therap (BD) Ltd. between 2023 and 2025, working with computer vision and natural language processing. 
       <br />
       Outside research, I enjoy art, anime, competitive programming, and table tennis.
     </>
