@@ -37,6 +37,48 @@ const mainBody = {
       url: "https://x.com/raheebomega",
     }
   ],
+  updates: [
+    {
+      date: "Nov 6, 2025",
+      text: "Received the Dean's Award from the University of Dhaka",
+      link: "#awards",
+    },
+    {
+      date: "Sep 22, 2025",
+      text: "Started PhD at UC Irvine",
+      link: "#education",
+    },
+    {
+      date: "Aug 31, 2025",
+      text: "Left Therap (BD) Ltd.",
+      link: "#experience",
+    },
+    {
+      date: "May 14, 2024",
+      text: "Presented at a session by Therap (BD) Ltd. at Bangladesh University of Engineering and Technology (BUET)",
+      link: "#experience",
+    },
+    {
+      date: "Apr 1, 2024",
+      text: "Got promoted to ML Engineer at Therap (BD) Ltd.",
+      link: "#experience",
+    },
+    {
+      date: "Nov 8, 2024",
+      text: "Published research paper in IEEE Access Journal",
+      link: "#research",
+    },
+    {
+      date: "Mar 29, 2024",
+      text: "Published research paper in Springer Applied Intelligence Journal",
+      link: "#research",
+    },
+    {
+      date: "Feb 1, 2023",
+      text: "Joined Therap (BD) Ltd. as an Associate ML Engineer",
+      link: "#experience",
+    },
+  ],
 };
 
 // ABOUT SECTION

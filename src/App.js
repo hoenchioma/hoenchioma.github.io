@@ -40,6 +40,7 @@ const Home = React.forwardRef((props, ref) => {
         title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
         message={mainBody.message}
         icons={mainBody.icons}
+        updates={mainBody.updates}
         ref={ref}
       />
       {about.show && (
