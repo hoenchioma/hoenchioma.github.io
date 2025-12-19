@@ -45,26 +45,21 @@ const Home = React.forwardRef((props, ref) => {
       />
       {about.show && (
         <AboutMe
-          heading={about.heading}
-          message={about.message}
-          link={about.imageLink}
-          imgSize={about.imageSize}
-          resume={about.resume}
-          education={about.education}
+        heading={about.heading}
+        message={about.message}
+        link={about.imageLink}
+        imgSize={about.imageSize}
+        resume={about.resume}
+        education={about.education}
         />
       )}
-      {education.show && (
-        <Education
+      {research.show && (
+        <Research
           background="light"
-          heading={education.heading}
-          educationList={education.data}
-        />
-      )}
-      {experience.show && (
-        <Experience
-          background="white"
-          heading={experience.heading}
-          experienceList={experience.data}
+          heading={research.heading}
+          myName={research.myName}
+          googleScholarUrl={research.googleScholarUrl}
+          researchList={research.data}
         />
       )}
       {awards.show && (
@@ -76,6 +71,20 @@ const Home = React.forwardRef((props, ref) => {
           imageSize={awards.imageSize}
         />
       )}
+      {experience.show && (
+        <Experience
+          background="white"
+          heading={experience.heading}
+          experienceList={experience.data}
+        />
+      )}
+      {education.show && (
+        <Education
+          background="light"
+          heading={education.heading}
+          educationList={education.data}
+        />
+      )}
       {skills.show && (
         <Skills
           background="white"
@@ -83,15 +92,6 @@ const Home = React.forwardRef((props, ref) => {
           languages={skills.languages}
           librariesFrameworks={skills.librariesFrameworks}
           otherSkills={skills.otherSkills}
-        />
-      )}
-      {research.show && (
-        <Research
-          background="light"
-          heading={research.heading}
-          myName={research.myName}
-          googleScholarUrl={research.googleScholarUrl}
-          researchList={research.data}
         />
       )}
       {repos.show && (
