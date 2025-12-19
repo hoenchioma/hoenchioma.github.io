@@ -10,7 +10,7 @@ const mainBody = {
   firstName: "Raheeb",
   middleName: "",
   lastName: "Hassan",
-  message: "ML Engineer at Therap Services LLC",
+  message: "CS PhD Student at UC Irvine",
   icons: [
     {
       type: "email",
@@ -57,8 +57,13 @@ const about = {
   heading: "About Me",
   imageLink: require("../editable-stuff/headshot.jpg"),
   imageSize: 375,
-  message:
-    "Hello! I'm Raheeb Hassan, a CSE graduate from the University of Dhaka. Currently, I work as an ML Engineer at Therap Services LLC. My research interests lie in Computer Vision, Reinforcement Learning and Multi-agent systems. I enjoy tinkering and problem-solving with a passion. I also like creating digital art in my spare time.",
+  message: (
+    <>
+      I am a CS PhD Student at the University of California, Irvine. My research focuses on hyperdimensional computing, neurosymbolic learning, multimodal reasoning and reinforcement learning.
+      <br />
+      Outside research, I enjoy art, anime, competitive programming, and table tennis.
+    </>
+  ),
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -68,12 +73,41 @@ const education = {
   heading: "Education",
   data: [
     {
+      university: "University of California, Irvine",
+      department: "Department of Computer Science",
+      location: "Irvine, California, USA",
+      date: "Sep 2025 - Present",
+      degree: "Doctor of Philosophy - PhD, Computer Science",
+      result: (
+        <>
+          <small>
+            Research: Brain Inspired Computing, Hyperdimensional Computing, Machine Learning Robustness and Security
+            <br />
+            Advisor: Dr. Mohsen Imani
+          </small>
+        </>
+      ),
+      logo: require("../assets/img/logo_uci.png"),
+    },
+    {
       university: "University of Dhaka",
       department: "Department of Computer Science and Engineering",
       location: "Dhaka, Bangladesh",
       date: "2018 - 2023",
-      degree: "BSc. in Computer Science and Engineering",
-      result: "CGPA: 3.75/4.00 (2nd highest in my class)",
+      degree: "Bachelor of Science - B.Sc., Computer Science and Engineering",
+      result: (
+        <>
+          CGPA: 3.75/4.00 (2nd highest in my class)
+          <br />
+          <small>
+            Activities and societies: Competitive Programming
+            <br />
+            Thesis Topic: Safe Multi-Agent Reinforcement Learning
+            <br />
+            Supervisor: Dr. Md. Mosaddek Khan
+          </small>
+        </>
+      ),
       logo: require("../assets/img/logo_du.png"),
     },
   ],
@@ -89,8 +123,8 @@ const experience = {
       location: "Irvine, California, USA",
       secondaryCompany: "University of California, Irvine",
       secondaryLocation: "California, USA",
-      role: "Research Intern (Part-Time, Remote)",
-      date: "Oct 2024 - Present",
+      role: ["Graduate Research Fellow", "Research Intern"],
+      date: ["Sep 2025 - Present", "Oct 2024 - Aug 2025"],
       logo: require("../assets/img/logo_biaslab.jpg"),
       description: [
         <ul>
@@ -99,6 +133,9 @@ const experience = {
           </li>
           <li>
             Implemented graph neural network based strategy for anomaly detection using image and audio data
+          </li>
+          <li>
+            Scholarly Research in Hyperdimensional Computing
           </li>
         </ul>,
       ],
@@ -109,7 +146,7 @@ const experience = {
       secondaryCompany: "Therap Services LLC",
       secondaryLocation: "Connecticut, USA",
       role: ["ML Engineer", "Associate ML Engineer"],
-      date: ["Apr 2024 - Present", "Feb 2023 – Mar 2024"],
+      date: ["Apr 2024 - Aug 2025", "Feb 2023 – Mar 2024"],
       logo: require("../assets/img/logo_therap.jpg"),
       description: [
         <ul>
@@ -135,7 +172,7 @@ const experience = {
       secondaryCompany: "University of Dhaka",
       secondaryLocation: "Dhaka, Bangladesh",
       role: "Research Assistant",
-      date: "2021 – Present",
+      date: "Jan 2021 - Dec 2023",
       logo: require("../assets/img/logo_du.png"),
       description: [
         <>
@@ -210,6 +247,13 @@ const awards = {
       </p>
       <ul style={{ fontSize: 18 }}>
         <li>
+          Dean's Award 2021
+          <br />
+          <span style={{ fontSize: 16, color: "gray" }}>
+            Faculty of Engineering and Technology, University of Dhaka
+          </span>
+        </li>
+        <li>
           Best Undergraduate Final Project Award 2021 (Held on Jan 2023)
           <br />
           <span style={{ fontSize: 16, color: "gray" }}>
@@ -254,6 +298,11 @@ const awards = {
     </div>
   ),
   images: [
+    {
+      img: require("../assets/img/deansaward_du.jpg"),
+      label: "",
+      paragraph: "",
+    },
     {
       img: require("../assets/img/best_poster_award_du.jpg"),
       label: "Best Undergraduate Final Project Award",
