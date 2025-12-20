@@ -64,7 +64,7 @@ const Home = React.forwardRef((props, ref) => {
       )}
       {awards.show && (
         <Awards
-          background="light"
+          background="white"
           heading={awards.heading}
           message={awards.message}
           img={awards.images}
@@ -73,21 +73,21 @@ const Home = React.forwardRef((props, ref) => {
       )}
       {experience.show && (
         <Experience
-          background="white"
+          background="light"
           heading={experience.heading}
           experienceList={experience.data}
         />
       )}
       {education.show && (
         <Education
-          background="light"
+          background="white"
           heading={education.heading}
           educationList={education.data}
         />
       )}
       {skills.show && (
         <Skills
-          background="white"
+          background="light"
           heading={skills.heading}
           languages={skills.languages}
           librariesFrameworks={skills.librariesFrameworks}

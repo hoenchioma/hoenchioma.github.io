@@ -1,6 +1,5 @@
 import React from "react";
 import SkillsBar from "./SkillsBar";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 function SkillsSection({ skills, isScrolled }) {
@@ -20,20 +19,11 @@ function SkillsSection({ skills, isScrolled }) {
 
 function SkillsTab({ skills, isScrolled }) {
   return (
-    <div class="card-content text-center p-3">
-      <Container center>
-        <Row xs={12} md={6}>
-          <SkillsSection
-            skills={skills}
-            isScrolled={isScrolled}
-          />
-        </Row>
-      </Container>
-      {/* <div class="row text-center">
-      <SkillsSection
-           skills={skills} />
-      </div> */}
-      </div>
+    <div className="card-content p-3">
+      <Row className="justify-content-center">
+        <SkillsSection skills={skills} isScrolled={isScrolled} />
+      </Row>
+    </div>
   );
 }
 

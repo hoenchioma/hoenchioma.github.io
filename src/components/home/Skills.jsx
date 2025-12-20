@@ -20,7 +20,7 @@ const Skills = React.forwardRef(({ heading, languages, librariesFrameworks, othe
     skillsTabRef
   );
   return (
-    <Jumbotron ref={skillsTabRef} fluid className={`bg-${background} m-0`} id="skills">
+    <Jumbotron ref={skillsTabRef} fluid className={`bg-${background} m-0 ${background === 'white' ? 'text-dark' : ''}`} id="skills" style={{ backgroundColor: background === "white" ? "#fff" : null }}>
       <Container className="p-5 ">
         <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
           {heading}
@@ -32,7 +32,7 @@ const Skills = React.forwardRef(({ heading, languages, librariesFrameworks, othe
           fill
         >
           <Tab
-            tabClassName="skills-tab lead"
+            tabClassName={`skills-tab lead ${background === 'white' ? 'text-dark' : ''}`}
             eventKey="languages-skills"
             title="Languages"
           >
@@ -42,7 +42,7 @@ const Skills = React.forwardRef(({ heading, languages, librariesFrameworks, othe
           </Tab>
 
           <Tab
-            tabClassName="skills-tab lead"
+            tabClassName={`skills-tab lead ${background === 'white' ? 'text-dark' : ''}`}
             eventKey="libraries-skills"
             title="Libraries & Frameworks"
           >
@@ -52,7 +52,7 @@ const Skills = React.forwardRef(({ heading, languages, librariesFrameworks, othe
           </Tab>
 
           <Tab
-            tabClassName="skills-tab lead"
+            tabClassName={`skills-tab lead ${background === 'white' ? 'text-dark' : ''}`}
             eventKey="other-skills"
             title="Other Skills"
           >
