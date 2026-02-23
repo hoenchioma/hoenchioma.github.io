@@ -445,7 +445,8 @@ const art = {
   instagramUrls: [
     "https://www.instagram.com/p/CdKsMcrJXeV/",
     "https://www.instagram.com/p/CkozB5wyMFL/",
-    "https://www.instagram.com/p/Clqj-VZSvYg/",
+    // "https://www.instagram.com/p/Clqj-VZSvYg/",
+    "https://www.instagram.com/p/DEhQ3QbSt3G/",
     "https://www.instagram.com/p/Cd1RattPE-1/",
     "https://www.instagram.com/p/CbWQGXiJOwp/",
     "https://www.instagram.com/p/CaHroEypwXc/",
