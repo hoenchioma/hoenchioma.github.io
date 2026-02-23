@@ -39,6 +39,11 @@ const mainBody = {
   ],
   updates: [
     {
+      date: "Jan 2026",
+      text: "Started as Graduate Teaching Assistant at UC Irvine",
+      link: "#experience",
+    },
+    {
       date: "Nov 6, 2025",
       text: "Received the Dean's Award from the University of Dhaka",
       link: "#awards",
@@ -167,7 +172,7 @@ const experience = {
       location: "Irvine, California, USA",
       secondaryCompany: "University of California, Irvine",
       secondaryLocation: "California, USA",
-      role: ["Graduate Research Fellow", "Research Intern"],
+      role: ["Doctoral Researcher", "Research Intern"],
       date: ["Sep 2025 - Present", "Oct 2024 - Aug 2025"],
       logo: require("../assets/img/logo_biaslab.jpg"),
       description: [
@@ -180,6 +185,20 @@ const experience = {
           </li>
           <li>
             Scholarly Research in Hyperdimensional Computing
+          </li>
+        </ul>,
+      ],
+    },
+    {
+      company: "University of California, Irvine",
+      location: "Irvine, California, USA",
+      role: "Graduate Teaching Assistant",
+      date: "Jan 2026 - Present",
+      logo: require("../assets/img/logo_uci.png"),
+      description: [
+        <ul>
+          <li>
+            <i>IC&S 26: Data Structures Implementation and Analysis - </i>Exam proctoring, grading, holding office hours, conducting review sessions, and mentoring students
           </li>
         </ul>,
       ],
