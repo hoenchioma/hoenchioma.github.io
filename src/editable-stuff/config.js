@@ -10,7 +10,7 @@ const mainBody = {
   firstName: "Raheeb",
   middleName: "",
   lastName: "Hassan",
-  message: "CS PhD student at UC Irvine · reinforcement learning & world models",
+  message: "CS PhD Student at UC Irvine",
   icons: [
     {
       type: "email",
