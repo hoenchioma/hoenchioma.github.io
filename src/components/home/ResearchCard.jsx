@@ -10,6 +10,7 @@ const ResearchCard = ({ myName, value }) => {
     description,
     link,
     preprintLink,
+    codeLink,
   } = value;
 
   const authors =
@@ -29,7 +30,7 @@ const ResearchCard = ({ myName, value }) => {
               Authors:{" "}
               {authors.map((author, index) => (
                 <>
-                  {author === myName ? <b>{author}</b> : author}
+                  {author === myName ? <b style={{ fontWeight: 600 }}>{author}</b> : author}
                   {index < authors.length - 1 ? ", " : ""}
                 </>
               ))}
@@ -56,9 +57,16 @@ const ResearchCard = ({ myName, value }) => {
                 </a>
               </div>
             )}
+            {codeLink && (
+              <div className="lead" style={{ fontSize: 17 }}>
+                <a href={codeLink} style={{ textDecoration: "none" }}>
+                  Link to Code
+                </a>
+              </div>
+            )}
             <div className="my-2">
               {" "}
-              {description.map((description, index) => (
+              {description?.map((description, index) => (
                 <p
                   className="lead"
                   key={`research-description-${index}`}

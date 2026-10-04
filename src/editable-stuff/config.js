@@ -469,6 +469,61 @@ const research = {
   data: [
     {
       title:
+        "CyberWorld: World Models for Sample-Efficient Autonomous Cyber Defense",
+      authors:
+        "Ryozo Masukawa, Sanggeon Yun, Raheeb Hassan, Hyunwoo Oh, Sungheon Jeong, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2609.31893",
+    },
+    {
+      title: "Vector Symbolic Policy Gradient",
+      authors:
+        "Ryozo Masukawa, Sanggeon Yun, Sungheon Jeong, Hyunwoo Oh, Raheeb Hassan, Pietro Mercati, Nathaniel D. Bastian, Mahdi Imani, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2608.18404",
+      codeLink: "https://github.com/BiasLabProjects/VSPG",
+    },
+    {
+      title:
+        "Qubit-Efficient Quantum Search for Hyperdimensional Decomposition via Logarithmic Encoding",
+      authors:
+        "Sanggeon Yun, Hyunwoo Oh, Ryozo Masukawa, Raheeb Hassan, Mohsen Imani",
+      conferenceOrJournal:
+        "IEEE/ACM International Conference on Computer-Aided Design (ICCAD 2026)",
+      status: "Accepted",
+      preprintLink: "https://arxiv.org/abs/2607.11936",
+    },
+    {
+      title:
+        "HopFormer: Sparse Graph Transformers with Explicit Receptive Field Control",
+      authors:
+        "Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, Sungheon Jeong, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2602.02268",
+    },
+    {
+      title:
+        "Contextual Fusion Strategies for Multimodal GNN-Based Reasoning: Performance and Computational Trade-Offs",
+      authors:
+        "Sanggeon Yun, Ryozo Masukawa, Raheeb Hassan, Minhyoung Na, Mohsen Imani",
+      conferenceOrJournal: "IEEE Access",
+      status: "Published",
+      link: "https://doi.org/10.1109/ACCESS.2026.3653660",
+    },
+    {
+      title:
+        "MissionHD: Hyperdimensional Refinement of Distribution-Deficient Reasoning Graphs for Video Anomaly Detection",
+      authors:
+        "Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, Nathaniel D. Bastian, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2508.14746",
+    },
+    {
+      title:
         "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
       authors:
         "Raheeb Hassan, K.M. Shadman Wadith, Md. Mamun or Rashid, Md. Mosaddek Khan",
