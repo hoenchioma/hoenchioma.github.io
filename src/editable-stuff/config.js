@@ -10,7 +10,7 @@ const mainBody = {
   firstName: "Raheeb",
   middleName: "",
   lastName: "Hassan",
-  message: "CS PhD Student at UC Irvine",
+  message: "CS PhD student at UC Irvine · reinforcement learning & world models",
   icons: [
     {
       type: "email",
@@ -106,9 +106,9 @@ const about = {
   imageSize: 375,
   message: (
     <>
-      I am currently a CS PhD Student at the University of California, Irvine, advised by Dr. Mohsen Imani. My research focuses on hyperdimensional computing, neurosymbolic learning, multimodal reasoning and reinforcement learning.
+      I'm a CS PhD student at UC Irvine, advised by Dr. Mohsen Imani. I work on machine learning, with a focus on neurosymbolic methods and vector symbolic architectures. Lately, I've been especially drawn to reinforcement learning and world models.
       <br />
-      Previously, I graduated from the University of Dhaka in 2023 where I conducted research on Multi-Agent Reinforcement Learning under the supervision of Dr. Md. Mosaddek Khan. I also worked as a Machine Learning Engineer at Therap (BD) Ltd. between 2023 and 2025, working with computer vision and natural language processing. 
+      Previously, I studied at the University of Dhaka, where I worked on multi-agent reinforcement learning, and spent two years as an ML engineer at Therap.
       <br />
       Outside research, I enjoy art, anime, competitive programming, and table tennis.
     </>
@@ -130,7 +130,7 @@ const education = {
       result: (
         <>
           <small>
-            Research: Brain Inspired Computing, Hyperdimensional Computing, Machine Learning Robustness and Security
+            Research: Machine Learning, Neurosymbolic AI, Reinforcement Learning
             <br />
             Advisor: Dr. Mohsen Imani
           </small>
