@@ -497,6 +497,15 @@ const research = {
     },
     {
       title:
+        "n-Musketeers: Reinforcement Learning Shapes Collaboration Among Language Models",
+      authors:
+        "Ryozo Masukawa, Sanggeon Yun, Hyunwoo Oh, Sungheon Jeong, Raheeb Hassan, Hanning Chen, Wen-Jun Huang, Mahdi Imani, Pietro Mercati, Nathaniel D. Bastian, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2602.09173",
+    },
+    {
+      title:
         "HopFormer: Sparse Graph Transformers with Explicit Receptive Field Control",
       authors:
         "Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, Sungheon Jeong, Mohsen Imani",
@@ -531,20 +540,6 @@ const research = {
       status: "Published",
       link: "https://doi.org/10.1007/s10489-024-05433-x",
       preprintLink: "https://arxiv.org/abs/2310.14348",
-      description: [
-        <ul>
-          <li>
-            Proposed a novel decentralized safe multi-agent reinforcement
-            learning algorithm
-          </li>
-          <li>Considered both peak and average constraints</li>
-          <li>Theoretically analysed the convergence of the algorithm</li>
-          <li>
-            Compared with existing centralized MARL algorithms that deal with
-            peak and average constraints
-          </li>
-        </ul>,
-      ],
     },
     {
       title:
@@ -554,25 +549,6 @@ const research = {
       status: "Published",
       link: "https://doi.org/10.1109/access.2024.3497955",
       preprintLink: "https://arxiv.org/abs/2311.16277",
-      description: [
-        <ul>
-          <li>
-            Investigated and suggested alternatives to the early stopping
-            strategy of PI-GNN
-          </li>
-          <li>
-            Proposed a modified generic RL framework using QUBO for
-            combinatorial optimization
-          </li>
-          <li>
-            Proposed a MCTS based approach using GNNs and QUBO for combinatorial
-            optimization
-          </li>
-          <li>
-            Achieved upto 44% improvement over PI-GNN in the Max Cut problem
-          </li>
-        </ul>,
-      ],
     },
   ],
 };
