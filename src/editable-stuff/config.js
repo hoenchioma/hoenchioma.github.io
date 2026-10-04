@@ -106,9 +106,9 @@ const about = {
   imageSize: 375,
   message: (
     <>
-      I am currently a CS PhD Student at the University of California, Irvine, advised by Dr. Mohsen Imani. My research focuses on hyperdimensional computing, neurosymbolic learning, multimodal reasoning and reinforcement learning.
+      I'm a CS PhD student at UC Irvine, advised by Dr. Mohsen Imani. I work on machine learning, with a focus on neurosymbolic methods and vector symbolic architectures. Lately, I've been especially drawn to reinforcement learning and world models.
       <br />
-      Previously, I graduated from the University of Dhaka in 2023 where I conducted research on Multi-Agent Reinforcement Learning under the supervision of Dr. Md. Mosaddek Khan. I also worked as a Machine Learning Engineer at Therap (BD) Ltd. between 2023 and 2025, working with computer vision and natural language processing. 
+      Previously, I studied at the University of Dhaka, where I worked on multi-agent reinforcement learning, and spent two years as an ML engineer at Therap.
       <br />
       Outside research, I enjoy art, anime, competitive programming, and table tennis.
     </>
@@ -130,7 +130,7 @@ const education = {
       result: (
         <>
           <small>
-            Research: Brain Inspired Computing, Hyperdimensional Computing, Machine Learning Robustness and Security
+            Research: Machine Learning, Neurosymbolic AI, Reinforcement Learning
             <br />
             Advisor: Dr. Mohsen Imani
           </small>
@@ -469,6 +469,70 @@ const research = {
   data: [
     {
       title:
+        "CyberWorld: World Models for Sample-Efficient Autonomous Cyber Defense",
+      authors:
+        "Ryozo Masukawa, Sanggeon Yun, Raheeb Hassan, Hyunwoo Oh, Sungheon Jeong, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2609.31893",
+    },
+    {
+      title: "Vector Symbolic Policy Gradient",
+      authors:
+        "Ryozo Masukawa, Sanggeon Yun, Sungheon Jeong, Hyunwoo Oh, Raheeb Hassan, Pietro Mercati, Nathaniel D. Bastian, Mahdi Imani, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2608.18404",
+      codeLink: "https://github.com/BiasLabProjects/VSPG",
+    },
+    {
+      title:
+        "Qubit-Efficient Quantum Search for Hyperdimensional Decomposition via Logarithmic Encoding",
+      authors:
+        "Sanggeon Yun, Hyunwoo Oh, Ryozo Masukawa, Raheeb Hassan, Mohsen Imani",
+      conferenceOrJournal:
+        "IEEE/ACM International Conference on Computer-Aided Design (ICCAD 2026)",
+      status: "Accepted",
+      preprintLink: "https://arxiv.org/abs/2607.11936",
+    },
+    {
+      title:
+        "n-Musketeers: Reinforcement Learning Shapes Collaboration Among Language Models",
+      authors:
+        "Ryozo Masukawa, Sanggeon Yun, Hyunwoo Oh, Sungheon Jeong, Raheeb Hassan, Hanning Chen, Wen-Jun Huang, Mahdi Imani, Pietro Mercati, Nathaniel D. Bastian, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2602.09173",
+    },
+    {
+      title:
+        "HopFormer: Sparse Graph Transformers with Explicit Receptive Field Control",
+      authors:
+        "Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, Sungheon Jeong, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2602.02268",
+    },
+    {
+      title:
+        "Contextual Fusion Strategies for Multimodal GNN-Based Reasoning: Performance and Computational Trade-Offs",
+      authors:
+        "Sanggeon Yun, Ryozo Masukawa, Raheeb Hassan, Minhyoung Na, Mohsen Imani",
+      conferenceOrJournal: "IEEE Access",
+      status: "Published",
+      link: "https://doi.org/10.1109/ACCESS.2026.3653660",
+    },
+    {
+      title:
+        "MissionHD: Hyperdimensional Refinement of Distribution-Deficient Reasoning Graphs for Video Anomaly Detection",
+      authors:
+        "Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, Nathaniel D. Bastian, Mohsen Imani",
+      conferenceOrJournal: "arXiv",
+      status: "Preprint",
+      preprintLink: "https://arxiv.org/abs/2508.14746",
+    },
+    {
+      title:
         "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints",
       authors:
         "Raheeb Hassan, K.M. Shadman Wadith, Md. Mamun or Rashid, Md. Mosaddek Khan",
@@ -476,20 +540,6 @@ const research = {
       status: "Published",
       link: "https://doi.org/10.1007/s10489-024-05433-x",
       preprintLink: "https://arxiv.org/abs/2310.14348",
-      description: [
-        <ul>
-          <li>
-            Proposed a novel decentralized safe multi-agent reinforcement
-            learning algorithm
-          </li>
-          <li>Considered both peak and average constraints</li>
-          <li>Theoretically analysed the convergence of the algorithm</li>
-          <li>
-            Compared with existing centralized MARL algorithms that deal with
-            peak and average constraints
-          </li>
-        </ul>,
-      ],
     },
     {
       title:
@@ -499,25 +549,6 @@ const research = {
       status: "Published",
       link: "https://doi.org/10.1109/access.2024.3497955",
       preprintLink: "https://arxiv.org/abs/2311.16277",
-      description: [
-        <ul>
-          <li>
-            Investigated and suggested alternatives to the early stopping
-            strategy of PI-GNN
-          </li>
-          <li>
-            Proposed a modified generic RL framework using QUBO for
-            combinatorial optimization
-          </li>
-          <li>
-            Proposed a MCTS based approach using GNNs and QUBO for combinatorial
-            optimization
-          </li>
-          <li>
-            Achieved upto 44% improvement over PI-GNN in the Max Cut problem
-          </li>
-        </ul>,
-      ],
     },
   ],
 };
