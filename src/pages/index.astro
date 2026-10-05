@@ -26,14 +26,13 @@ const art = (await ordered('art')).filter((a) => a.data.home).slice(0, 5);
         <div class="divider short" aria-hidden="true"><i></i></div>
         <p>
           I'm a PhD student in Computer Science at UC Irvine, advised by Dr. Mohsen Imani. I work on machine
-          learning, with a focus on neurosymbolic methods: models that pair the flexibility of neural networks with
-          the structure of symbolic reasoning. Lately, I've been especially drawn to reinforcement learning and world
-          models, and to how agents can learn a model of their environment and use it to plan.
+          learning, with a focus on neurosymbolic methods. Lately, I've been especially drawn to reinforcement
+          learning and world models.
         </p>
         <p class="muted">
           Before that, I studied Computer Science at the University of Dhaka, where I worked on safe multi-agent
           reinforcement learning with Dr. Md. Mosaddek Khan, and spent two years as an ML engineer at Therap
-          Services, building computer vision systems for real-time monitoring.
+          Services.
         </p>
         <ul class="links">
           {site.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}

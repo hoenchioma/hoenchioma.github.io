@@ -1,4 +1,4 @@
-# Art pieces, in display order (newest first). Images live in src/assets/art/.
+# Art pieces, in display order. Slots 1 and 7 are the large tiles on the Art page. Images live in src/assets/art/.
 # home: true shows the piece in the landing page strip (first five are used).
 # link: optional URL the piece opens (e.g. its Instagram post).
 
@@ -26,13 +26,13 @@
   home: true
   link: https://www.instagram.com/p/Cd1RattPE-1/
 
-- id: stop-drowning
-  image: ../assets/art/stop-drowning.jpg
-  title: How Do I Stop Drowning?
-  year: 2022
-  medium: Digital
+- id: gojo-glow
+  image: ../assets/art/gojo-glow.jpg
+  title: Gojo Satoru
+  year: 2021
+  medium: Pencil · Glow art
   home: true
-  link: https://www.instagram.com/p/CdKsMcrJXeV/
+  link: https://www.instagram.com/p/CVwyJpJvOpb/
 
 - id: birthday-sketch
   image: ../assets/art/birthday-sketch.jpg
@@ -48,13 +48,13 @@
   medium: Digital
   link: https://www.instagram.com/p/CaHroEypwXc/
 
-- id: gojo-glow
-  image: ../assets/art/gojo-glow.jpg
-  title: Gojo Satoru
-  year: 2021
-  medium: Pencil · Glow art
+- id: stop-drowning
+  image: ../assets/art/stop-drowning.jpg
+  title: How Do I Stop Drowning?
+  year: 2022
+  medium: Digital
   home: true
-  link: https://www.instagram.com/p/CVwyJpJvOpb/
+  link: https://www.instagram.com/p/CdKsMcrJXeV/
 
 - id: violet-evergarden
   image: ../assets/art/violet-evergarden.jpg

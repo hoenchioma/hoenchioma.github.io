@@ -7,14 +7,27 @@ import { site } from '../data/site';
 
 const art = await ordered('art');
 
-// Staggered, asymmetric layout on a 12-column grid: [column span, top offset in px].
-// Rows alternate a large and a small piece, with an occasional row of three.
-const pattern: [number, number][] = [
-  [7, 0], [5, 140],
-  [5, 40], [7, 0],
-  [4, 0], [4, 110], [4, 30],
+// Tightly packed mosaic on a 12-column grid of square cells.
+// Each block is six rows tall: one large 6×6 piece plus 3×3 pieces around it,
+// with the large piece alternating position so the layout stays asymmetric.
+// [column start, row start, width, height] in grid cells.
+const BLOCKS: [number, number, number, number][][] = [
+  [[1, 1, 6, 6], [7, 1, 3, 3], [10, 1, 3, 3], [7, 4, 3, 3], [10, 4, 3, 3]],
+  [[1, 1, 3, 3], [4, 1, 6, 6], [10, 1, 3, 3], [1, 4, 3, 3]],
 ];
-const layout = (i: number) => pattern[i % pattern.length];
+const place = (i: number) => {
+  let rowOffset = 0;
+  let n = i;
+  for (let b = 0; ; b++) {
+    const block = BLOCKS[b % BLOCKS.length];
+    if (n < block.length) {
+      const [c, r, w, h] = block[n];
+      return { style: `grid-column:${c} / span ${w};grid-row:${r + rowOffset} / span ${h}`, large: w === 6 };
+    }
+    n -= block.length;
+    rowOffset += 6;
+  }
+};
 ---
 
 <Base title="Art" description="Digital art by Raheeb Hassan.">
@@ -26,32 +39,77 @@ const layout = (i: number) => pattern[i % pattern.length];
     {art.length === 0 ? (
       <p class="muted">New pieces coming soon. In the meantime, see <a href={site.instagram}>Instagram</a>.</p>
     ) : (
-      <div class="gallery">
-        {art.map((a, i) => (
-          <figure class="piece" style={`--span:${layout(i)[0]};--mt:${layout(i)[1]}px`}>
-            <a href={a.data.link ?? a.data.image.src} class="frame" aria-label={a.data.link ? `${a.data.title ?? "Artwork"} on Instagram` : undefined}>
-              <Image src={a.data.image} alt={a.data.title ?? `Artwork ${i + 1}`} widths={[400, 800, 1200]} sizes="(max-width: 720px) 100vw, 380px" />
-            </a>
-            <figcaption>
-              <span>No. {String(i + 1).padStart(2, '0')}{a.data.title && ` — ${a.data.title}`}</span>
-              <span>{[a.data.medium, a.data.year].filter(Boolean).join(' · ')}</span>
-            </figcaption>
-          </figure>
-        ))}
+      <div class="mosaic">
+        {art.map((a, i) => {
+          const p = place(i);
+          return (
+            <figure class:list={['tile', { large: p.large }]} style={p.style}>
+              <a href={a.data.link ?? a.data.image.src} aria-label={`${a.data.title ?? 'Artwork'}${a.data.link ? ' on Instagram' : ''}`}>
+                <Image
+                  src={a.data.image}
+                  alt={a.data.title ?? `Artwork ${i + 1}`}
+                  widths={p.large ? [600, 900, 1200] : [300, 600]}
+                  sizes={p.large ? '(max-width: 760px) 100vw, 560px' : '(max-width: 760px) 50vw, 280px'}
+                />
+                <span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <figcaption>
+                  <span class="title">{a.data.title}</span>
+                  <span class="meta">{[a.data.medium, a.data.year].filter(Boolean).join(' · ')}</span>
+                </figcaption>
+              </a>
+            </figure>
+          );
+        })}
+        <a class="tile more" href={site.instagram} style="grid-column: span 3; grid-row: span 3"><span>More on<br />Instagram ↗</span></a>
       </div>
     )}
   </div>
 </Base>
 
 <style>
-  .gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px 40px; align-items: start; padding-bottom: 40px; }
-  .piece { margin: var(--mt) 0 0; grid-column: span var(--span); }
-  @media (max-width: 760px) {
-    .gallery { grid-template-columns: 1fr; gap: 32px; }
-    .piece { grid-column: auto; margin-top: 0; }
+  .mosaic {
+    --gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    /* square cells: row height equals column width */
+    grid-auto-rows: calc((min(100vw - 48px, 1132px) - 11 * var(--gap)) / 12);
+    gap: var(--gap);
+    padding-bottom: 24px;
   }
-  .frame { display: block; background: var(--surface); border: 1px solid var(--line); padding: 10px; transition: transform .2s, box-shadow .2s, border-color .2s; }
-  .frame:hover { transform: translateY(-3px) rotate(-0.6deg); box-shadow: 0 14px 30px rgba(2, 48, 71, 0.12); border-color: var(--accent); }
-  .frame :global(img) { width: 100%; height: auto; }
-  figcaption { margin: 6px 2px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .tile { position: relative; margin: 0; overflow: hidden; background: var(--placeholder); }
+  .tile > a { display: block; width: 100%; height: 100%; color: #fff; text-decoration: none; }
+  .tile :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform .35s ease; }
+  .tile:hover :global(img), .tile:focus-within :global(img) { transform: scale(1.04); }
+
+  .num {
+    position: absolute; top: 10px; left: 10px; padding: 1px 7px;
+    background: rgba(255, 255, 255, 0.9); color: var(--ink);
+    font-size: 11px; letter-spacing: 0.18em;
+  }
+  figcaption {
+    position: absolute; inset: auto 0 0 0; padding: 28px 14px 12px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2px 12px;
+    background: linear-gradient(transparent, rgba(2, 48, 71, 0.85));
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s;
+  }
+  .large figcaption { font-size: 12px; padding: 40px 18px 16px; }
+  .title { font-weight: 500; }
+  .meta { opacity: 0.85; }
+  .tile:hover figcaption, .tile:focus-within figcaption { opacity: 1; transform: none; }
+
+  .more {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    background: var(--tint); border: 1px solid var(--tint-line); color: var(--accent-text);
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .more:hover { background: var(--ink); color: #fff; }
+
+  @media (max-width: 760px) {
+    .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: calc((100vw - 48px - var(--gap)) / 2); grid-auto-flow: dense; }
+    .tile, .more { grid-column: auto !important; grid-row: auto !important; }
+    .tile.large { grid-column: span 2 !important; grid-row: span 2 !important; }
+    figcaption { opacity: 1; transform: none; }
+  }
 </style>
