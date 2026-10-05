@@ -90,6 +90,7 @@ const art = defineCollection({
       year: z.coerce.string().optional(),
       medium: z.string().optional(),
       home: z.boolean().default(false),
+      link: z.url().optional(),
     }),
 });
 
