@@ -20,7 +20,7 @@ Almost everything lives in `src/data/`:
 | File | What it controls |
 | --- | --- |
 | `log.yaml` | News log. Home shows the latest four; Journey shows all. Acceptances and milestones only. |
-| `experience.yaml`, `education.yaml` | Journey page and both timelines (`timeline.row` picks the row, `kind` the colour). Experience sorts newest first; `order: 1` pins an entry to the top. |
+| `experience.yaml`, `education.yaml` | Journey page and both timelines (`timeline.row` picks the row, `kind` the colour). Experience sorts newest first; `before: <id>` / `after: <id>` override the relative order of two entries. |
 | `achievements.yaml` | Achievements page; `home: true` puts an item on the landing page, `photo` adds it to the Moments carousel. |
 | `skills.yaml`, `projects.yaml` | Achievements (skills) and Projects pages. |
 | `art.yaml` + `src/assets/art/` | Art gallery; `home: true` shows a piece on the landing page. |
