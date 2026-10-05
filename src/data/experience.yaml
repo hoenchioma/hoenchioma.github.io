@@ -54,10 +54,10 @@
   logo: ../assets/logos/du.png
   kind: research
   start: 2021-01
-  end: 2023-12
+  end: 2023-01
   timeline: { row: 1, short: "RA · CAIL, DU", role: Research Assistant, org: "CAIL, University of Dhaka" }
   roles:
-    - { title: Research Assistant, start: 2021-01, end: 2023-12 }
+    - { title: Research Assistant, start: 2021-01, end: 2023-01 }
   points:
     - Safe and multi-agent reinforcement learning
     - Developed DePAint, a decentralized safe MARL algorithm
