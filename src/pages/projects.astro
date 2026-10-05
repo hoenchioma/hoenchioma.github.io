@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import { ordered } from '../lib/ordered';
+import Base from '../layouts/Base.astro';
+import PageTitle from '../components/PageTitle.astro';
+
+const projects = await ordered('projects');
+---
+
+<Base title="Projects" description="Software projects by Raheeb Hassan.">
+  <div class="wrap">
+    <PageTitle kicker="03 · Workshop" title="Projects">
+      {projects.length} entries · <a href="https://github.com/hoenchioma">GitHub</a>
+    </PageTitle>
+
+    <div class="grid projects">
+      {projects.map((p, i) => (
+        <article class="card">
+          {p.data.image && <Image src={p.data.image} alt={`Screenshot of ${p.data.name}`} class="shot" widths={[400, 800]} sizes="(max-width: 720px) 100vw, 380px" />}
+          <div class="card-head"><span class="kind">■ {p.data.kind}</span><span>No. {String(i + 1).padStart(2, '0')}</span></div>
+          <div class="body">
+            <h2>{p.data.name}</h2>
+            <p>{p.data.description}</p>
+            <div class="foot">
+              <div class="tags">{p.data.tags.map((t) => <span class="tag">{t}</span>)}</div>
+              <a href={p.data.link.href}>{p.data.link.label} ↗</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .projects { grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; }
+  .shot { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--line); }
+  .kind { color: var(--accent-text); }
+  .card:hover .kind { color: #fff; }
+  .body { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; }
+  h2 { margin: 0; font-size: 19px; font-weight: 500; letter-spacing: 0.04em; }
+  p { margin: 0; font-size: 14px; line-height: 1.7; flex: 1 1 auto; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
+  .foot a { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+</style>

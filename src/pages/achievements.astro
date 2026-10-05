@@ -1,0 +1,138 @@
+---
+import { Image } from 'astro:assets';
+import { ordered } from '../lib/ordered';
+import Base from '../layouts/Base.astro';
+import PageTitle from '../components/PageTitle.astro';
+import Panel from '../components/Panel.astro';
+import { groups, moments, groupLabel } from '../lib/achievements';
+
+const { columns, total } = await groups();
+const photos = await moments();
+const skills = await ordered('skills');
+---
+
+<Base title="Achievements & Skills" description="Awards, competitive programming, hackathons and skills of Raheeb Hassan.">
+  <div class="wrap">
+    <PageTitle kicker="05 · Records" title="Achievements" and="Skills" />
+
+    <div class="stack">
+      <Panel title="Achievements" id="honors" meta={total}>
+        <div class="cols">
+          {columns.map((col) => (
+            <div class="col">
+              {col.map((g) => (
+                <div>
+                  <p class="group-head"><span>{g.label}</span><span class="muted">{g.items.length}</span></p>
+                  <div class="tiles">
+                    {g.items.map((a) => (
+                      <div class="tile">
+                        <p class="t"><span>{a.data.title}</span><span class="muted y">{a.data.year}</span></p>
+                        <p class="d muted">{a.data.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </Panel>
+
+      {photos.length > 0 && (
+        <Panel title="Moments" id="moments" meta={`1 / ${photos.length}`} class="moments">
+          <div class="carousel" data-carousel>
+            <div class="stage">
+              {photos.map((m, i) => (
+                <figure class="slide" hidden={i !== 0} data-slide>
+                  <Image src={m.data.photo!} alt={m.data.title} widths={[400, 800]} sizes="(max-width: 720px) 100vw, 520px" />
+                </figure>
+              ))}
+            </div>
+            <div class="info">
+              {photos.map((m, i) => (
+                <div class="caption" hidden={i !== 0} data-caption>
+                  <p class="kicker">{groupLabel(m.data.group)} · {m.data.year}</p>
+                  <p class="title">{m.data.title}</p>
+                  <p class="muted small">{m.data.detail}</p>
+                </div>
+              ))}
+              <div class="controls">
+                <button type="button" class="chip" data-prev aria-label="Previous photo">← Prev</button>
+                <button type="button" class="chip" data-next aria-label="Next photo">Next →</button>
+              </div>
+              <div class="thumbs">
+                {photos.map((m, i) => (
+                  <button type="button" data-thumb aria-label={`Show ${m.data.title}`} aria-current={i === 0 ? 'true' : undefined}>
+                    <Image src={m.data.photo!} alt="" width={144} height={144} />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Panel>
+      )}
+
+      <Panel title="Skills" meta="Inventory">
+        <div class="skills">
+          {skills.map((g) => (
+            <div>
+              <p class="group-head skill"><span>◆ {g.data.group}</span></p>
+              <div class="chips">{g.data.items.map((s) => <span class="chip">{s}</span>)}</div>
+            </div>
+          ))}
+        </div>
+      </Panel>
+    </div>
+  </div>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    const captions = [...root.querySelectorAll<HTMLElement>('[data-caption]')];
+    const thumbs = [...root.querySelectorAll<HTMLButtonElement>('[data-thumb]')];
+    const counter = root.closest('.panel')?.querySelector('.panel-head .muted');
+    let i = 0;
+    const show = (n: number) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => (s.hidden = k !== i));
+      captions.forEach((c, k) => (c.hidden = k !== i));
+      thumbs.forEach((t, k) => (k === i ? t.setAttribute('aria-current', 'true') : t.removeAttribute('aria-current')));
+      if (counter) counter.textContent = `${i + 1} / ${slides.length}`;
+    };
+    root.querySelector('[data-prev]')?.addEventListener('click', () => show(i - 1));
+    root.querySelector('[data-next]')?.addEventListener('click', () => show(i + 1));
+    thumbs.forEach((t, k) => t.addEventListener('click', () => show(k)));
+  });
+</script>
+
+<style>
+  .cols { padding: 20px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px 28px; }
+  .col { display: flex; flex-direction: column; gap: 24px; }
+  .group-head { margin: 0 0 10px; display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding: 0 0 6px 8px; border-left: 2px solid var(--accent); }
+  .group-head.skill { border-left: 0; padding-left: 0; color: var(--accent-text); }
+  .tiles { display: flex; flex-direction: column; gap: 8px; }
+  .tile { background: var(--bg); border: 1px solid var(--line); border-left: 2px solid var(--sky); padding: 12px 16px; transition: border-color .15s, transform .15s; }
+  .tile:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .t { margin: 0; display: flex; justify-content: space-between; gap: 12px; font-weight: 500; line-height: 1.5; }
+  .y { font-weight: 400; font-size: 13px; }
+  .d { margin: 2px 0 0; font-size: 13px; }
+
+  .carousel { padding: 20px 22px; display: flex; flex-wrap: wrap; gap: 24px; }
+  .stage { flex: 1 1 420px; max-width: 520px; min-width: 0; height: 280px; background: var(--placeholder); border: 1px solid var(--line); }
+  .slide { margin: 0; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .slide[hidden], .caption[hidden] { display: none; }
+  .slide :global(img) { max-height: 100%; width: auto; object-fit: contain; }
+  .info { flex: 999 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  .caption .title { margin: 6px 0 4px; font-size: 18px; font-weight: 500; }
+  .small { margin: 0; font-size: 14px; }
+  .controls { margin-top: auto; display: flex; gap: 8px; }
+  .thumbs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .thumbs button { width: 72px; height: 72px; padding: 0; border: 2px solid transparent; background: var(--placeholder); cursor: pointer; overflow: hidden; }
+  .thumbs button[aria-current='true'] { border-color: var(--ink); }
+  .thumbs :global(img) { width: 100%; height: 100%; object-fit: cover; }
+
+  .skills { padding: 20px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 24px 28px; }
+  .skills .group-head { border-bottom-color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+</style>

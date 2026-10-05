@@ -2,35 +2,38 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  # Weekly rebuild so new papers from Semantic Scholar show up on their own.
+  schedule:
+    - cron: '17 9 * * 1'
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Runs `npm run build`, which fetches publications first (falling back
+      # to the committed cache if Semantic Scholar is unavailable).
+      - uses: withastro/action@v6
         with:
-          node-version: 18
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          name: github-pages
-          path: ./build
+          node-version: 22
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+  /** Text on the right of the header (e.g. a count) */
+  meta?: string | number;
+  /** Link on the right of the header */
+  more?: { href: string; label: string };
+  class?: string;
+  bodyClass?: string;
+}
+const { title, id, meta, more, class: cls, bodyClass } = Astro.props;
+---
+
+<section class:list={['panel', cls]} id={id} aria-label={title}>
+  <div class="panel-head">
+    <h2><span class="sq" aria-hidden="true"></span>{title}</h2>
+    {more ? <a class="more" href={more.href}>{more.label} →</a> : meta !== undefined && <span class="muted">{meta}</span>}
+  </div>
+  <div class={bodyClass}>
+    <slot />
+  </div>
+</section>

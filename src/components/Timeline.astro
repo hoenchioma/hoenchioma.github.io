@@ -1,0 +1,119 @@
+---
+import { ordered } from '../lib/ordered';
+import { toYear } from '../lib/dates';
+
+interface Props {
+  /** Compact = one-line short labels (home page); otherwise role + org on two lines */
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+
+const experience = await ordered('experience');
+const education = await ordered('education');
+
+const now = new Date();
+const NOW = now.getFullYear() + now.getMonth() / 12 + 0.04;
+const T0 = Math.floor(Math.min(...[...experience, ...education].map((e) => toYear(e.data.start))));
+const T1 = Math.floor(NOW) + 1;
+const pct = (v: number) => `${(((v - T0) / (T1 - T0)) * 100).toFixed(2)}%`;
+
+type Bar = { left: string; width: string; kind: string; ongoing: boolean; label: { short: string; role: string; org: string } };
+const bar = (start: string, end: string | undefined, kind: string, label: Bar['label']): Bar => {
+  const s = toYear(start);
+  const e = end ? toYear(end) + 1 / 12 : NOW;
+  return { left: pct(s), width: pct(T0 + Math.min(e, NOW) - s), kind, ongoing: !end, label };
+};
+
+const eduBars = education.map((e) => bar(e.data.start, e.data.end, 'education', e.data.timeline));
+const expRows: Bar[][] = [[], []];
+for (const e of experience) expRows[e.data.timeline.row].push(bar(e.data.start, e.data.end, e.data.kind, e.data.timeline));
+
+const ticks = Array.from({ length: T1 - T0 }, (_, i) => ({ year: T0 + i, left: pct(T0 + i) }));
+const legend = [
+  { kind: 'education', label: 'Education' },
+  { kind: 'research', label: 'Research' },
+  { kind: 'industry', label: 'Industry' },
+  { kind: 'teaching', label: 'Teaching' },
+];
+---
+
+<div class:list={['timeline', { compact }]}>
+  <div class="inner">
+    <p class="section-label"><span>▲ Education</span></p>
+    <div class="row edu">
+      {eduBars.map((b) => (
+        <div class:list={['item', b.kind, { ongoing: b.ongoing }]} style={`left:${b.left};width:${b.width}`}>
+          <div class:list={['label', { right: b.ongoing }]}>
+            {compact ? <span>{b.label.short}</span> : <><strong>{b.label.role}</strong><span>{b.label.org}</span></>}
+          </div>
+          <div class="bar"></div>
+        </div>
+      ))}
+    </div>
+    <div class="axis" aria-hidden="true">
+      {ticks.map((t) => <span class="tick" style={`left:${t.left}`}>{t.year}</span>)}
+      <span class="now" style={`left:${pct(NOW)}`}></span>
+    </div>
+    {expRows.map((row) => (
+      <div class="row exp">
+        {row.map((b) => (
+          <div class:list={['item', b.kind, { ongoing: b.ongoing }]} style={`left:${b.left};width:${b.width}`}>
+            <div class="bar"></div>
+            <div class:list={['label', { right: b.ongoing }]}>
+              {compact ? <span>{b.label.short}</span> : <><strong>{b.label.role}</strong><span>{b.label.org}</span></>}
+            </div>
+          </div>
+        ))}
+      </div>
+    ))}
+    <p class="section-label bottom"><span>▼ Experience</span></p>
+    <ul class="legend">
+      {legend.map((l) => <li><i class={l.kind}></i>{l.label}</li>)}
+      {!compact && <li><i class="ongoing-key"></i>Ongoing</li>}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .timeline { overflow-x: auto; padding: 18px 22px 14px; }
+  .inner { position: relative; min-width: 960px; }
+  .compact .inner { min-width: 820px; }
+
+  .section-label { margin: 0 0 6px; display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+  .section-label::after { content: ''; flex: 1 1 auto; height: 1px; background: var(--line); }
+  .section-label.bottom { margin: 8px 0 0; }
+
+  .row { position: relative; height: 48px; }
+  .compact .row { height: 30px; }
+
+  .item { position: absolute; height: 6px; }
+  .compact .item { height: 4px; }
+  .edu .item { bottom: 4px; }
+  .exp .item { top: 4px; }
+  .bar { height: 100%; background: var(--kind); transition: filter .15s; }
+  .item:hover .bar { filter: brightness(0.8); }
+  .ongoing .bar { background: repeating-linear-gradient(-45deg, var(--kind) 0 4px, #fff 4px 6px); }
+
+  .education { --kind: var(--c-education); }
+  .research { --kind: var(--c-research); }
+  .industry { --kind: var(--c-industry); }
+  .teaching { --kind: var(--c-teaching); }
+
+  .label { position: absolute; white-space: nowrap; line-height: 1.35; left: 0; }
+  .label.right { left: auto; right: 0; text-align: right; }
+  .edu .label { bottom: 10px; }
+  .exp .label { top: 10px; }
+  .label strong { display: block; font-size: 12px; font-weight: 500; }
+  .label span { display: block; font-size: 11px; color: var(--muted); }
+  .compact .label span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+  .compact .edu .label { bottom: 7px; }
+  .compact .exp .label { top: 7px; }
+
+  .axis { position: relative; height: 20px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+  .tick { position: absolute; top: 0; padding-left: 4px; border-left: 1px solid var(--line); font-size: 10px; letter-spacing: 0.12em; line-height: 19px; color: var(--muted); }
+  .now { position: absolute; top: -5px; bottom: -5px; border-left: 2px solid var(--orange); }
+
+  .legend { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 18px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .legend i { display: inline-block; width: 12px; height: 5px; vertical-align: 2px; margin-right: 6px; background: var(--kind); }
+  .legend .ongoing-key { background: repeating-linear-gradient(-45deg, var(--muted) 0 4px, #fff 4px 6px); }
+</style>

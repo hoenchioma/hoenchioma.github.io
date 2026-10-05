@@ -1,0 +1,153 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Panel from '../components/Panel.astro';
+import Timeline from '../components/Timeline.astro';
+import { site } from '../data/site';
+import { selected, publications } from '../lib/publications';
+import { dotted } from '../lib/dates';
+import { groups } from '../lib/achievements';
+import { ordered } from '../lib/ordered';
+import profile from '../assets/profile.webp';
+
+const log = (await getCollection('log')).sort((a, b) => b.data.date.localeCompare(a.data.date)).slice(0, 4);
+const picks = selected();
+const homeGroups = await groups({ homeOnly: true });
+const art = (await ordered('art')).filter((a) => a.data.home).slice(0, 5);
+---
+
+<Base>
+  <div class="wrap">
+    <section class="hero">
+      <div class="intro">
+        <p class="kicker">{site.role} · {site.institution}</p>
+        <h1>Raheeb<br />Hassan</h1>
+        <div class="divider short" aria-hidden="true"><i></i></div>
+        <p>
+          I'm advised by Dr. Mohsen Imani. I work on machine learning, with a focus on neurosymbolic methods and
+          vector symbolic architectures. Lately, I've been especially drawn to reinforcement learning and world models.
+        </p>
+        <p class="muted">
+          Previously, I studied at the University of Dhaka, where I worked on multi-agent reinforcement learning, and
+          spent two years as an ML engineer at Therap Services.
+        </p>
+        <ul class="links">
+          {site.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+      <figure class="portrait">
+        <Image src={profile} alt="Raheeb Hassan in front of a painted mural" widths={[400, 600, 900]} sizes="(max-width: 900px) 100vw, 520px" loading="eager" />
+      </figure>
+    </section>
+
+    <div class="stack">
+      <div class="two-up">
+        <Panel title="Log" more={{ href: '/journey/#log', label: 'Full log' }} class="log">
+          <ul class="dashed-list news">
+            {log.map((n) => (
+              <li><span class="date">{dotted(n.data.date)}</span><span>{n.data.short ?? n.data.text}</span></li>
+            ))}
+          </ul>
+        </Panel>
+        <Panel title="Selected research" more={{ href: '/research/', label: `All ${publications.length}` }} class="research">
+          <div class="grid pubs">
+            {picks.map((p) => (
+              <a class="card" href={`/research/#${p.id}`}>
+                <div class="card-head">
+                  <span>■ {p.venue} · {p.year}</span>
+                  <span class:list={['pill', p.badge === 'Recent' ? 'pill-recent' : 'pill-cited']}>{p.badge}</span>
+                </div>
+                <p class="pub-title">{p.title}</p>
+              </a>
+            ))}
+          </div>
+        </Panel>
+      </div>
+
+      <Panel title="Achievements" more={{ href: '/achievements/', label: 'All achievements' }}>
+        <div class="ach">
+          {homeGroups.columns.map((col) => (
+            <div class="ach-col">
+              {col.map((g) => (
+                <div>
+                  <p class="group-label">{g.label}</p>
+                  <ul class="dashed-list ach-list">
+                    {g.items.map((a) => <li><span>{a.data.homeTitle ?? a.data.title}</span><span class="muted">{a.data.year}</span></li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </Panel>
+
+      <Panel title="Journey" more={{ href: '/journey/', label: 'Full journey' }}>
+        <Timeline compact />
+      </Panel>
+
+      {art.length > 0 && (
+        <Panel title="Art" more={{ href: '/art/', label: 'Gallery' }}>
+          <div class="grid art">
+            {art.map((a) => (
+              <a href="/art/" class="art-thumb"><Image src={a.data.image} alt={a.data.title ?? 'Artwork'} widths={[240, 480]} sizes="220px" /></a>
+            ))}
+          </div>
+        </Panel>
+      )}
+
+      <section class="cta" aria-label="Get in touch">
+        <div>
+          <p class="kicker">Get in touch</p>
+          <p class="cta-line">Always open to collaborations and new opportunities.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn solid" href={`mailto:${site.email}`}>Email me →</a>
+          <a class="btn outline" href={site.cv}>Download CV ↓</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .hero { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; padding: 56px 0 64px; }
+  .intro { flex: 999 1 460px; min-width: 0; }
+  .intro .kicker { margin-bottom: 10px; }
+  h1 { margin: 0; font-size: clamp(40px, 7vw, 58px); font-weight: 300; letter-spacing: 0.16em; line-height: 1.08; text-transform: uppercase; }
+  .divider.short { margin: 22px 0; max-width: 200px; }
+  .intro p { max-width: 560px; margin: 0 0 14px; }
+  .links { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+  .portrait { flex: 1 1 360px; max-width: 520px; margin: 0; background: var(--surface); border: 1px solid var(--ink); padding: 8px; }
+  .portrait :global(img) { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 70%; }
+
+  .two-up { display: flex; flex-wrap: wrap; gap: 20px; }
+  .two-up :global(.log) { flex: 1 1 320px; min-width: 0; }
+  .two-up :global(.research) { flex: 999 1 560px; min-width: 0; }
+  .news { list-style: none; margin: 0; padding: 8px 18px 14px; }
+  .news li { display: flex; gap: 16px; font-size: 14px; }
+  .date { flex: 0 0 64px; color: var(--accent-text); font-weight: 500; letter-spacing: 0.06em; }
+
+  .pubs { padding: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .pub-title { margin: 0; padding: 10px 14px 14px; font-size: 14px; font-weight: 500; line-height: 1.55; }
+
+  .ach { padding: 16px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px 32px; }
+  .ach-col { display: flex; flex-direction: column; gap: 14px; }
+  .ach-list { list-style: none; margin: 0; padding: 0; }
+  .ach-list li { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+
+  .art { padding: 16px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .art-thumb { display: block; aspect-ratio: 1; overflow: hidden; border: 1px solid var(--line); }
+  .art-thumb :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform .2s; }
+  .art-thumb:hover :global(img) { transform: scale(1.04); }
+
+  .cta { background: var(--tint); border: 1px solid var(--tint-line); padding: 36px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+  .cta-line { margin: 6px 0 0; font-size: 22px; font-weight: 300; letter-spacing: 0.04em; line-height: 1.4; }
+  .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; padding: 11px 21px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); }
+  .btn.solid { background: var(--ink); color: #fff; }
+  .btn.solid:hover { background: var(--accent-text); border-color: var(--accent-text); color: #fff; }
+  .btn.outline { color: var(--ink); }
+  .btn.outline:hover { background: var(--surface); color: var(--ink); }
+  @media (max-width: 640px) { .cta { padding: 28px 20px; } .hero { padding-top: 36px; } }
+</style>

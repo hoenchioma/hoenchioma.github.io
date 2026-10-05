@@ -1,90 +1,43 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h1 align="center">Raheeb's Personal Website</h1>
+# raheeb.xyz / hoenchioma.github.io
 
-  <p align="center">
-    This is a personal portfolio website hosted with GitHub Pages. It is forked from 
-    <a href="https://github.com/hashirshoaeb/home">Hashir Shoaeb's Template</a>
-  </p>
-</p>
+Personal site of Raheeb Hassan, built with [Astro](https://astro.build) and deployed to GitHub Pages.
 
-<!-- [![GitHub forks](https://img.shields.io/github/forks/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/star_book/network)
-[![GitHub issues](https://img.shields.io/github/issues/hashirshoaeb/home?color=ffcc66&style=for-the-badge)](https://github.com/hashirshoaeb/star_book/issues)
-[![GitHub license](https://img.shields.io/github/license/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/home/blob/master/LICENSE)
-[![Node Version](https://img.shields.io/static/v1?label=Node&message=v18.13.0&color=026e00&style=for-the-badge)](https://nodejs.org)
-[![npm Version](https://img.shields.io/static/v1?label=npm&message=9.5.1&color=cb0000&style=for-the-badge)](https://nodejs.org) -->
-[![Site preview](/public/social-image.png)](https://hoenchioma.github.io)
+## Develop
 
-<!-- ## Table of Contents
+```bash
+npm install
+npm run dev            # http://localhost:4321
+npm run build          # fetch publications, then build to dist/
+npm run build:offline  # build without fetching publications
+```
 
-- [Technology Stack 🛠️](#technology-stack-)
-- [Prerequisites 🍪](#prerequisites-)
-- [Setup And Deployment 🔧](#setup-and-deployment-)
+## Editing content
 
-## Technology Stack 🛠️
+Almost everything lives in `src/data/`:
 
-Dependencies defined in package.json:
+| File | What it controls |
+| --- | --- |
+| `log.yaml` | News log. Home shows the latest four; Journey shows all. Acceptances and milestones only. |
+| `experience.yaml`, `education.yaml` | Journey page and both timelines (`timeline.row` picks the row, `kind` the colour). |
+| `achievements.yaml` | Achievements page; `home: true` puts an item on the landing page, `photo` adds it to the Moments carousel. |
+| `skills.yaml`, `projects.yaml` | Achievements (skills) and Projects pages. |
+| `art.yaml` + `src/assets/art/` | Art gallery; `home: true` shows a piece on the landing page. |
+| `publications.overrides.yaml` | Curation for papers (see below). |
+| `site.ts` | Name, email, social links, navigation. |
 
-[Reactjs](https://reactjs.org/)
-| [Bootstrap](https://getbootstrap.com/)
-| [Typist](https://github.com/jstejada/react-typist)
-| [GitHub API](https://developer.github.com/v3/repos/)
-| [Instagram API](https://www.instagram.com/developer/embedding/)
+Images go in `src/assets/` and are resized and compressed at build time. The CV is `public/files/resume.pdf`.
 
-## Prerequisites 🍪
+## Publications
 
-You should have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/) installed on your PC. You should also own a GitHub account.
+Papers are fetched from Semantic Scholar by `scripts/fetch-publications.mjs` into
+`src/data/publications.cache.json` (committed, so builds work offline). The site
+rebuilds weekly via GitHub Actions to pick up new papers.
 
-## Setup And Deployment 🔧
+`src/data/publications.overrides.yaml` wins over fetched data: venue and status
+(e.g. `accepted`), topic tags, one-line summaries, highlight notes, extra links,
+author-name fixes, and `mergeInto` for duplicate records (citations are summed).
+The home page picks the newest papers and the most cited ones automatically.
 
-1. To Get Started, Fork this repository to your GitHub account:
-2. Clone the forked repo from your account using:
+## Deploy
 
-   ```bash
-     git clone https://github.com/<your-username>/home.git
-   ```
-
-3. Open in editor and edit [src/editable-stuff/config.js](./src/editable-stuff/config.js) file.
-
-4. Add your resume as <resume.pdf> in place of [src/editable-stuff/resume.pdf](./src/editable-stuff/)
-
-5. Edit [title](./public/index.html#L34) and meta [description](./public/index.html#L13) in [public/index.html](./public/index.html).
-6. Change URL in [package.json](./package.json) file:
-
-   ```json
-    "homepage": "https://<your-username>.github.io/home"
-   ```
-
-   Or for deployment at custom domain, refer [create-react-app.dev](https://create-react-app.dev/docs/deployment/#step-1-add-homepage-to-packagejson)
-
-7. After editing run the following bash commands:
-
-   ```bash
-   npm install
-   npm start
-   ```
-
-8. To deploy website, run:
-
-   ```bash
-    npm run build
-    npm run deploy
-   ```
-
-   Or for deployment at \<username>.github.io, refer [READMEdocs/custom-deployment.md](./READMEdocs/custom-deployment.md) and [pages.js](./pages.js)
-
-9. Congrats your site is up and running. To see it live, visit:
-
-   ```https
-     https://<your-username>.github.io/home
-   ```
-
-10. To change the thumbnail image:
-
-    - Navigate to the "public" folder.
-    - There you will see "social-image.png".
-    - Delete it.
-    - Take a screenshot of your version and rename it "social-image.png" and place it there.
-
-Next time if you make changes, repeat from step 8. -->
+Pushing to `master` builds and deploys via `.github/workflows/deploy.yml`.

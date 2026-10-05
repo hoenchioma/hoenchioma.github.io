@@ -1,0 +1,4 @@
+- { id: languages, group: Languages, items: [Python, C / C++, Java, JavaScript, TypeScript] }
+- { id: ml, group: Machine Learning, items: [PyTorch, TensorFlow, scikit-learn, NumPy, pandas, OpenCV, Optuna, NVIDIA DeepStream] }
+- { id: systems, group: Systems, items: [Linux, Docker, Git, AWS, Oracle Cloud] }
+- { id: also, group: Also, items: [React, Unity, SFML, Android] }

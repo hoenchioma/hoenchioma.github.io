@@ -1,0 +1,197 @@
+{
+  "fetchedAt": "2026-10-05T08:29:06.913Z",
+  "papers": [
+    {
+      "id": "98cf3f50e231a5476c1a2d3844b5ba5522892e28",
+      "title": "CyberWorld: World Models for Sample-Efficient Autonomous Cyber Defense",
+      "authors": [
+        "Ryozo Masukawa",
+        "Sanggeon Yun",
+        "Raheeb Hassan",
+        "Hyunwoo Oh",
+        "Sungheon Jeong",
+        "Mohsen Imani"
+      ],
+      "year": 2026,
+      "date": "2026-09-25",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2609.31893",
+      "citations": 0
+    },
+    {
+      "id": "604b577b22983450b91820b7e11b82a797ddbd0b",
+      "title": "Vector Symbolic Policy Gradient",
+      "authors": [
+        "Ryozo Masukawa",
+        "Sanggeon Yun",
+        "Sungheon Jeong",
+        "Hyunwoo Oh",
+        "Raheeb Hassan",
+        "P. Mercati",
+        "Nathaniel D. Bastian",
+        "Mahdi Imani",
+        "Mohsen Imani"
+      ],
+      "year": 2026,
+      "date": "2026-08-19",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2608.18404",
+      "citations": 0
+    },
+    {
+      "id": "d45362a8569b93f1911e9becd4f30f7b830a05c2",
+      "title": "Qubit-Efficient Quantum Search for Hyperdimensional Decomposition via Logarithmic Encoding",
+      "authors": [
+        "Sanggeon Yun",
+        "Hyunwoo Oh",
+        "Ryozo Masukawa",
+        "Raheeb Hassan",
+        "Mohsen Imani"
+      ],
+      "year": 2026,
+      "date": "2026-07-11",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2607.11936",
+      "citations": 0
+    },
+    {
+      "id": "59c97e4b88542606c7f63a79f6a4e0a8af19d742",
+      "title": "n-Musketeers: Reinforcement Learning Shapes Collaboration Among Language Models",
+      "authors": [
+        "Ryozo Masukawa",
+        "Sanggeon Yun",
+        "Hyunwoo Oh",
+        "Sungheon Jeong",
+        "Raheeb Hassan",
+        "Hanning Chen",
+        "Wen-Jun Huang",
+        "Mahdi Imani",
+        "P. Mercati",
+        "Nathaniel D. Bastian",
+        "Mohsen Imani"
+      ],
+      "year": 2026,
+      "date": "2026-02-09",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2602.09173",
+      "citations": 0
+    },
+    {
+      "id": "8155fb0cc3e22cb03ea881067a52393e9d40806e",
+      "title": "HopFormer: Sparse Graph Transformers with Explicit Receptive Field Control",
+      "authors": [
+        "Sanggeon Yun",
+        "Raheeb Hassan",
+        "Ryozo Masukawa",
+        "Sungheon Jeong",
+        "Mohsen Imani"
+      ],
+      "year": 2026,
+      "date": "2026-02-02",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2602.02268",
+      "citations": 1
+    },
+    {
+      "id": "94e17e4feae354874138df737a45743a7574d6ae",
+      "title": "Contextual Fusion Strategies for Multimodal GNN-Based Reasoning: Performance and Computational Trade-Offs",
+      "authors": [
+        "Sanggeon Yun",
+        "Ryozo Masukawa",
+        "Raheeb Hassan",
+        "Minhyoung Na",
+        "Mohen Imani"
+      ],
+      "year": 2026,
+      "date": null,
+      "venue": "IEEE Access",
+      "doi": "10.1109/ACCESS.2026.3653660",
+      "arxiv": null,
+      "citations": 2
+    },
+    {
+      "id": "de28a6fe2ac7000bebfb15adf75e57dbf653c48e",
+      "title": "MissionHD: Hyperdimensional Refinement of Distribution-Deficient Reasoning Graphs for Video Anomaly Detection",
+      "authors": [
+        "Sanggeon Yun",
+        "Raheeb Hassan",
+        "Ryozo Masukawa",
+        "Nathaniel D. Bastian",
+        "Mohsen Imani"
+      ],
+      "year": 2025,
+      "date": "2025-08-20",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2508.14746",
+      "citations": 0
+    },
+    {
+      "id": "fe06cc575251c95becd9a12b3bfdd4bf42214dce",
+      "title": "MissionHD: Data-Driven Refinement of Reasoning Graph Structure through Hyperdimensional Causal Path Encoding and Decoding",
+      "authors": [
+        "Sanggeon Yun",
+        "Raheeb Hassan",
+        "Ryozo Masukawa",
+        "Mohsen Imani"
+      ],
+      "year": 2025,
+      "date": null,
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2508.14746",
+      "citations": 2
+    },
+    {
+      "id": "9771abe8f1988c91e5866b4fa06779ad9a9941aa",
+      "title": "Reinforcement Learning-Based Formulations With Hamiltonian-Inspired Loss Functions for Combinatorial Optimization Over Graphs",
+      "authors": [
+        "Redwan Ahmed Rizvee",
+        "Raheeb Hassan",
+        "Md. Mosaddek Khan"
+      ],
+      "year": 2024,
+      "date": null,
+      "venue": "IEEE Access",
+      "doi": "10.1109/ACCESS.2024.3497955",
+      "arxiv": null,
+      "citations": 1
+    },
+    {
+      "id": "4de4f5dc4b00a886632cf97218c6cf118c2cb86c",
+      "title": "DePAint: a decentralized safe multi-agent reinforcement learning algorithm considering peak and average constraints",
+      "authors": [
+        "Raheeb Hassan",
+        "K. M. S. Wadith",
+        "Md. Mamun-or Rashid",
+        "Md. Mosaddek Khan"
+      ],
+      "year": 2023,
+      "date": "2023-10-22",
+      "venue": "Applied Intelligence",
+      "doi": "10.1007/s10489-024-05433-x",
+      "arxiv": "2310.14348",
+      "citations": 5
+    },
+    {
+      "id": "63ff4f09a3d0563b18a6fdff6a471d698ed6934b",
+      "title": "A Graph Neural Network-Based QUBO-Formulated Hamiltonian-Inspired Loss Function for Combinatorial Optimization using Reinforcement Learning",
+      "authors": [
+        "Redwan Ahmed Rizvee",
+        "Raheeb Hassan",
+        "Md. Mosaddek Khan"
+      ],
+      "year": 2023,
+      "date": "2023-08-27",
+      "venue": "arXiv",
+      "doi": null,
+      "arxiv": "2308.13978",
+      "citations": 2
+    }
+  ]
+}

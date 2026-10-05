@@ -1,0 +1,28 @@
+---
+interface Props {
+  kicker: string;
+  title: string;
+  /** Optional second half of the title, after a teal ampersand */
+  and?: string;
+}
+const { kicker, title, and } = Astro.props;
+---
+
+<div class="page-title">
+  <div class="row">
+    <div>
+      <p class="kicker">{kicker}</p>
+      <h1>{title}{and && <> <span class="amp">&amp;</span> {and}</>}</h1>
+    </div>
+    <div class="aside"><slot /></div>
+  </div>
+  <div class="divider" aria-hidden="true"><i></i></div>
+</div>
+
+<style>
+  .page-title { padding: 48px 0 24px; }
+  .row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 18px; }
+  h1 { margin: 4px 0 0; font-size: clamp(30px, 6vw, 44px); font-weight: 300; letter-spacing: 0.16em; line-height: 1.1; text-transform: uppercase; }
+  .amp { color: var(--accent); }
+  .aside { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+</style>

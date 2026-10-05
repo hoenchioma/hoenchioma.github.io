@@ -1,0 +1,50 @@
+# Projects, in display order. `image` (optional) shows a screenshot on the card.
+
+- id: hotkey
+  name: Hotkey
+  kind: App · Java
+  description: "Control a desktop computer from an Android phone: mouse and keyboard, media keys, and a presentation assistant with a virtual laser pointer. Pairs over WiFi/LAN or Bluetooth with a QR-code handshake."
+  tags: [Java, Android, Networking]
+  link: { label: Source, href: "https://github.com/hoenchioma/hotkey" }
+
+- id: depths-of-csedu
+  name: Depths of CSEDU
+  kind: Game · C++
+  description: A top-down adventure RPG where a student trapped in the university after dark explores locked rooms and hidden stairways, solving puzzles to collect keys and escape.
+  tags: [C++, SFML, TGUI]
+  link: { label: Source, href: "https://github.com/hoenchioma/Depths-of-CSEDU" }
+
+- id: vlawyer
+  name: vlawyer
+  kind: Library · Python
+  description: An unofficial statistics API for vjudge that turns submission data into a machine-readable format. Published on PyPI.
+  tags: [Python, PyPI, Scraping]
+  link: { label: PyPI, href: "https://pypi.org/project/vlawyer/" }
+
+- id: cp-library
+  name: cp-library
+  kind: Algorithms · C++
+  description: "My implementations of competitive-programming staples: flows, Fenwick trees, LCA, FFT, convex hull, Miller–Rabin and more."
+  tags: [C++, Algorithms]
+  link: { label: Source, href: "https://github.com/hoenchioma/cp-library" }
+
+- id: kamlabot
+  name: kamlabot
+  kind: Chatbot · Python
+  description: A class-info chatbot for Messenger and Discord that answers questions about routines, syllabi and materials using wit.ai NLP and Firebase.
+  tags: [Python, NLP, Firebase]
+  link: { label: Source, href: "https://github.com/hoenchioma/kamlabot" }
+
+- id: transperfecta
+  name: Transperfecta
+  kind: Web · TypeScript
+  description: An English-to-Bangla dictionary website built on perfect hashing, with a Node/TypeScript backend and a React frontend.
+  tags: [TypeScript, React, Hashing]
+  link: { label: Source, href: "https://github.com/hoenchioma/transperfecta" }
+
+- id: backtrack2class
+  name: backtrack2class
+  kind: Tool · Python
+  description: A backtracking solver that generates every valid class routine from course prerequisite data in a spreadsheet.
+  tags: [Python, Search]
+  link: { label: Source, href: "https://github.com/hoenchioma/backtrack2class" }

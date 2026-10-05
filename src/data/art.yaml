@@ -1,0 +1,9 @@
+# Art pieces, in display order. Put image files in src/assets/art/.
+# Example:
+# - id: piece-01
+#   image: ../assets/art/piece-01.jpg
+#   title: Untitled
+#   year: 2025
+#   medium: Digital
+#   home: true        # show on the landing page strip
+[]

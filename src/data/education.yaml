@@ -1,0 +1,23 @@
+# Degrees, newest first. Dates are YYYY-MM; leave `end` out if ongoing.
+
+- id: uci-phd
+  degree: PhD, Computer Science
+  school: University of California, Irvine
+  logo: ../assets/logos/uci.png
+  start: 2025-09
+  timeline: { short: PhD · UCI, role: "PhD, Computer Science", org: UC Irvine }
+  details:
+    - "Advisor: Dr. Mohsen Imani, BIASLab."
+  note: Machine learning, neurosymbolic AI, reinforcement learning.
+
+- id: du-bsc
+  degree: B.Sc., Computer Science & Engineering
+  school: University of Dhaka
+  logo: ../assets/logos/du.png
+  start: 2018-01
+  end: 2023-06
+  display: "2018 – 2023"
+  timeline: { short: B.Sc · DU, role: B.Sc. Computer Science & Engineering, org: University of Dhaka }
+  details:
+    - CGPA 3.75 / 4.00, 2nd highest in class.
+  note: "Thesis: Safe multi-agent reinforcement learning, supervised by Dr. Md. Mosaddek Khan."

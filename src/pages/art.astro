@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import { ordered } from '../lib/ordered';
+import Base from '../layouts/Base.astro';
+import PageTitle from '../components/PageTitle.astro';
+import { site } from '../data/site';
+
+const art = await ordered('art');
+---
+
+<Base title="Art" description="Digital art by Raheeb Hassan.">
+  <div class="wrap">
+    <PageTitle kicker="06 · Gallery" title="Art">
+      <a href={site.instagram}>Instagram ↗</a>
+    </PageTitle>
+
+    {art.length === 0 ? (
+      <p class="muted">New pieces coming soon. In the meantime, see <a href={site.instagram}>Instagram</a>.</p>
+    ) : (
+      <div class="gallery">
+        {art.map((a, i) => (
+          <figure class="piece">
+            <a href={a.data.image.src} class="frame">
+              <Image src={a.data.image} alt={a.data.title ?? `Artwork ${i + 1}`} widths={[400, 800, 1200]} sizes="(max-width: 720px) 100vw, 380px" />
+            </a>
+            <figcaption>
+              <span>No. {String(i + 1).padStart(2, '0')}{a.data.title && ` — ${a.data.title}`}</span>
+              <span>{[a.data.medium, a.data.year].filter(Boolean).join(' · ')}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
+  </div>
+</Base>
+
+<style>
+  .gallery { columns: 3 300px; column-gap: 18px; }
+  .piece { break-inside: avoid; margin: 0 0 18px; }
+  .frame { display: block; background: var(--surface); border: 1px solid var(--line); padding: 10px; transition: transform .2s, box-shadow .2s, border-color .2s; }
+  .frame:hover { transform: translateY(-3px) rotate(-0.6deg); box-shadow: 0 14px 30px rgba(2, 48, 71, 0.12); border-color: var(--accent); }
+  .frame :global(img) { width: 100%; height: auto; }
+  figcaption { margin: 6px 2px 0; display: flex; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+</style>

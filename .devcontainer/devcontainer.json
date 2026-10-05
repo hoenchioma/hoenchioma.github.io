@@ -1,6 +1,6 @@
 {
     "name": "JavaScript",
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -17,7 +17,7 @@
             }
         }
     },
-    "appPort": [3000],
+    "appPort": [4321],
     "postCreateCommand": "npm install",
-    "postStartCommand": "npm start"
+    "postStartCommand": "npm run dev -- --host"
   }
