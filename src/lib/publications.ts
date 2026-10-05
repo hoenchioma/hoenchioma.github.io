@@ -66,6 +66,12 @@ function build(): Publication[] {
 
   return cache.papers
     .filter((p) => !curated[p.id]?.hide && !curated[p.id]?.mergeInto)
+    .filter((p) => {
+      // A record without a year can't be placed on the page; give it `year` in the overrides to show it.
+      if (p.year ?? curated[p.id]?.year) return true;
+      console.warn(`[publications] skipping "${p.title}" (${p.id}): no year; set papers.${p.id}.year in the overrides to include it`);
+      return false;
+    })
     .map((p) => {
       const o = curated[p.id] ?? {};
       const arxiv = o.links?.arxiv ?? p.arxiv;
@@ -79,7 +85,7 @@ function build(): Publication[] {
         id: p.id,
         title: o.title ?? p.title,
         authors: p.authors.map(fixName),
-        year: o.year ?? p.year ?? 0,
+        year: (o.year ?? p.year)!,
         date: p.date ?? `${p.year}`,
         venue: o.venue ?? (status === 'preprint' ? 'Preprint' : p.venue),
         status,

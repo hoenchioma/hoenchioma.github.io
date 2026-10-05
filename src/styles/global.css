@@ -25,6 +25,9 @@
   --c-research: var(--accent);
   --c-industry: var(--orange);
   --c-teaching: var(--sky);
+  /* Edges for the lighter category fills, so bars and swatches reach 3:1 against white. */
+  --c-industry-edge: #c26700;
+  --c-teaching-edge: #3a8db5;
 
   --wrap: 1180px;
   --font: 'Zen Kaku Gothic New', system-ui, -apple-system, 'Segoe UI', sans-serif;

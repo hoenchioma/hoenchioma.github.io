@@ -49,13 +49,15 @@ const skills = await ordered('skills');
               ))}
             </div>
             <div class="info">
-              {photos.map((m, i) => (
-                <div class="caption" hidden={i !== 0} data-caption>
-                  <p class="kicker">{groupLabel(m.data.group)} · {m.data.year}</p>
-                  <p class="title">{m.data.title}</p>
-                  <p class="muted small">{m.data.detail}</p>
-                </div>
-              ))}
+              <div aria-live="polite">
+                {photos.map((m, i) => (
+                  <div class="caption" hidden={i !== 0} data-caption>
+                    <p class="kicker">{groupLabel(m.data.group)} · {m.data.year}</p>
+                    <p class="title">{m.data.title}</p>
+                    <p class="muted small">{m.data.detail}</p>
+                  </div>
+                ))}
+              </div>
               <div class="controls">
                 <button type="button" class="chip" data-prev aria-label="Previous photo">← Prev</button>
                 <button type="button" class="chip" data-next aria-label="Next photo">Next →</button>
