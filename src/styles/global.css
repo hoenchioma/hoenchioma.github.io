@@ -52,7 +52,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--ink); text-decoration: underline; text-decoration-color: #b0daee; text-underline-offset: 3px; }
 a:hover { color: var(--accent-text); text-decoration-color: var(--accent-text); }
 
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
 .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
 
