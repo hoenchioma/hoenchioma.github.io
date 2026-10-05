@@ -58,6 +58,19 @@ export const me = overrides.me;
 function build(): Publication[] {
   const curated = Object.fromEntries(Object.entries(overrides.papers ?? {}).map(([k, v]) => [k, v ?? {}]));
   const fixName = (n: string) => overrides.authorNames?.[n] ?? n;
+  // A merge target must be a fetched paper that is itself shown, or its citations would vanish.
+  const cachedIds = new Set(cache.papers.map((p) => p.id));
+  for (const [id, o] of Object.entries(curated)) {
+    const target = o.mergeInto;
+    if (!target) continue;
+    const problem =
+      target === id ? 'merges into itself'
+      : !cachedIds.has(target) ? `targets ${target}, which is not in the fetched papers`
+      : curated[target]?.mergeInto ? `targets ${target}, which is itself merged`
+      : curated[target]?.hide ? `targets ${target}, which is hidden`
+      : null;
+    if (problem) throw new Error(`Invalid mergeInto in src/data/publications.overrides.yaml: ${id} ${problem}`);
+  }
   const extraCitations = new Map<string, number>();
   for (const p of cache.papers) {
     const target = curated[p.id]?.mergeInto;
