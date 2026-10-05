@@ -52,11 +52,11 @@ const place = (i: number) => {
                   sizes={p.large ? '(max-width: 760px) 100vw, 560px' : '(max-width: 760px) 50vw, 280px'}
                 />
                 <span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-                <figcaption>
-                  <span class="title">{a.data.title}</span>
-                  <span class="meta">{[a.data.medium, a.data.year].filter(Boolean).join(' · ')}</span>
-                </figcaption>
               </a>
+              <figcaption>
+                <span class="title">{a.data.title}</span>
+                <span class="meta">{[a.data.medium, a.data.year].filter(Boolean).join(' · ')}</span>
+              </figcaption>
             </figure>
           );
         })}
@@ -88,6 +88,8 @@ const place = (i: number) => {
   }
   figcaption {
     position: absolute; inset: auto 0 0 0; padding: 28px 14px 12px;
+    /* sits over the link; let clicks fall through to it */
+    pointer-events: none; color: #fff;
     display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2px 12px;
     background: linear-gradient(transparent, rgba(2, 48, 71, 0.85));
     font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
