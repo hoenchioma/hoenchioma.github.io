@@ -18,6 +18,8 @@ export const site = {
     'Before that, I studied Computer Science at the University of Dhaka, where I worked on safe multi-agent reinforcement learning with Dr. Md. Mosaddek Khan. After graduating, I spent two years in industry as a machine learning engineer at Therap Services before starting my PhD.',
     'Outside research, I enjoy art, anime, competitive programming, and table tennis.',
   ],
+  /** Shown on the Journey page's timeline header. */
+  route: 'Dhaka → Irvine · ~13,000 km',
   /** Lead line under the Art page title. */
   artCaption:
     'I try to draw when I can, mostly digital pieces and pencil sketches. A few favourites are below; more are on Instagram.',
