@@ -1,20 +1,10 @@
-# Work and research positions, newest first.
+# Work and research positions, in display order (Journey page). Roughly newest first,
+# but the current main role (BIASLab) is listed first on purpose.
 # kind: research | industry | teaching  (sets the timeline colour)
 # start/end: YYYY-MM; leave `end` out for ongoing roles.
 # timeline.row: which row of the timeline the bar sits on (0 or 1).
 # timeline.short: compact label used on the home page timeline.
 # Not every past role is listed (e.g. the 2024–25 BIASLab internship); that's a deliberate choice.
-
-- id: uci-ta
-  org: University of California, Irvine
-  logo: ../assets/logos/uci.png
-  kind: teaching
-  start: 2026-01
-  timeline: { row: 1, short: TA · UCI, role: Teaching Assistant, org: "ICS 26, UC Irvine" }
-  roles:
-    - { title: Graduate Teaching Assistant, start: 2026-01 }
-  points:
-    - "ICS 26: Data Structures Implementation and Analysis: office hours, review sessions, grading and mentoring"
 
 - id: biaslab
   org: BIASLab, UC Irvine
@@ -28,6 +18,17 @@
     - Multimodal anomaly detection and recognition
     - Graph neural network methods for anomaly detection from image and audio data
     - Research in hyperdimensional computing
+
+- id: uci-ta
+  org: University of California, Irvine
+  logo: ../assets/logos/uci.png
+  kind: teaching
+  start: 2026-01
+  timeline: { row: 1, short: TA · UCI, role: Teaching Assistant, org: "ICS 26, UC Irvine" }
+  roles:
+    - { title: Graduate Teaching Assistant, start: 2026-01 }
+  points:
+    - "ICS 26: Data Structures Implementation and Analysis: office hours, review sessions, grading and mentoring"
 
 - id: therap
   org: Therap Services
