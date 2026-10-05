@@ -1,8 +1,10 @@
-name: Deploy to GitHub Pages
+name: Build and deploy
 
 on:
   push:
     branches: [master]
+  # Pull requests run the same build (and a type check) but never deploy.
+  pull_request:
   # Weekly rebuild so new papers from Semantic Scholar show up on their own.
   schedule:
     - cron: '17 9 * * 1'
@@ -10,30 +12,46 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  check:
+    name: Type check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx astro check
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
       # Runs `npm run build`, which fetches publications first (falling back
-      # to the committed cache if Semantic Scholar is unavailable).
+      # to the committed cache if Semantic Scholar is unavailable), then
+      # uploads the site as the Pages artifact.
       - uses: withastro/action@v6
         with:
           node-version: 22
 
   deploy:
-    needs: build
+    name: Deploy
+    needs: [check, build]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
