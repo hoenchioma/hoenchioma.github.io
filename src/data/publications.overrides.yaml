@@ -1,0 +1,85 @@
+# Publications come from Semantic Scholar (see scripts/fetch-publications.mjs).
+# This file curates them. Anything here wins over the fetched data.
+
+# Semantic Scholar author profiles to pull from.
+semanticScholarAuthors:
+  - "2376330070"   # UCI-era papers
+  - "2261283604"   # University of Dhaka papers
+
+# Spelling fixes applied to every author list.
+authorNames:
+  "Mohen Imani": Mohsen Imani
+  "P. Mercati": Pietro Mercati
+  "K. M. S. Wadith": K.M. Shadman Wadith
+  "Md. Mamun-or Rashid": Md. Mamun or Rashid
+
+# Your name as it appears in author lists (it's highlighted).
+me: Raheeb Hassan
+
+# How many papers the home page shows in each "Selected research" group.
+selected:
+  recent: 2
+  mostCited: 2
+
+# Per-paper curation, keyed by Semantic Scholar paper id.
+# Fields (all optional):
+#   hide: true            drop the paper
+#   mergeInto: <id>       fold a duplicate record (e.g. its arXiv preprint) into another
+#                         paper: citations are added up, the duplicate is not shown
+#   title, venue, year    replace fetched values
+#   status                published | accepted | preprint (default: inferred)
+#   links                 extra links, e.g. { code: https://..., arxiv: 2311.16277 }
+#   tags                  topic tags used by the Research page filter
+#   summary               one-line summary shown on the Research page
+#   note                  highlight line, e.g. "My first first-author paper."
+papers:
+  98cf3f50e231a5476c1a2d3844b5ba5522892e28:   # CyberWorld
+    tags: [World Models, RL, Graphs]
+    summary: A Dreamer-style world model for autonomous cyber defense that reaches a strong control policy in thousands of environment steps instead of millions.
+
+  604b577b22983450b91820b7e11b82a797ddbd0b:   # Vector Symbolic Policy Gradient
+    links: { code: "https://github.com/BiasLabProjects/VSPG" }
+    tags: [HDC / VSA, RL]
+    summary: An actor that represents each action as a hypervector; its policy-gradient update is exactly advantage-weighted bundling, with provable robustness to bit flips.
+
+  d45362a8569b93f1911e9becd4f30f7b830a05c2:   # Qubit-Efficient Quantum Search
+    venue: ICCAD 2026
+    status: accepted
+    tags: [HDC / VSA]
+    summary: Encodes hypervectors in O(log D) qubits for quantum hypervector decomposition, using up to 2,000x fewer qubits while keeping the quadratic search speedup.
+
+  59c97e4b88542606c7f63a79f6a4e0a8af19d742:   # n-Musketeers
+    title: "n-Musketeers: Reinforcement Learning Shapes Collaboration Among Language Models"
+    tags: [RL, LLMs]
+    summary: Frozen small language models collaborate through a trainable attention interface over their hidden states, trained with RL from verifiable rewards.
+
+  8155fb0cc3e22cb03ea881067a52393e9d40806e:   # HopFormer
+    tags: [Graphs]
+    summary: A graph Transformer that injects structure only through head-specific n-hop sparse attention, with no positional encodings and cost linear in mask sparsity.
+
+  94e17e4feae354874138df737a45743a7574d6ae:   # Contextual Fusion (IEEE Access 2026)
+    tags: [Multimodal, Graphs]
+    summary: Three knowledge-graph-centric fusion strategies for multimodal video anomaly detection, reaching 72.93% mAP on XD-Violence; early fusion cuts per-frame energy by over 70%.
+
+  de28a6fe2ac7000bebfb15adf75e57dbf653c48e:   # MissionHD (current title)
+    tags: [HDC / VSA, Multimodal, Graphs]
+    summary: Refines LLM-generated reasoning graphs directly in hyperdimensional space, improving weakly supervised video anomaly detection and recognition.
+
+  fe06cc575251c95becd9a12b3bfdd4bf42214dce:   # MissionHD (older duplicate record)
+    mergeInto: de28a6fe2ac7000bebfb15adf75e57dbf653c48e
+
+  4de4f5dc4b00a886632cf97218c6cf118c2cb86c:   # DePAint
+    title: "DePAint: A Decentralized Safe Multi-Agent Reinforcement Learning Algorithm considering Peak and Average Constraints"
+    year: 2024
+    tags: [RL]
+    note: My first first-author paper.
+    summary: A privacy-preserving, fully decentralized multi-agent policy gradient method that satisfies both peak and average safety constraints.
+
+  9771abe8f1988c91e5866b4fa06779ad9a9941aa:   # Hamiltonian-inspired RL (IEEE Access 2024)
+    title: Reinforcement Learning Based Formulations with Hamiltonian-Inspired Loss Functions for Combinatorial Optimization over Graphs
+    links: { arxiv: "2311.16277" }
+    tags: [RL, Graphs]
+    summary: Uses the QUBO Hamiltonian as an RL reward for combinatorial optimization over graphs, improving on PI-GNN by up to 44%.
+
+  63ff4f09a3d0563b18a6fdff6a471d698ed6934b:   # arXiv preprint of the Hamiltonian paper
+    mergeInto: 9771abe8f1988c91e5866b4fa06779ad9a9941aa

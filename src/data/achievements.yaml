@@ -1,0 +1,65 @@
+# Achievements, grouped. `home: true` shows the item on the landing page.
+# `photo` (optional) adds it to the Moments carousel on the Achievements page.
+# group: academic | competitive-programming | hackathons | ctf
+
+- id: deans-award
+  group: academic
+  title: "Dean's Award"
+  detail: Faculty of Engineering & Technology, University of Dhaka
+  homeTitle: "Dean's Award, University of Dhaka"
+  year: 2021
+  home: true
+  photo: ../assets/moments/deans-award.jpg
+
+- id: best-final-project
+  group: academic
+  title: Best Undergraduate Final Project Award
+  detail: Dept. of CSE, University of Dhaka
+  homeTitle: Best Undergraduate Final Project
+  year: 2021
+  home: true
+  photo: ../assets/moments/best-final-project.jpg
+
+- id: scholarship
+  group: academic
+  title: Scholarship for Academic Excellence
+  detail: University of Dhaka
+  year: 2021
+
+- id: icpc-dhaka-21
+  group: competitive-programming
+  title: 16th, ICPC Asia Dhaka Regional
+  detail: International Collegiate Programming Contest
+  year: 2021
+  home: true
+
+- id: mist-iupc-19
+  group: competitive-programming
+  title: 20th, MIST Inter-University Contest
+  detail: Programming contest
+  homeTitle: 20th, MIST Inter-University
+  year: 2019
+  home: true
+  photo: ../assets/moments/mist-iupc.jpg
+
+- id: sub-iupc-19
+  group: competitive-programming
+  title: 28th, SUB Inter-University Contest
+  detail: Programming contest
+  year: 2019
+
+- id: code-samurai-22
+  group: hackathons
+  title: Champion, Code Samurai
+  detail: Inter-University Hackathon
+  year: 2022
+  home: true
+  photo: ../assets/moments/code-samurai.jpg
+
+- id: sust-ctf-23
+  group: ctf
+  title: 11th, SUST Technovent
+  detail: Capture the Flag
+  homeTitle: 11th, SUST Technovent CTF
+  year: 2023
+  home: true

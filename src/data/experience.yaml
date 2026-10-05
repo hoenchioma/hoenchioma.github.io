@@ -1,0 +1,76 @@
+# Work and research positions. The Journey page lists them newest first by `start`;
+# the order in this file doesn't matter.
+# before / after: optional id of another entry; keeps this one somewhere above / below it
+# (only that pair's relative order is fixed; everything else stays in date order).
+# kind: research | industry | teaching  (sets the timeline colour)
+# start/end: YYYY-MM; leave `end` out for ongoing roles.
+# timeline.row: which row of the timeline the bar sits on (0 or 1).
+# timeline.short: compact label used on the home page timeline.
+# Not every past role is listed (e.g. the 2024–25 BIASLab internship); that's a deliberate choice.
+
+- id: biaslab
+  org: BIASLab, UC Irvine
+  logo: ../assets/logos/biaslab.jpg
+  kind: research
+  start: 2025-09
+  before: uci-ta
+  timeline: { row: 0, short: Researcher · BIASLab, role: Doctoral Researcher, org: "BIASLab, UC Irvine" }
+  roles:
+    - { title: Doctoral Researcher, start: 2025-09 }
+  points:
+    - Multimodal anomaly detection and recognition
+    - Graph neural network methods for anomaly detection from image and audio data
+    - Research in hyperdimensional computing
+
+- id: uci-ta
+  org: University of California, Irvine
+  logo: ../assets/logos/uci.png
+  kind: teaching
+  start: 2026-01
+  timeline: { row: 1, short: TA · UCI, role: Teaching Assistant, org: "ICS 26, UC Irvine" }
+  roles:
+    - { title: Graduate Teaching Assistant, start: 2026-01 }
+  points:
+    - "ICS 26: Data Structures Implementation and Analysis: office hours, review sessions, grading and mentoring"
+
+- id: therap
+  org: Therap Services
+  logo: ../assets/logos/therap.jpg
+  kind: industry
+  start: 2023-02
+  end: 2025-08
+  timeline: { row: 0, short: MLE · Therap Services, role: ML Engineer, org: Therap Services }
+  roles:
+    - { title: ML Engineer, start: 2024-04, end: 2025-08 }
+    - { title: Associate ML Engineer, start: 2023-02, end: 2024-03 }
+  points:
+    - "Computer vision: face recognition, multi-object tracking, activity recognition"
+    - Real-time monitoring system combining cameras and sensors into long-term behavior models
+    - Optimized ML pipelines for constrained devices with NVIDIA DeepStream
+    - Scaled distributed video ML in the cloud (AWS, Oracle Cloud)
+
+- id: cail
+  org: CAIL, University of Dhaka
+  logo: ../assets/logos/du.png
+  kind: research
+  start: 2021-01
+  end: 2023-12
+  timeline: { row: 1, short: "RA · CAIL, DU", role: Research Assistant, org: "CAIL, University of Dhaka" }
+  roles:
+    - { title: Research Assistant, start: 2021-01, end: 2023-12 }
+  points:
+    - Safe and multi-agent reinforcement learning
+    - Developed DePAint, a decentralized safe MARL algorithm
+    - GNNs and RL for combinatorial optimization
+
+- id: crantech
+  org: CranTech LLC
+  logo: ../assets/logos/crantech.jpg
+  kind: industry
+  start: 2020-01
+  end: 2021-12
+  timeline: { row: 0, short: Full Stack Dev · CranTech, role: Full Stack Developer, org: CranTech (remote) }
+  roles:
+    - { title: "Full Stack Developer, part-time", start: 2020-01, end: 2021-12, display: "2020 – 2021" }
+  points:
+    - Web and mobile projects with React, Express and React Native

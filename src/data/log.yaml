@@ -1,0 +1,14 @@
+# News log: acceptances, publications and milestones only (no preprint announcements).
+# Newest first. `date` is YYYY-MM. The home page shows the latest four.
+
+- { id: iccad-26, date: 2026-07, text: Paper accepted to ICCAD 2026., highlight: ICCAD 2026 }
+- { id: ta-ics26, date: 2026-01, text: Started as Graduate Teaching Assistant for ICS 26 at UC Irvine., short: Started as Graduate TA for ICS 26. }
+- { id: access-26, date: 2026-01, text: Paper published in IEEE Access. }
+- { id: deans-award, date: 2025-11, text: "Received the Dean's Award from the University of Dhaka." }
+- { id: phd-start, date: 2025-09, text: Started PhD at UC Irvine. }
+- { id: left-therap, date: 2025-08, text: Left Therap Services. }
+- { id: access-24, date: 2024-11, text: Paper published in IEEE Access. }
+- { id: buet-talk, date: 2024-05, text: Presented a Therap session at BUET. }
+- { id: mle-promo, date: 2024-04, text: Promoted to ML Engineer at Therap Services. }
+- { id: apin-24, date: 2024-03, text: Paper published in Springer Applied Intelligence. }
+- { id: therap-join, date: 2023-02, text: Joined Therap Services as an Associate ML Engineer. }

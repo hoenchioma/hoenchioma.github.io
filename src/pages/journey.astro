@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { ordered } from '../lib/ordered';
+import { sortedExperience } from '../lib/experience';
+import Base from '../layouts/Base.astro';
+import PageTitle from '../components/PageTitle.astro';
+import Panel from '../components/Panel.astro';
+import Timeline from '../components/Timeline.astro';
+import { site } from '../data/site';
+import { range } from '../lib/dates';
+
+const log = (await getCollection('log')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+const logYears = [...new Set(log.map((l) => l.data.date.slice(0, 4)))].map((year) => ({
+  year,
+  items: log.filter((l) => l.data.date.startsWith(year)),
+}));
+const education = await ordered('education');
+const experience = await sortedExperience();
+---
+
+<Base title="Journey" description="Raheeb Hassan's education, research and industry experience.">
+  <div class="wrap">
+    <PageTitle kicker="04 · Record" title="Journey">
+      <a href={site.cv}>Download CV ↓</a>
+    </PageTitle>
+
+    <div class="stack">
+      <Panel title="Timeline" meta="2018 — now">
+        <Timeline />
+      </Panel>
+
+      <Panel title="Log" id="log" meta={`${log.length} entries`}>
+        <div class="log">
+          {logYears.map((y) => (
+            <div class="log-year">
+              <h3>{y.year}</h3>
+              <ul>
+                {y.items.map((n) => <li><span class="m">{n.data.date.slice(5)}</span><span>{n.data.text}</span></li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Panel>
+
+      <div class="split">
+        <Panel title="Education" meta={education.length} class="edu">
+          <div class="entries">
+            {education.map((e) => (
+              <div class="entry">
+                <div class="who">
+                  <Image src={e.data.logo} alt="" width={80} class="logo" />
+                  <div>
+                    <div class="name">{e.data.degree}</div>
+                    <div class="muted small">{e.data.school} · {range(e.data.start, e.data.end, e.data.display)}</div>
+                  </div>
+                </div>
+                {e.data.details.map((d) => <p class="small">{d}</p>)}
+                {e.data.note && <p class="small muted">{e.data.note}</p>}
+              </div>
+            ))}
+          </div>
+        </Panel>
+
+        <Panel title="Experience" meta={experience.length} class="exp">
+          <div class="entries">
+            {experience.map((x) => (
+              <div class="entry row">
+                <Image src={x.data.logo} alt="" width={80} class="logo" />
+                <div class="grow">
+                  <div class="name org">{x.data.org}</div>
+                  {x.data.roles.map((r) => <div class="small">{r.title} <span class="muted">· {range(r.start, r.end, r.display)}</span></div>)}
+                  <ul class="points">{x.data.points.map((p) => <li>{p}</li>)}</ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .log { padding: 8px 22px 16px; }
+  .log-year { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .log-year:last-child { border-bottom: 0; }
+  .log-year h3 { margin: 0; font-size: 18px; font-weight: 400; letter-spacing: 0.12em; color: var(--accent-text); }
+  .log-year ul { list-style: none; margin: 0; padding: 0; }
+  .log-year li { display: flex; gap: 16px; padding: 4px 0; font-size: 14px; }
+  .m { flex: 0 0 34px; color: var(--muted); letter-spacing: 0.06em; }
+
+  .split { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .split :global(.edu) { flex: 1 1 340px; min-width: 0; }
+  .split :global(.exp) { flex: 999 1 560px; min-width: 0; }
+  .entries { padding: 4px 20px; }
+  .entry { padding: 16px 0; border-bottom: 1px dashed var(--line); }
+  .entry:last-child { border-bottom: 0; }
+  .entry.row { display: flex; gap: 16px; }
+  .who { display: flex; gap: 14px; align-items: center; margin-bottom: 8px; }
+  .logo { width: 40px; height: 40px; object-fit: contain; flex: 0 0 auto; }
+  .grow { flex: 1 1 auto; min-width: 0; }
+  .name { font-weight: 500; }
+  .org { color: var(--ink); }
+  .small { font-size: 14px; margin: 0; }
+  .points { margin: 8px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
+  @media (max-width: 520px) { .log-year { grid-template-columns: 1fr; gap: 4px; } }
+</style>

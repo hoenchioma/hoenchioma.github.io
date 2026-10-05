@@ -1,0 +1,21 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="wrap footer">
+  <span>© {year} {site.name}</span>
+  <a href={`mailto:${site.email}`}>{site.email}</a>
+</footer>
+
+<style>
+  .footer {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+    position: relative; margin-top: 48px; padding-top: 12px; padding-bottom: 36px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
+  }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent-text); }
+  /* hairline aligned with the content column, not the padding */
+  .footer::before { content: ''; position: absolute; top: 0; left: 24px; right: 24px; height: 1px; background: var(--line); }
+</style>

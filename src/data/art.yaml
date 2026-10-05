@@ -1,0 +1,71 @@
+# Art pieces, in display order. Slots 1 and 7 are the large tiles on the Art page. Images live in src/assets/art/.
+# home: true shows the piece in the landing page strip (first five are used).
+# link: optional URL the piece opens (e.g. its Instagram post).
+
+- id: moonlight-skies
+  image: ../assets/art/moonlight-skies.webp
+  title: Moonlight Skies
+  year: 2025
+  medium: Digital
+  home: true
+  link: https://www.instagram.com/p/DEhQ3QbSt3G/
+
+- id: dare-to-dream-big
+  image: ../assets/art/dare-to-dream-big.webp
+  title: Dare to Dream Big
+  year: 2022
+  medium: Mural
+  home: true
+  link: https://www.instagram.com/p/CkozB5wyMFL/
+
+- id: yor-forger
+  image: ../assets/art/yor-forger.jpg
+  title: Yor Forger in a Saree
+  year: 2022
+  medium: Digital
+  home: true
+  link: https://www.instagram.com/p/Cd1RattPE-1/
+
+- id: gojo-glow
+  image: ../assets/art/gojo-glow.jpg
+  title: Gojo Satoru
+  year: 2021
+  medium: Pencil · Glow art
+  home: true
+  link: https://www.instagram.com/p/CVwyJpJvOpb/
+
+- id: birthday-sketch
+  image: ../assets/art/birthday-sketch.jpg
+  title: Birthday Sketch
+  year: 2022
+  medium: Digital
+  link: https://www.instagram.com/p/CbWQGXiJOwp/
+
+- id: kirby
+  image: ../assets/art/kirby.jpg
+  title: Kirby
+  year: 2022
+  medium: Digital
+  link: https://www.instagram.com/p/CaHroEypwXc/
+
+- id: stop-drowning
+  image: ../assets/art/stop-drowning.jpg
+  title: How Do I Stop Drowning?
+  year: 2022
+  medium: Digital
+  home: true
+  link: https://www.instagram.com/p/CdKsMcrJXeV/
+
+- id: violet-evergarden
+  image: ../assets/art/violet-evergarden.jpg
+  title: Violet Evergarden
+  year: 2020
+  medium: Pencil
+  link: https://www.instagram.com/p/CBz1RDTj9Vj/
+
+- id: mitsuha
+  image: ../assets/art/mitsuha.jpg
+  title: Mitsuha
+  year: 2020
+  medium: Pencil
+  link: https://www.instagram.com/p/CBp12vAjPyf/
