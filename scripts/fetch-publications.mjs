@@ -65,7 +65,9 @@ async function main() {
   const byId = new Map();
   for (const authorId of authorIds) {
     const data = await getJson(`${API}/author/${authorId}/papers?fields=${FIELDS}&limit=100`);
-    for (const p of data.data ?? []) byId.set(p.paperId, normalize(p));
+    // Every profile has papers, so an empty or malformed list means a bad response: throw so the cache is kept.
+    if (!Array.isArray(data?.data) || data.data.length === 0) throw new Error(`no papers returned for author ${authorId}`);
+    for (const p of data.data) byId.set(p.paperId, normalize(p));
     await sleep(1000);
   }
   const papers = [...byId.values()].sort((a, b) => (b.date ?? `${b.year}`).localeCompare(a.date ?? `${a.year}`));
