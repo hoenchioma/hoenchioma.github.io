@@ -13,7 +13,7 @@ export const site = {
   ],
   /** Lead line under the Art page title. */
   artCaption:
-    'I try to draw when I can, mostly digital pieces and pencil sketches, with the occasional mural. A few favourites are below; more are on Instagram.',
+    'I try to draw when I can, mostly digital pieces and pencil sketches. A few favourites are below; more are on Instagram.',
   description:
     'Raheeb Hassan, CS PhD student at UC Irvine working on machine learning, neurosymbolic AI, and reinforcement learning.',
   links: [
