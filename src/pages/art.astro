@@ -6,6 +6,15 @@ import PageTitle from '../components/PageTitle.astro';
 import { site } from '../data/site';
 
 const art = await ordered('art');
+
+// Staggered, asymmetric layout on a 12-column grid: [column span, top offset in px].
+// Rows alternate a large and a small piece, with an occasional row of three.
+const pattern: [number, number][] = [
+  [7, 0], [5, 140],
+  [5, 40], [7, 0],
+  [4, 0], [4, 110], [4, 30],
+];
+const layout = (i: number) => pattern[i % pattern.length];
 ---
 
 <Base title="Art" description="Digital art by Raheeb Hassan.">
@@ -19,7 +28,7 @@ const art = await ordered('art');
     ) : (
       <div class="gallery">
         {art.map((a, i) => (
-          <figure class="piece">
+          <figure class="piece" style={`--span:${layout(i)[0]};--mt:${layout(i)[1]}px`}>
             <a href={a.data.link ?? a.data.image.src} class="frame" aria-label={a.data.link ? `${a.data.title ?? "Artwork"} on Instagram` : undefined}>
               <Image src={a.data.image} alt={a.data.title ?? `Artwork ${i + 1}`} widths={[400, 800, 1200]} sizes="(max-width: 720px) 100vw, 380px" />
             </a>
@@ -35,10 +44,14 @@ const art = await ordered('art');
 </Base>
 
 <style>
-  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 24px 18px; align-items: start; }
-  .piece { margin: 0; }
+  .gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 56px 40px; align-items: start; padding-bottom: 40px; }
+  .piece { margin: var(--mt) 0 0; grid-column: span var(--span); }
+  @media (max-width: 760px) {
+    .gallery { grid-template-columns: 1fr; gap: 32px; }
+    .piece { grid-column: auto; margin-top: 0; }
+  }
   .frame { display: block; background: var(--surface); border: 1px solid var(--line); padding: 10px; transition: transform .2s, box-shadow .2s, border-color .2s; }
   .frame:hover { transform: translateY(-3px) rotate(-0.6deg); box-shadow: 0 14px 30px rgba(2, 48, 71, 0.12); border-color: var(--accent); }
   .frame :global(img) { width: 100%; height: auto; }
-  figcaption { margin: 6px 2px 0; display: flex; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  figcaption { margin: 6px 2px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 </style>
