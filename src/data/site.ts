@@ -19,7 +19,7 @@ export const site = {
     'Outside research, I enjoy art, anime, competitive programming, and table tennis.',
   ],
   /** Shown on the Journey page's timeline header. */
-  route: 'Dhaka → Irvine · ~13,000 km',
+  route: '~13,000 km travelled',
   /** Lead line under the Art page title. */
   artCaption:
     'I try to draw when I can, mostly digital pieces and pencil sketches. A few favourites are below; more are on Instagram.',
