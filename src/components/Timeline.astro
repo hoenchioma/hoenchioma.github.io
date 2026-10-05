@@ -1,6 +1,6 @@
 ---
 import { ordered } from '../lib/ordered';
-import { toYear } from '../lib/dates';
+import { toYear, range } from '../lib/dates';
 
 interface Props {
   /** Compact = one-line short labels (home page); otherwise role + org on two lines */
@@ -17,16 +17,16 @@ const T0 = Math.floor(Math.min(...[...experience, ...education].map((e) => toYea
 const T1 = Math.floor(NOW) + 1;
 const pct = (v: number) => `${(((v - T0) / (T1 - T0)) * 100).toFixed(2)}%`;
 
-type Bar = { left: string; width: string; kind: string; ongoing: boolean; label: { short: string; role: string; org: string } };
-const bar = (start: string, end: string | undefined, kind: string, label: Bar['label']): Bar => {
+type Bar = { left: string; width: string; kind: string; ongoing: boolean; dates: string; label: { short: string; role: string; org: string } };
+const bar = (start: string, end: string | undefined, kind: string, label: Bar['label'], display?: string): Bar => {
   const s = toYear(start);
   const e = end ? toYear(end) + 1 / 12 : NOW;
-  return { left: pct(s), width: pct(T0 + Math.min(e, NOW) - s), kind, ongoing: !end, label };
+  return { left: pct(s), width: pct(T0 + Math.min(e, NOW) - s), kind, ongoing: !end, dates: range(start, end, display), label };
 };
 
-const eduBars = education.map((e) => bar(e.data.start, e.data.end, 'education', e.data.timeline));
+const eduBars = education.map((e) => bar(e.data.start, e.data.end, 'education', e.data.timeline, e.data.display));
 const expRows: Bar[][] = [[], []];
-for (const e of experience) expRows[e.data.timeline.row].push(bar(e.data.start, e.data.end, e.data.kind, e.data.timeline));
+for (const e of experience) expRows[e.data.timeline.row].push(bar(e.data.start, e.data.end, e.data.kind, e.data.timeline, e.data.roles.length === 1 ? e.data.roles[0].display : undefined));
 
 const ticks = Array.from({ length: T1 - T0 }, (_, i) => ({ year: T0 + i, left: pct(T0 + i) }));
 const legend = [
@@ -44,7 +44,7 @@ const legend = [
       {eduBars.map((b) => (
         <div class:list={['item', b.kind, { ongoing: b.ongoing }]} style={`left:${b.left};width:${b.width}`}>
           <div class:list={['label', { right: b.ongoing }]}>
-            {compact ? <span>{b.label.short}</span> : <><strong>{b.label.role}</strong><span>{b.label.org}</span></>}
+            {compact ? <span>{b.label.short}</span> : <><strong>{b.label.role}</strong><span>{b.label.org}</span></>}<span class="visually-hidden">, {b.dates}</span>
           </div>
           <div class="bar"></div>
         </div>
@@ -60,7 +60,7 @@ const legend = [
           <div class:list={['item', b.kind, { ongoing: b.ongoing }]} style={`left:${b.left};width:${b.width}`}>
             <div class="bar"></div>
             <div class:list={['label', { right: b.ongoing }]}>
-              {compact ? <span>{b.label.short}</span> : <><strong>{b.label.role}</strong><span>{b.label.org}</span></>}
+              {compact ? <span>{b.label.short}</span> : <><strong>{b.label.role}</strong><span>{b.label.org}</span></>}<span class="visually-hidden">, {b.dates}</span>
             </div>
           </div>
         ))}

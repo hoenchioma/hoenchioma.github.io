@@ -13,7 +13,7 @@
   --ink: #023047;
   --muted: #66707d;
   --accent: #219ebc;
-  --accent-text: #1a7f99;
+  --accent-text: #177690; /* ≥ 4.5:1 on --bg, --surface and --tint */
   --sky: #8ecae6;
   --tint: #eaf5fa;
   --tint-line: #d3ebf6;

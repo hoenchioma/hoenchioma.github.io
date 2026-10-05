@@ -2,7 +2,7 @@ import { defineCollection } from 'astro:content';
 import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const yearMonth = z.coerce.string().regex(/^\d{4}-\d{2}$/, 'use YYYY-MM');
+const yearMonth = z.coerce.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/, 'use YYYY-MM with a month from 01 to 12');
 
 const timeline = z.object({ short: z.string(), role: z.string(), org: z.string() });
 

@@ -47,7 +47,13 @@ function normalize(p) {
 
 async function main() {
   const overrides = parse(await readFile(OVERRIDES, 'utf8'));
-  const authorIds = overrides.semanticScholarAuthors ?? [];
+  // The full overrides file is validated at build time (src/lib/publications.ts);
+  // here we only need the author ids, and a bad list is a config error, not an outage.
+  const authorIds = overrides?.semanticScholarAuthors;
+  if (!Array.isArray(authorIds) || authorIds.length === 0 || !authorIds.every((id) => /^\d+$/.test(String(id)))) {
+    console.error('[publications] semanticScholarAuthors in publications.overrides.yaml must be a non-empty list of numeric ids');
+    process.exit(1);
+  }
   const byId = new Map();
   for (const authorId of authorIds) {
     const data = await getJson(`${API}/author/${authorId}/papers?fields=${FIELDS}&limit=100`);

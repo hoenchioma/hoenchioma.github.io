@@ -24,16 +24,7 @@ const art = (await ordered('art')).filter((a) => a.data.home).slice(0, 5);
         <p class="kicker">{site.role} · {site.institution}</p>
         <h1>Raheeb<br />Hassan</h1>
         <div class="divider short" aria-hidden="true"><i></i></div>
-        <p>
-          I'm a PhD student in Computer Science at UC Irvine, advised by Dr. Mohsen Imani. I work on machine
-          learning, with a focus on neurosymbolic methods. Lately, I've been especially drawn to reinforcement
-          learning and world models.
-        </p>
-        <p class="muted">
-          Before that, I studied Computer Science at the University of Dhaka, where I worked on safe multi-agent
-          reinforcement learning with Dr. Md. Mosaddek Khan. After graduating, I spent two years in industry as a
-          machine learning engineer at Therap Services before starting my PhD.
-        </p>
+        {site.intro.map((para, i) => <p class:list={{ muted: i > 0 }}>{para}</p>)}
         <ul class="links">
           {site.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
         </ul>

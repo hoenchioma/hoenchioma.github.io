@@ -1,28 +1,37 @@
 import { parse } from 'yaml';
+import { z } from 'astro/zod';
 import cache from '../data/publications.cache.json';
 import overridesRaw from '../data/publications.overrides.yaml?raw';
 
-type Status = 'published' | 'accepted' | 'preprint';
+// Runtime schema for the hand-edited overrides file, so a typo (e.g. an unknown
+// status or a misspelled field) fails the build instead of silently changing output.
+const StatusSchema = z.enum(['published', 'accepted', 'preprint']);
+type Status = z.infer<typeof StatusSchema>;
 
-interface Override {
-  hide?: boolean;
-  mergeInto?: string;
-  title?: string;
-  venue?: string;
-  year?: number;
-  status?: Status;
-  links?: { code?: string; arxiv?: string; paper?: string };
-  tags?: string[];
-  summary?: string;
-  note?: string;
-}
+const OverrideSchema = z
+  .object({
+    hide: z.boolean().optional(),
+    mergeInto: z.string().optional(),
+    title: z.string().optional(),
+    venue: z.string().optional(),
+    year: z.number().int().optional(),
+    status: StatusSchema.optional(),
+    links: z.object({ code: z.url().optional(), arxiv: z.string().optional(), paper: z.url().optional() }).strict().optional(),
+    tags: z.array(z.string()).optional(),
+    summary: z.string().optional(),
+    note: z.string().optional(),
+  })
+  .strict();
 
-interface Overrides {
-  authorNames?: Record<string, string>;
-  me: string;
-  selected?: { recent?: number; mostCited?: number };
-  papers?: Record<string, Override>;
-}
+const OverridesSchema = z
+  .object({
+    semanticScholarAuthors: z.array(z.string().regex(/^\d+$/)).min(1),
+    authorNames: z.record(z.string(), z.string()).optional(),
+    me: z.string(),
+    selected: z.object({ recent: z.number().int().min(0), mostCited: z.number().int().min(0) }).partial().optional(),
+    papers: z.record(z.string(), OverrideSchema.nullable()).optional(),
+  })
+  .strict();
 
 export interface Publication {
   id: string;
@@ -39,11 +48,15 @@ export interface Publication {
   note?: string;
 }
 
-export const overrides = parse(overridesRaw) as Overrides;
+const parsed = OverridesSchema.safeParse(parse(overridesRaw));
+if (!parsed.success) {
+  throw new Error(`Invalid src/data/publications.overrides.yaml:\n${z.prettifyError(parsed.error)}`);
+}
+export const overrides = parsed.data;
 export const me = overrides.me;
 
 function build(): Publication[] {
-  const curated = overrides.papers ?? {};
+  const curated = Object.fromEntries(Object.entries(overrides.papers ?? {}).map(([k, v]) => [k, v ?? {}]));
   const fixName = (n: string) => overrides.authorNames?.[n] ?? n;
   const extraCitations = new Map<string, number>();
   for (const p of cache.papers) {
