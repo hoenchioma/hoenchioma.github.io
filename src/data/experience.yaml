@@ -68,9 +68,9 @@
   logo: ../assets/logos/crantech.jpg
   kind: industry
   start: 2020-01
-  end: 2021-12
+  end: 2020-12
   timeline: { row: 0, short: Full Stack Dev · CranTech, role: Full Stack Developer, org: CranTech (remote) }
   roles:
-    - { title: "Full Stack Developer, part-time", start: 2020-01, end: 2021-12, display: "2020 – 2021" }
+    - { title: "Full Stack Developer, part-time", start: 2020-01, end: 2020-12, display: "2020" }
   points:
     - Web and mobile projects with React, Express and React Native
