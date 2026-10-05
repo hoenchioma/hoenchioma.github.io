@@ -1,5 +1,6 @@
-# Work and research positions, in display order (Journey page). Roughly newest first,
-# but the current main role (BIASLab) is listed first on purpose.
+# Work and research positions. The Journey page lists them newest first by `start`;
+# the order in this file doesn't matter.
+# order: optional; pins an entry to the top (1 = first, 2 = second, …).
 # kind: research | industry | teaching  (sets the timeline colour)
 # start/end: YYYY-MM; leave `end` out for ongoing roles.
 # timeline.row: which row of the timeline the bar sits on (0 or 1).
@@ -11,6 +12,7 @@
   logo: ../assets/logos/biaslab.jpg
   kind: research
   start: 2025-09
+  order: 1
   timeline: { row: 0, short: Researcher · BIASLab, role: Doctoral Researcher, org: "BIASLab, UC Irvine" }
   roles:
     - { title: Doctoral Researcher, start: 2025-09 }

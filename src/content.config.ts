@@ -15,6 +15,8 @@ const experience = defineCollection({
       kind: z.enum(['research', 'industry', 'teaching']),
       start: yearMonth,
       end: yearMonth.optional(),
+      /** Pins the entry to the top of the list (1 = first); unpinned entries sort newest first. */
+      order: z.number().int().min(1).optional(),
       timeline: timeline.extend({ row: z.number().int().min(0).max(1) }),
       roles: z.array(
         z.object({ title: z.string(), start: yearMonth, end: yearMonth.optional(), display: z.string().optional() }),

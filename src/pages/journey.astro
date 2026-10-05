@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { ordered } from '../lib/ordered';
+import { sortedExperience } from '../lib/experience';
 import Base from '../layouts/Base.astro';
 import PageTitle from '../components/PageTitle.astro';
 import Panel from '../components/Panel.astro';
@@ -15,7 +16,7 @@ const logYears = [...new Set(log.map((l) => l.data.date.slice(0, 4)))].map((year
   items: log.filter((l) => l.data.date.startsWith(year)),
 }));
 const education = await ordered('education');
-const experience = await ordered('experience');
+const experience = await sortedExperience();
 ---
 
 <Base title="Journey" description="Raheeb Hassan's education, research and industry experience.">
