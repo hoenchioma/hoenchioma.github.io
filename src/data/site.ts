@@ -1,10 +1,17 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+// The CV link carries a hash of the PDF so browsers fetch the new file as soon as it changes
+// (GitHub Pages lets browsers cache files for hours).
+const cvVersion = createHash('sha256').update(readFileSync('public/files/resume.pdf')).digest('hex').slice(0, 8);
+
 // Site-wide identity and links.
 export const site = {
   name: 'Raheeb Hassan',
   role: 'CS PhD Student',
   institution: 'University of California, Irvine',
   email: 'contact@raheeb.xyz',
-  cv: '/files/resume.pdf',
+  cv: `/files/resume.pdf?v=${cvVersion}`,
   /** Home page introduction, one string per paragraph (later paragraphs are de-emphasized). */
   intro: [
     "I'm a PhD student in Computer Science at UC Irvine, advised by Dr. Mohsen Imani. I work on machine learning, with a focus on neurosymbolic methods. Lately, I've been especially drawn to reinforcement learning and world models.",
