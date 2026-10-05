@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://hoenchioma.github.io',
+  site: 'https://raheeb.xyz',
   trailingSlash: 'ignore',
 });

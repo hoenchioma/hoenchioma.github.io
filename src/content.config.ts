@@ -37,8 +37,8 @@ const education = defineCollection({
       end: yearMonth.optional(),
       display: z.string().optional(),
       timeline,
-      details: z.array(z.string()),
-      note: z.string().optional(),
+      /** One labelled line each, e.g. { label: Advisor, text: Dr. … }. */
+      details: z.array(z.object({ label: z.string(), text: z.string() })),
     }),
 });
 
