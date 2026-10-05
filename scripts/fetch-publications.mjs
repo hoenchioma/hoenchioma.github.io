@@ -18,7 +18,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function getJson(url, attempts = 5) {
   for (let i = 0; i < attempts; i++) {
-    const res = await fetch(url, { headers: { 'user-agent': 'hoenchioma.github.io build' } });
+    let res;
+    try {
+      // Bounded so a stalled connection falls back to the cache instead of hanging the build.
+      res = await fetch(url, { headers: { 'user-agent': 'hoenchioma.github.io build' }, signal: AbortSignal.timeout(20_000) });
+    } catch (err) {
+      if (i === attempts - 1) throw err;
+      await sleep(2000 * 2 ** i);
+      continue;
+    }
     if (res.ok) return res.json();
     if (res.status !== 429 && res.status < 500) throw new Error(`${res.status} ${res.statusText} for ${url}`);
     await sleep(2000 * 2 ** i);

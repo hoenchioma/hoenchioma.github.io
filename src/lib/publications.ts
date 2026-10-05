@@ -74,6 +74,7 @@ function build(): Publication[] {
     })
     .map((p) => {
       const o = curated[p.id] ?? {};
+      const year = (o.year ?? p.year)!;
       const arxiv = o.links?.arxiv ?? p.arxiv;
       const status: Status = o.status ?? (p.venue === 'arXiv' ? 'preprint' : 'published');
       const links: Publication['links'] = [];
@@ -85,8 +86,8 @@ function build(): Publication[] {
         id: p.id,
         title: o.title ?? p.title,
         authors: p.authors.map(fixName),
-        year: (o.year ?? p.year)!,
-        date: p.date ?? `${p.year}`,
+        year,
+        date: p.date ?? `${year}`,
         venue: o.venue ?? (status === 'preprint' ? 'Preprint' : p.venue),
         status,
         citations: p.citations + (extraCitations.get(p.id) ?? 0),
