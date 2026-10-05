@@ -3,6 +3,7 @@
 # start/end: YYYY-MM; leave `end` out for ongoing roles.
 # timeline.row: which row of the timeline the bar sits on (0 or 1).
 # timeline.short: compact label used on the home page timeline.
+# Not every past role is listed (e.g. the 2024–25 BIASLab internship); that's a deliberate choice.
 
 - id: uci-ta
   org: University of California, Irvine

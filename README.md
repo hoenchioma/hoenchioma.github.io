@@ -4,6 +4,8 @@ Personal site of Raheeb Hassan, built with [Astro](https://astro.build) and depl
 
 ## Develop
 
+Requires Node.js 22.12 or newer and npm 9.6.5 or newer (Astro 7's minimum).
+
 ```bash
 npm install
 npm run dev            # http://localhost:4321
