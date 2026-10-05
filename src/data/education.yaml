@@ -1,4 +1,5 @@
 # Degrees, newest first. Dates are YYYY-MM; leave `end` out if ongoing.
+# details: one labelled line each ({ label, text }), shown in order on the Journey page.
 
 - id: uci-phd
   degree: PhD, Computer Science
@@ -7,8 +8,9 @@
   start: 2025-09
   timeline: { short: PhD · UCI, role: "PhD, Computer Science", org: UC Irvine }
   details:
-    - "Advisor: Dr. Mohsen Imani, BIASLab."
-  note: Machine learning, neurosymbolic AI, reinforcement learning.
+    - { label: Advisor, text: Dr. Mohsen Imani }
+    - { label: Lab, text: BIASLab }
+    - { label: Topics, text: "Machine learning, neurosymbolic AI, reinforcement learning" }
 
 - id: du-bsc
   degree: B.Sc., Computer Science & Engineering
@@ -19,5 +21,7 @@
   display: "2018 – 2023"
   timeline: { short: B.Sc · DU, role: B.Sc. Computer Science & Engineering, org: University of Dhaka }
   details:
-    - CGPA 3.75 / 4.00, 2nd highest in class.
-  note: "Thesis: Safe multi-agent reinforcement learning, supervised by Dr. Md. Mosaddek Khan."
+    - { label: CGPA, text: "3.75 / 4.00, 2nd highest in class" }
+    - { label: Award, text: "Dean's Award, Faculty of Engineering & Technology" }
+    - { label: Thesis, text: Safe multi-agent reinforcement learning }
+    - { label: Supervisor, text: Dr. Md. Mosaddek Khan }

@@ -25,7 +25,7 @@ Almost everything lives in `src/data/`:
 | `skills.yaml`, `projects.yaml` | Achievements (skills) and Projects pages. |
 | `art.yaml` + `src/assets/art/` | Art gallery; `home: true` shows a piece on the landing page. |
 | `publications.overrides.yaml` | Curation for papers (see below). |
-| `site.ts` | Name, home page intro, email, social links, navigation. |
+| `site.ts` | Name, home page intro, Art page caption, email, social links, navigation. |
 
 Images go in `src/assets/` and are resized and compressed at build time. The CV is `public/files/resume.pdf`.
 

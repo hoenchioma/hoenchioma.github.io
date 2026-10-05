@@ -55,8 +55,11 @@ const experience = await sortedExperience();
                     <div class="muted small">{e.data.school} · {range(e.data.start, e.data.end, e.data.display)}</div>
                   </div>
                 </div>
-                {e.data.details.map((d) => <p class="small">{d}</p>)}
-                {e.data.note && <p class="small muted">{e.data.note}</p>}
+                <dl class="facts small">
+                  {e.data.details.map((d) => (
+                    <div><dt class="muted">{d.label}</dt><dd>{d.text}</dd></div>
+                  ))}
+                </dl>
               </div>
             ))}
           </div>
@@ -96,6 +99,9 @@ const experience = await sortedExperience();
   .entries { padding: 4px 20px; }
   .entry { padding: 16px 0; border-bottom: 1px dashed var(--line); }
   .entry:last-child { border-bottom: 0; }
+  .facts { margin: 12px 0 0; display: grid; gap: 4px; }
+  .facts div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 12px; }
+  .facts dt, .facts dd { margin: 0; }
   .entry.row { display: flex; gap: 16px; }
   .who { display: flex; gap: 14px; align-items: center; margin-bottom: 8px; }
   .logo { width: 40px; height: 40px; object-fit: contain; flex: 0 0 auto; }

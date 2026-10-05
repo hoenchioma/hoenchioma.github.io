@@ -35,6 +35,7 @@ const place = (i: number) => {
     <PageTitle kicker="06 · Gallery" title="Art">
       <a href={site.instagram}>Instagram ↗</a>
     </PageTitle>
+    <p class="lead">{site.artCaption}</p>
 
     {art.length === 0 ? (
       <p class="muted">New pieces coming soon. In the meantime, see <a href={site.instagram}>Instagram</a>.</p>
@@ -67,6 +68,7 @@ const place = (i: number) => {
 </Base>
 
 <style>
+  .lead { max-width: 620px; margin: -4px 0 24px; color: var(--muted); }
   .mosaic {
     --gap: 14px;
     display: grid;
