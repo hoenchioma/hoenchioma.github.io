@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import Panel from '../components/Panel.astro';
 import Timeline from '../components/Timeline.astro';
 import { site } from '../data/site';
-import { selected, publications } from '../lib/publications';
+import { selected, publications, venueLabel } from '../lib/publications';
 import { dotted } from '../lib/dates';
 import { groups } from '../lib/achievements';
 import { ordered } from '../lib/ordered';
@@ -48,7 +48,7 @@ const art = (await ordered('art')).filter((a) => a.data.home).slice(0, 5);
             {picks.map((p) => (
               <a class="card" href={`/research/#${p.id}`}>
                 <div class="card-head">
-                  <span>■ {p.venue} · {p.year}</span>
+                  <span>■ {venueLabel(p)} · {p.year}</span>
                   <span class:list={['pill', p.badge === 'Recent' ? 'pill-recent' : 'pill-cited']}>{p.badge}</span>
                 </div>
                 <p class="pub-title">{p.title}</p>
