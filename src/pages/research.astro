@@ -1,10 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageTitle from '../components/PageTitle.astro';
-import { publications, allTags, splitAuthors } from '../lib/publications';
+import { publications, allTags, splitAuthors, venueLabel } from '../lib/publications';
 
 const years = [...new Set(publications.map((p) => p.year))];
-const venueLabel = (p: (typeof publications)[number]) => p.venue;
 ---
 
 <Base title="Research" description="Publications by Raheeb Hassan: reinforcement learning, world models, hyperdimensional computing and neurosymbolic learning.">
@@ -37,7 +36,7 @@ const venueLabel = (p: (typeof publications)[number]) => p.venue;
               return (
                 <article class="card paper" id={p.id} data-tags={p.tags.join('|')}>
                   <div class="card-head">
-                    <span class:list={[{ venue: p.status !== 'preprint' }]}>■ {venueLabel(p)}{p.status === 'accepted' && ' · accepted'}</span>
+                    <span class:list={[{ venue: p.status !== 'preprint' }]}>■ {venueLabel(p)}</span>
                     <span>No. {String(n).padStart(2, '0')}</span>
                   </div>
                   <div class="body">

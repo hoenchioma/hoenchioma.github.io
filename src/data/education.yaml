@@ -10,6 +10,7 @@
   details:
     - { label: Advisor, text: Dr. Mohsen Imani }
     - { label: Lab, text: BIASLab }
+    - { label: Expected, text: June 2031 }
     - { label: Topics, text: "Machine learning, neurosymbolic AI, reinforcement learning" }
 
 - id: du-bsc

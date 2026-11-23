@@ -5,7 +5,7 @@ import overridesRaw from '../data/publications.overrides.yaml?raw';
 
 // Runtime schema for the hand-edited overrides file, so a typo (e.g. an unknown
 // status or a misspelled field) fails the build instead of silently changing output.
-const StatusSchema = z.enum(['published', 'accepted', 'preprint']);
+const StatusSchema = z.enum(['published', 'accepted', 'under-review', 'preprint']);
 type Status = z.infer<typeof StatusSchema>;
 
 const OverrideSchema = z
@@ -13,6 +13,7 @@ const OverrideSchema = z
     hide: z.boolean().optional(),
     mergeInto: z.string().optional(),
     title: z.string().optional(),
+    authors: z.array(z.string()).min(1).optional(),
     venue: z.string().optional(),
     year: z.number().int().optional(),
     status: StatusSchema.optional(),
@@ -23,6 +24,17 @@ const OverrideSchema = z
   })
   .strict();
 
+// A paper that Semantic Scholar doesn't have (e.g. a submission with no preprint yet).
+const ManualSchema = OverrideSchema.omit({ hide: true, mergeInto: true })
+  .extend({
+    title: z.string(),
+    authors: z.array(z.string()).min(1),
+    year: z.number().int(),
+    date: z.string().regex(/^\d{4}(-\d{2}){0,2}$/).optional(),
+    status: StatusSchema,
+  })
+  .strict();
+
 const OverridesSchema = z
   .object({
     semanticScholarAuthors: z.array(z.string().regex(/^\d+$/)).min(1),
@@ -30,6 +42,7 @@ const OverridesSchema = z
     me: z.string(),
     selected: z.object({ recent: z.number().int().min(0), mostCited: z.number().int().min(0) }).partial().optional(),
     papers: z.record(z.string(), OverrideSchema.nullable()).optional(),
+    manual: z.record(z.string(), ManualSchema).optional(),
   })
   .strict();
 
@@ -78,7 +91,14 @@ function build(): Publication[] {
     if (target) extraCitations.set(target, (extraCitations.get(target) ?? 0) + p.citations);
   }
 
-  return cache.papers
+  const cachedIds = new Set(cache.papers.map((p) => p.id));
+  const manual = Object.entries(overrides.manual ?? {}).map(([id, m]) => {
+    if (cachedIds.has(id)) throw new Error(`Invalid src/data/publications.overrides.yaml: manual.${id} clashes with a fetched paper id`);
+    curated[id] = m;
+    return { id, title: m.title, authors: m.authors, year: m.year, date: m.date ?? null, venue: m.venue ?? '', doi: null, arxiv: null, citations: 0 };
+  });
+
+  return [...cache.papers, ...manual]
     .filter((p) => !curated[p.id]?.hide && !curated[p.id]?.mergeInto)
     .filter((p) => {
       // A record without a year can't be placed on the page; give it `year` in the overrides to show it.
@@ -91,6 +111,7 @@ function build(): Publication[] {
       const year = (o.year ?? p.year)!;
       const arxiv = o.links?.arxiv ?? p.arxiv;
       const status: Status = o.status ?? (p.venue === 'arXiv' ? 'preprint' : 'published');
+      const defaultVenue = status === 'preprint' ? 'Preprint' : status === 'under-review' ? 'Under review' : p.venue;
       const links: Publication['links'] = [];
       const paperHref = o.links?.paper ?? (p.doi ? `https://doi.org/${p.doi}` : null);
       if (paperHref) links.push({ label: 'Paper', href: paperHref });
@@ -99,10 +120,10 @@ function build(): Publication[] {
       return {
         id: p.id,
         title: o.title ?? p.title,
-        authors: p.authors.map(fixName),
+        authors: (o.authors ?? p.authors).map(fixName),
         year,
         date: p.date ?? `${year}`,
-        venue: o.venue ?? (status === 'preprint' ? 'Preprint' : p.venue),
+        venue: o.venue ?? defaultVenue,
         status,
         citations: p.citations + (extraCitations.get(p.id) ?? 0),
         links,
@@ -115,6 +136,13 @@ function build(): Publication[] {
 }
 
 export const publications = build();
+
+/** Venue with its status, e.g. "ICCAD 2026 · accepted" or "ICLR 2027 · under review". */
+export function venueLabel(p: Pick<Publication, 'venue' | 'status'>) {
+  if (p.status === 'accepted') return `${p.venue} · accepted`;
+  if (p.status === 'under-review' && p.venue !== 'Under review') return `${p.venue} · under review`;
+  return p.venue;
+}
 
 /** Papers for the home page: the newest ones plus the most cited ones (no repeats). */
 export function selected() {

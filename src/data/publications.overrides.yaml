@@ -12,6 +12,7 @@ authorNames:
   "P. Mercati": Pietro Mercati
   "K. M. S. Wadith": K.M. Shadman Wadith
   "Md. Mamun-or Rashid": Md. Mamun or Rashid
+  "Sungheon Jeong": SungHeon Jeong
 
 # Your name as it appears in author lists (it's highlighted).
 me: Raheeb Hassan
@@ -27,7 +28,10 @@ selected:
 #   mergeInto: <id>       fold a duplicate record (e.g. its arXiv preprint) into another
 #                         paper: citations are added up, the duplicate is not shown
 #   title, venue, year    replace fetched values
-#   status                published | accepted | preprint (default: inferred)
+#   authors               replace the fetched author list
+#   status                published | accepted | under-review | preprint (default: inferred)
+#                         Name a venue for an under-review paper only if that venue allows it
+#                         publicly (ICLR does; CVPR and AAAI forbid it), else leave venue out.
 #   links                 extra links, e.g. { code: https://..., arxiv: 2311.16277 }
 #   tags                  topic tags used by the Research page filter
 #   summary               one-line summary shown on the Research page
@@ -54,6 +58,8 @@ papers:
     summary: Frozen small language models collaborate through a trainable attention interface over their hidden states, trained with RL from verifiable rewards.
 
   8155fb0cc3e22cb03ea881067a52393e9d40806e:   # HopFormer
+    authors: [Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, SungHeon Jeong, Mahdi Imani, Mohsen Imani]
+    status: under-review
     tags: [Graphs]
     summary: A graph Transformer that injects structure only through head-specific n-hop sparse attention, with no positional encodings and cost linear in mask sparsity.
 
@@ -62,6 +68,7 @@ papers:
     summary: Three knowledge-graph-centric fusion strategies for multimodal video anomaly detection, reaching 72.93% mAP on XD-Violence; early fusion cuts per-frame energy by over 70%.
 
   de28a6fe2ac7000bebfb15adf75e57dbf653c48e:   # MissionHD (current title)
+    status: under-review
     tags: [HDC / VSA, Multimodal, Graphs]
     summary: Refines LLM-generated reasoning graphs directly in hyperdimensional space, improving weakly supervised video anomaly detection and recognition.
 
@@ -83,3 +90,16 @@ papers:
 
   63ff4f09a3d0563b18a6fdff6a471d698ed6934b:   # arXiv preprint of the Hamiltonian paper
     mergeInto: 9771abe8f1988c91e5866b4fa06779ad9a9941aa
+
+# Papers Semantic Scholar doesn't have yet, keyed by any unique id (used as the page anchor).
+# Required: title, authors, year, status. Optional: date (YYYY-MM[-DD]) and the fields above.
+manual:
+  lodiss:
+    title: "LoDiSS: Learning in Low-Dimensional Seeded Subspaces for Long-Term Test-Time Recovery of Floating-Point Neural Weights"
+    authors: [Sanggeon Yun, Ryozo Masukawa, SungHeon Jeong, Hyunwoo Oh, Raheeb Hassan, William Youngwoo Chung, Mohsen Imani]
+    year: 2026
+    date: 2026-09
+    venue: ICLR 2027
+    status: under-review
+    tags: [Robustness]
+    summary: Recovers corrupted floating-point neural network weights at test time by learning in low-dimensional seeded subspaces, keeping models accurate over long deployments.
