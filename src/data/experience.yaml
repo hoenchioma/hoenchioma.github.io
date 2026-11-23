@@ -27,11 +27,11 @@
   logo: ../assets/logos/uci.png
   kind: teaching
   start: 2026-01
-  timeline: { row: 1, short: TA · UCI, role: Teaching Assistant, org: "ICS 26, UC Irvine" }
+  timeline: { row: 1, short: TA · UCI, role: Teaching Assistant, org: "ICS 46, UC Irvine" }
   roles:
     - { title: Graduate Teaching Assistant, start: 2026-01 }
   points:
-    - "ICS 26: Data Structures Implementation and Analysis: office hours, review sessions, grading and mentoring"
+    - "ICS 46: Data Structures Implementation and Analysis: office hours, review sessions, grading and mentoring"
 
 - id: therap
   org: Therap Services
