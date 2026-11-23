@@ -33,8 +33,8 @@ selected:
 #   title, venue, year    replace fetched values
 #   authors               replace the fetched author list
 #   status                published | accepted | under-review | preprint (default: inferred)
-#                         Name a venue for an under-review paper only if that venue allows it
-#                         publicly (ICLR does; CVPR and AAAI forbid it), else leave venue out.
+#                         Use under-review only where the venue allows naming it publicly
+#                         (ICLR does; CVPR and AAAI don't); otherwise keep the paper a preprint.
 #   links                 extra links, e.g. { code: https://..., arxiv: 2311.16277 }
 #   tags                  topic tags used by the Research page filter
 #   summary               one-line summary shown on the Research page
@@ -62,7 +62,6 @@ papers:
 
   8155fb0cc3e22cb03ea881067a52393e9d40806e:   # HopFormer
     authors: [Sanggeon Yun, Raheeb Hassan, Ryozo Masukawa, SungHeon Jeong, Mahdi Imani, Mohsen Imani]
-    status: under-review
     tags: [Graphs]
     summary: A graph Transformer that injects structure only through head-specific n-hop sparse attention, with no positional encodings and cost linear in mask sparsity.
 
@@ -71,7 +70,6 @@ papers:
     summary: Three knowledge-graph-centric fusion strategies for multimodal video anomaly detection, reaching 72.93% mAP on XD-Violence; early fusion cuts per-frame energy by over 70%.
 
   de28a6fe2ac7000bebfb15adf75e57dbf653c48e:   # MissionHD (current title)
-    status: under-review
     tags: [HDC / VSA, Multimodal, Graphs]
     summary: Refines LLM-generated reasoning graphs directly in hyperdimensional space, improving weakly supervised video anomaly detection and recognition.
 
